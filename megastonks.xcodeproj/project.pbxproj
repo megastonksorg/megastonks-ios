@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D027BBD227839B6400B7AD6C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027BBD127839B6400B7AD6C /* Colors.swift */; };
+		D027BBDA2783A6AA00B7AD6C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D027BBD92783A6AA00B7AD6C /* Poppins-Regular.ttf */; };
+		D027BBDE2783A6EE00B7AD6C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D027BBDD2783A6EE00B7AD6C /* Poppins-SemiBold.ttf */; };
+		D0A578B02779A60D007650E3 /* megastonksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A578AF2779A60D007650E3 /* megastonksApp.swift */; };
+		D0A578B22779A60D007650E3 /* AuthPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A578B12779A60D007650E3 /* AuthPageView.swift */; };
+		D0A578B42779A60E007650E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A578B32779A60E007650E3 /* Assets.xcassets */; };
+		D0A578B72779A60E007650E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A578B62779A60E007650E3 /* Preview Assets.xcassets */; };
+		D0B3FE52278A433600BE257F /* Eula.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B3FE51278A433600BE257F /* Eula.swift */; };
+		D0B3FE56278A48EA00BE257F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B3FE55278A48EA00BE257F /* View.swift */; };
+		D0B3FE59278BAF8E00BE257F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B3FE58278BAF8E00BE257F /* APIClient.swift */; };
+		D0F63F362793BE5700540231 /* CryptoPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F63F352793BE5700540231 /* CryptoPageView.swift */; };
+		D0F63F3A2795371300540231 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F63F392795371300540231 /* AsyncImage.swift */; };
+		D0FF77C12787B4C500E613F7 /* FormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF77C02787B4C500E613F7 /* FormFieldView.swift */; };
+		D0FF77C52787BDDF00E613F7 /* AuthPageView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF77C42787BDDF00E613F7 /* AuthPageView+ViewModel.swift */; };
+		D0FF77C727882E1300E613F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FF77C627882E1300E613F7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D027BBD127839B6400B7AD6C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D027BBD82783A59000B7AD6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D027BBD92783A6AA00B7AD6C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		D027BBDD2783A6EE00B7AD6C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		D0A578AC2779A60D007650E3 /* Mega Stonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mega Stonks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0A578AF2779A60D007650E3 /* megastonksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megastonksApp.swift; sourceTree = "<group>"; };
+		D0A578B12779A60D007650E3 /* AuthPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPageView.swift; sourceTree = "<group>"; };
+		D0A578B32779A60E007650E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0A578B62779A60E007650E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0B3FE51278A433600BE257F /* Eula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eula.swift; sourceTree = "<group>"; };
+		D0B3FE55278A48EA00BE257F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D0B3FE58278BAF8E00BE257F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D0F63F352793BE5700540231 /* CryptoPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPageView.swift; sourceTree = "<group>"; };
+		D0F63F392795371300540231 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		D0FF77C02787B4C500E613F7 /* FormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldView.swift; sourceTree = "<group>"; };
+		D0FF77C42787BDDF00E613F7 /* AuthPageView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthPageView+ViewModel.swift"; sourceTree = "<group>"; };
+		D0FF77C627882E1300E613F7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0A578A92779A60D007650E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D027BBD027839B5700B7AD6C /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D027BBD127839B6400B7AD6C /* Colors.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		D027BBD32783A3C400B7AD6C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D027BBDD2783A6EE00B7AD6C /* Poppins-SemiBold.ttf */,
+				D027BBD92783A6AA00B7AD6C /* Poppins-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D0A578A32779A60D007650E3 = {
+			isa = PBXGroup;
+			children = (
+				D0A578AE2779A60D007650E3 /* megastonks */,
+				D0A578AD2779A60D007650E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0A578AD2779A60D007650E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0A578AC2779A60D007650E3 /* Mega Stonks.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0A578AE2779A60D007650E3 /* megastonks */ = {
+			isa = PBXGroup;
+			children = (
+				D0B3FE57278BAF7700BE257F /* APIClient */,
+				D0B3FE50278A431B00BE257F /* Model */,
+				D0FF77C22787BDA900E613F7 /* View */,
+				D0FF77C32787BDBC00E613F7 /* ViewModel */,
+				D0B3FE53278A48D300BE257F /* Helpers */,
+				D027BBD32783A3C400B7AD6C /* Fonts */,
+				D027BBD027839B5700B7AD6C /* Styles */,
+				D0A578AF2779A60D007650E3 /* megastonksApp.swift */,
+				D027BBD82783A59000B7AD6C /* Info.plist */,
+				D0A578B32779A60E007650E3 /* Assets.xcassets */,
+				D0A578B52779A60E007650E3 /* Preview Content */,
+				D0FF77C627882E1300E613F7 /* LaunchScreen.storyboard */,
+			);
+			path = megastonks;
+			sourceTree = "<group>";
+		};
+		D0A578B52779A60E007650E3 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D0A578B62779A60E007650E3 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0B3FE50278A431B00BE257F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0B3FE51278A433600BE257F /* Eula.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0B3FE53278A48D300BE257F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D0B3FE54278A48DC00BE257F /* Extensions */,
+				D0F63F392795371300540231 /* AsyncImage.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D0B3FE54278A48DC00BE257F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0B3FE55278A48EA00BE257F /* View.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0B3FE57278BAF7700BE257F /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				D0B3FE58278BAF8E00BE257F /* APIClient.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		D0F63F342793BE3000540231 /* CryptoView */ = {
+			isa = PBXGroup;
+			children = (
+				D0F63F352793BE5700540231 /* CryptoPageView.swift */,
+			);
+			path = CryptoView;
+			sourceTree = "<group>";
+		};
+		D0FF77BD2787B49F00E613F7 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				D0FF77C02787B4C500E613F7 /* FormFieldView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		D0FF77C22787BDA900E613F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0F63F342793BE3000540231 /* CryptoView */,
+				D0FF77BD2787B49F00E613F7 /* SubViews */,
+				D0A578B12779A60D007650E3 /* AuthPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0FF77C32787BDBC00E613F7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0FF77C42787BDDF00E613F7 /* AuthPageView+ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0A578AB2779A60D007650E3 /* megastonks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0A578BA2779A60E007650E3 /* Build configuration list for PBXNativeTarget "megastonks" */;
+			buildPhases = (
+				D0A578A82779A60D007650E3 /* Sources */,
+				D0A578A92779A60D007650E3 /* Frameworks */,
+				D0A578AA2779A60D007650E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = megastonks;
+			productName = megastonks;
+			productReference = D0A578AC2779A60D007650E3 /* Mega Stonks.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0A578A42779A60D007650E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					D0A578AB2779A60D007650E3 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+				};
+			};
+			buildConfigurationList = D0A578A72779A60D007650E3 /* Build configuration list for PBXProject "megastonks" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0A578A32779A60D007650E3;
+			productRefGroup = D0A578AD2779A60D007650E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0A578AB2779A60D007650E3 /* megastonks */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0A578AA2779A60D007650E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D027BBDE2783A6EE00B7AD6C /* Poppins-SemiBold.ttf in Resources */,
+				D0A578B72779A60E007650E3 /* Preview Assets.xcassets in Resources */,
+				D0A578B42779A60E007650E3 /* Assets.xcassets in Resources */,
+				D0FF77C727882E1300E613F7 /* LaunchScreen.storyboard in Resources */,
+				D027BBDA2783A6AA00B7AD6C /* Poppins-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0A578A82779A60D007650E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F63F3A2795371300540231 /* AsyncImage.swift in Sources */,
+				D0A578B22779A60D007650E3 /* AuthPageView.swift in Sources */,
+				D0FF77C12787B4C500E613F7 /* FormFieldView.swift in Sources */,
+				D0F63F362793BE5700540231 /* CryptoPageView.swift in Sources */,
+				D0B3FE52278A433600BE257F /* Eula.swift in Sources */,
+				D0B3FE59278BAF8E00BE257F /* APIClient.swift in Sources */,
+				D027BBD227839B6400B7AD6C /* Colors.swift in Sources */,
+				D0FF77C52787BDDF00E613F7 /* AuthPageView+ViewModel.swift in Sources */,
+				D0B3FE56278A48EA00BE257F /* View.swift in Sources */,
+				D0A578B02779A60D007650E3 /* megastonksApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D0A578B82779A60E007650E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0A578B92779A60E007650E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0A578BB2779A60E007650E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "\"megastonks/Preview Content\"";
+				DEVELOPMENT_TEAM = HMK8J32K98;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = megastonks/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strikingfinancial.megastonks;
+				PRODUCT_NAME = "Mega Stonks";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0A578BC2779A60E007650E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_ASSET_PATHS = "\"megastonks/Preview Content\"";
+				DEVELOPMENT_TEAM = HMK8J32K98;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = megastonks/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.strikingfinancial.megastonks;
+				PRODUCT_NAME = "Mega Stonks";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0A578A72779A60D007650E3 /* Build configuration list for PBXProject "megastonks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A578B82779A60E007650E3 /* Debug */,
+				D0A578B92779A60E007650E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0A578BA2779A60E007650E3 /* Build configuration list for PBXNativeTarget "megastonks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0A578BB2779A60E007650E3 /* Debug */,
+				D0A578BC2779A60E007650E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0A578A42779A60D007650E3 /* Project object */;
+}
