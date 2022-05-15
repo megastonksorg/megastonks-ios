@@ -55,7 +55,7 @@ class APIClient {
     var routes: APIRoutes = APIRoutes()
     private var cancellables = Set<AnyCancellable>()
     
-    func getData<T: Decodable>(request: APIRequest, type: T.Type) -> Future<[T], Error> {
+    func appRequest<T: Decodable>(request: APIRequest, type: T.Type) -> Future<[T], Error> {
          return Future<[T], Error> { [weak self] promise in
              guard let self = self else { return promise(.failure(APIError.invalidClient)) }
              URLSession.shared.dataTaskPublisher(for: request.request)
