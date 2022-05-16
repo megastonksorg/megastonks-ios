@@ -13,6 +13,8 @@
 		D0A2F0A22831BC6700EC397C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A2F0A12831BC6700EC397C /* Preview Assets.xcassets */; };
 		D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */; };
 		D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B02831CB9E00EC397C /* Colors.swift */; };
+		D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B22831D25700EC397C /* TournamentView.swift */; };
+		D0A2F0B62831D3BC00EC397C /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		D0A2F0A12831BC6700EC397C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D0A2F0B02831CB9E00EC397C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		D0A2F0B22831D25700EC397C /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
+		D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		D0A2F0A92831BE4A00EC397C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0A2F0B22831D25700EC397C /* TournamentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 		D0A2F0AC2831BF0600EC397C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D0A2F0B42831D39900EC397C /* Views */,
 				D0A2F0AB2831BEE100EC397C /* Styles */,
 				D0A2F0AD2831BF1100EC397C /* Extensions */,
 			);
@@ -119,6 +125,14 @@
 				D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D0A2F0B42831D39900EC397C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +208,8 @@
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
+				D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */,
+				D0A2F0B62831D3BC00EC397C /* AsyncImage.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
