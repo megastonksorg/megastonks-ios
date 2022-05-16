@@ -10,19 +10,16 @@ import SwiftUI
 import UIKit
 import Combine
 
-struct AsyncImage<Placeholder: View>: View {
+struct AsyncImage: View {
 	@StateObject private var loader: ImageLoader
-	private let placeholder: Placeholder
 	private let image: (UIImage) -> Image
 	private let contentMode: ContentMode
 	
 	init(
 		url: URL,
-		@ViewBuilder placeholder: () -> Placeholder,
 		@ViewBuilder image: @escaping (UIImage) -> Image = Image.init(uiImage:),
 		contentMode: ContentMode = .fill
 	) {
-		self.placeholder = placeholder()
 		self.image = image
 		_loader = StateObject(wrappedValue: ImageLoader(url: url, cache: Environment(\.imageCache).wrappedValue))
 		self.contentMode = contentMode
@@ -40,17 +37,12 @@ struct AsyncImage<Placeholder: View>: View {
 					.resizable()
 					.aspectRatio(contentMode: contentMode)
 			} else {
-				placeholder
+				Color.black
 			}
 		}
 	}
 }
 
-extension AsyncImage {
-	init(url: URL) {
-		self.init(url: url, placeholder: { LinearGradient.dropShadow as! Placeholder })
-	}
-}
 protocol ImageCache {
 	subscript(_ url: URL) -> UIImage? { get set }
 }
