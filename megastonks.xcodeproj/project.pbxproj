@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09A2831BC6700EC397C /* megastonksApp.swift */; };
-		D0A2F09D2831BC6700EC397C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09C2831BC6700EC397C /* ContentView.swift */; };
+		D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09C2831BC6700EC397C /* AppView.swift */; };
 		D0A2F09F2831BC6700EC397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A2F09E2831BC6700EC397C /* Assets.xcassets */; };
 		D0A2F0A22831BC6700EC397C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A2F0A12831BC6700EC397C /* Preview Assets.xcassets */; };
+		D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */; };
+		D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B02831CB9E00EC397C /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D0A2F0972831BC6700EC397C /* megastonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = megastonks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F09A2831BC6700EC397C /* megastonksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megastonksApp.swift; sourceTree = "<group>"; };
-		D0A2F09C2831BC6700EC397C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0A2F09C2831BC6700EC397C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		D0A2F09E2831BC6700EC397C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0A2F0A12831BC6700EC397C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		D0A2F0B02831CB9E00EC397C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,12 @@
 		D0A2F0992831BC6700EC397C /* megastonks */ = {
 			isa = PBXGroup;
 			children = (
+				D0A2F0AC2831BF0600EC397C /* Utilities */,
+				D0A2F0A82831BE4100EC397C /* Model */,
+				D0A2F0A92831BE4A00EC397C /* View */,
+				D0A2F0AA2831BE5500EC397C /* ViewModel */,
 				D0A2F09A2831BC6700EC397C /* megastonksApp.swift */,
-				D0A2F09C2831BC6700EC397C /* ContentView.swift */,
+				D0A2F09C2831BC6700EC397C /* AppView.swift */,
 				D0A2F09E2831BC6700EC397C /* Assets.xcassets */,
 				D0A2F0A02831BC6700EC397C /* Preview Content */,
 			);
@@ -65,6 +73,52 @@
 				D0A2F0A12831BC6700EC397C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0A2F0A82831BE4100EC397C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0A2F0A92831BE4A00EC397C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0A2F0AA2831BE5500EC397C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D0A2F0AB2831BEE100EC397C /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D0A2F0B02831CB9E00EC397C /* Colors.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		D0A2F0AC2831BF0600EC397C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D0A2F0AB2831BEE100EC397C /* Styles */,
+				D0A2F0AD2831BF1100EC397C /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D0A2F0AD2831BF1100EC397C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +191,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A2F09D2831BC6700EC397C /* ContentView.swift in Sources */,
+				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
+				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
+				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
