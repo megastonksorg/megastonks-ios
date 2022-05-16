@@ -8,7 +8,13 @@
 import SwiftUI
 
 extension View {
+	
 	func frame(dimension: CGFloat?) -> some View {
 		frame(width: dimension, height: dimension)
 	}
+	
+	func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+		ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
+	}
+	
 }

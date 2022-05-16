@@ -37,7 +37,9 @@ struct AsyncImage: View {
 					.resizable()
 					.aspectRatio(contentMode: contentMode)
 			} else {
-				Color.black
+				Color.black.opacity(0.6)
+					.background(.ultraThinMaterial)
+					.overlay(Text("Loading").foregroundColor(.white))
 			}
 		}
 	}
