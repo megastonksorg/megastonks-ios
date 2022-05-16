@@ -46,6 +46,11 @@ struct AsyncImage<Placeholder: View>: View {
 	}
 }
 
+extension AsyncImage {
+	init(url: URL) {
+		self.init(url: url, placeholder: { LinearGradient.dropShadow as! Placeholder })
+	}
+}
 protocol ImageCache {
 	subscript(_ url: URL) -> UIImage? { get set }
 }

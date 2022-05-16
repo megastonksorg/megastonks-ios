@@ -9,7 +9,9 @@ import SwiftUI
 
 struct TournamentView: View {
     var body: some View {
-        Text("Hello, World!")
+		RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
+			.fill(LinearGradient.megaStonksGreen)
+			.frame(height: SizeConstants.tournamentCardHeight)
     }
 }
 

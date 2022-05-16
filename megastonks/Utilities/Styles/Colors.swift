@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
 	static var megaStonksGreen: Color { .init(.init(hex: "A3F52F")) }
+	static var megaStonksGreenDark: Color { .init(.init(hex: "4BBD20")) }
 }

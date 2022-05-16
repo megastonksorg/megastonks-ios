@@ -16,6 +16,9 @@
 		D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B22831D25700EC397C /* TournamentView.swift */; };
 		D0A2F0B62831D3BC00EC397C /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */; };
 		D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B72831D61E00EC397C /* Tournament.swift */; };
+		D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B92831E01C00EC397C /* Gradients.swift */; };
+		D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BB2831E31000EC397C /* Helpers.swift */; };
+		D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BD2831E3F800EC397C /* View+Frame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		D0A2F0B22831D25700EC397C /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
 		D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		D0A2F0B72831D61E00EC397C /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		D0A2F0B92831E01C00EC397C /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
+		D0A2F0BB2831E31000EC397C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		D0A2F0BD2831E3F800EC397C /* View+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Frame.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A2F0B02831CB9E00EC397C /* Colors.swift */,
+				D0A2F0B92831E01C00EC397C /* Gradients.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 				D0A2F0B42831D39900EC397C /* Views */,
 				D0A2F0AB2831BEE100EC397C /* Styles */,
 				D0A2F0AD2831BF1100EC397C /* Extensions */,
+				D0A2F0BB2831E31000EC397C /* Helpers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */,
+				D0A2F0BD2831E3F800EC397C /* View+Frame.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -208,9 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */,
 				D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
+				D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */,
+				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */,
 				D0A2F0B62831D3BC00EC397C /* AsyncImage.swift in Sources */,
