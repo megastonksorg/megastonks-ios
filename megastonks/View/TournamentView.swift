@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TournamentView: View {
 	let innerPadding: CGFloat = 2
-	let liveButtonSize = SizeConstants.overlayButtonSize
 	
     var body: some View {
 		
@@ -43,7 +42,7 @@ struct TournamentView: View {
 												.foregroundColor(.white)
 												.lineLimit(2)
 											Spacer()
-												.frame(width: liveButtonSize.width)
+												.frame(width: SizeConstants.overlayButtonSize.width)
 										}
 									}
 									.padding(.horizontal, 10)
@@ -51,15 +50,7 @@ struct TournamentView: View {
 						}
 					}
 					.overlay(alignment: .bottomTrailing) {
-						Rectangle()
-							.fill(LinearGradient.megaStonksGreen)
-							.frame(width: liveButtonSize.width, height: liveButtonSize.height)
-							.cornerRadius(SizeConstants.cornerRadius - 8, corners: [.topLeft, .bottomRight])
-							.overlay{
-								Text("LIVE")
-									.foregroundColor(.white)
-									.font(.system(size: 18, weight: .bold, design: .rounded))
-							}
+						OverlayButton(title: "Live")
 					}
 			}
 			.padding(.horizontal)
