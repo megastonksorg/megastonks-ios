@@ -15,6 +15,7 @@
 		D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B02831CB9E00EC397C /* Colors.swift */; };
 		D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B22831D25700EC397C /* TournamentView.swift */; };
 		D0A2F0B62831D3BC00EC397C /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */; };
+		D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B72831D61E00EC397C /* Tournament.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D0A2F0B02831CB9E00EC397C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D0A2F0B22831D25700EC397C /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
 		D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		D0A2F0B72831D61E00EC397C /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		D0A2F0A82831BE4100EC397C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0A2F0B72831D61E00EC397C /* Tournament.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
