@@ -11,4 +11,5 @@ import SwiftUI
 struct SizeConstants {
 	static let cornerRadius: CGFloat = 20
 	static let tournamentCardHeight: CGFloat = 200
+	static let overlayButtonSize: CGSize = CGSize(width: 100, height: 40)
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TournamentView: View {
 	let innerPadding: CGFloat = 2
+	let liveButtonSize = SizeConstants.overlayButtonSize
+	
     var body: some View {
 		
 		RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
@@ -29,17 +31,35 @@ struct TournamentView: View {
 								.cornerRadius(SizeConstants.cornerRadius, corners: [.bottomLeft, .bottomRight])
 								.padding(innerPadding)
 								.overlay {
-									VStack {
+									VStack(alignment: .leading) {
 										Text("League of Legends North America Sponsors")
 											.font(.system(size: 16, weight: .semibold, design: .rounded))
 											.foregroundColor(.white)
 											.lineLimit(1)
-											.padding(.top, 6)
-											.padding(.horizontal, 10)
-										Spacer()
+											.padding(.vertical, 2)
+										HStack {
+											Text("KIA will continue to sponsor the 'Player of the Game' broadcast segment alongside joining")
+												.font(.system(size: 14, weight: .regular, design: .rounded))
+												.foregroundColor(.white)
+												.lineLimit(2)
+											Spacer()
+												.frame(width: liveButtonSize.width)
+										}
 									}
+									.padding(.horizontal, 10)
 								}
 						}
+					}
+					.overlay(alignment: .bottomTrailing) {
+						Rectangle()
+							.fill(LinearGradient.megaStonksGreen)
+							.frame(width: liveButtonSize.width, height: liveButtonSize.height)
+							.cornerRadius(SizeConstants.cornerRadius - 8, corners: [.topLeft, .bottomRight])
+							.overlay{
+								Text("LIVE")
+									.foregroundColor(.white)
+									.font(.system(size: 18, weight: .bold, design: .rounded))
+							}
 					}
 			}
 			.padding(.horizontal)
