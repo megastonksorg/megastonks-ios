@@ -39,7 +39,7 @@ struct AsyncImage: View {
 			} else {
 				Color.black.opacity(0.6)
 					.background(.ultraThinMaterial)
-					.overlay(Text("Loading").foregroundColor(.white))
+					.overlay(ProgressView().frame(width: .infinity, height: .infinity))
 			}
 		}
 	}
