@@ -21,6 +21,7 @@
 		D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BD2831E3F800EC397C /* View+Frame.swift */; };
 		D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */; };
 		D0A2F0C32832BDC800EC397C /* OverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0C22832BDC800EC397C /* OverlayButton.swift */; };
+		D0FF25052834CFFD004E98BD /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF25042834CFFD004E98BD /* GameCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		D0A2F0BD2831E3F800EC397C /* View+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Frame.swift"; sourceTree = "<group>"; };
 		D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		D0A2F0C22832BDC800EC397C /* OverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayButton.swift; sourceTree = "<group>"; };
+		D0FF25042834CFFD004E98BD /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				D0A2F0C12832BD2900EC397C /* SubView */,
-				D0A2F0B22831D25700EC397C /* TournamentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,6 +149,7 @@
 		D0A2F0B42831D39900EC397C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D0A2F0C22832BDC800EC397C /* OverlayButton.swift */,
 				D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */,
 			);
 			path = Views;
@@ -156,7 +158,8 @@
 		D0A2F0C12832BD2900EC397C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				D0A2F0C22832BDC800EC397C /* OverlayButton.swift */,
+				D0A2F0B22831D25700EC397C /* TournamentView.swift */,
+				D0FF25042834CFFD004E98BD /* GameCardView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				D0A2F0C32832BDC800EC397C /* OverlayButton.swift in Sources */,
 				D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */,
+				D0FF25052834CFFD004E98BD /* GameCardView.swift in Sources */,
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
 				D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
