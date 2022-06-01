@@ -14,14 +14,18 @@ struct GameCardView: View {
 		RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
 			.fill(LinearGradient.megaStonksGreen)
 			.frame(width: size.width, height: size.height)
-			.overlay(
-				AsyncImage(url: URL(string: "https://images.pexels.com/photos/10458845/pexels-photo-10458845.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")!)
-					.frame(width: size.width - innerPadding, height: size.height - innerPadding)
-					.clipShape(RoundedRectangle(cornerRadius: SizeConstants.cornerRadius))
-					.overlay(alignment: .bottomTrailing) {
-						OverlayButton(title: "Play")
-					}
-			)
+			.overlay {
+				AsyncImage(url: URL(string: "https://images.pexels.com/photos/10458845/pexels-photo-10458845.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")!) { image in
+					image.resizable()
+				} placeholder: {
+					ImagePlaceHolderView()
+				}
+				.frame(width: size.width - innerPadding, height: size.height - innerPadding)
+				.clipShape(RoundedRectangle(cornerRadius: SizeConstants.cornerRadius))
+				.overlay(alignment: .bottomTrailing) {
+					OverlayButton(title: "Play")
+				}
+			}
 	}
 }
 
