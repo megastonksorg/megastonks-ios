@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */; };
 		D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09A2831BC6700EC397C /* megastonksApp.swift */; };
 		D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09C2831BC6700EC397C /* AppView.swift */; };
 		D0A2F09F2831BC6700EC397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A2F09E2831BC6700EC397C /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */; };
 		D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B02831CB9E00EC397C /* Colors.swift */; };
 		D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B22831D25700EC397C /* TournamentView.swift */; };
-		D0A2F0B62831D3BC00EC397C /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */; };
 		D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B72831D61E00EC397C /* Tournament.swift */; };
 		D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B92831E01C00EC397C /* Gradients.swift */; };
 		D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BB2831E31000EC397C /* Helpers.swift */; };
@@ -25,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceHolderView.swift; sourceTree = "<group>"; };
 		D0A2F0972831BC6700EC397C /* megastonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = megastonks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F09A2831BC6700EC397C /* megastonksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megastonksApp.swift; sourceTree = "<group>"; };
 		D0A2F09C2831BC6700EC397C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D0A2F0B02831CB9E00EC397C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D0A2F0B22831D25700EC397C /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
-		D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		D0A2F0B72831D61E00EC397C /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		D0A2F0B92831E01C00EC397C /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		D0A2F0BB2831E31000EC397C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A2F0C22832BDC800EC397C /* OverlayButton.swift */,
-				D0A2F0B52831D3BC00EC397C /* AsyncImage.swift */,
+				D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -240,12 +240,12 @@
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
 				D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
+				D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */,
-				D0A2F0B62831D3BC00EC397C /* AsyncImage.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
