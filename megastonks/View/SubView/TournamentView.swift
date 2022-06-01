@@ -10,7 +10,7 @@ import SwiftUI
 struct TournamentView: View {
 	let innerPadding: CGFloat = SizeConstants.cardInnerPadding
 	
-    var body: some View {
+	var body: some View {
 		
 		RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
 			.fill(LinearGradient.megaStonksGreen)
@@ -55,11 +55,11 @@ struct TournamentView: View {
 			}
 			.padding(.horizontal)
 		
-    }
+	}
 }
 
 struct TournamentView_Previews: PreviewProvider {
-    static var previews: some View {
-        TournamentView()
-    }
+	static var previews: some View {
+		TournamentView()
+	}
 }

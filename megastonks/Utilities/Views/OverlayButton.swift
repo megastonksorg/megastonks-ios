@@ -12,7 +12,7 @@ struct OverlayButton: View {
 	let title: String
 	let buttonSize: CGSize = SizeConstants.overlayButtonSize
 	
-    var body: some View {
+	var body: some View {
 		Rectangle()
 			.fill(LinearGradient.megaStonksGreen)
 			.frame(width: buttonSize.width, height: buttonSize.height)
@@ -23,11 +23,11 @@ struct OverlayButton: View {
 					.foregroundColor(.white)
 					.font(.system(size: 18, weight: .bold, design: .rounded))
 			}
-    }
+	}
 }
 
 struct OverlayButton_Previews: PreviewProvider {
-    static var previews: some View {
-        OverlayButton(title: "Live")
-    }
+	static var previews: some View {
+		OverlayButton(title: "Live")
+	}
 }

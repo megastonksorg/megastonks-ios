@@ -80,7 +80,7 @@ class ImageLoader: ObservableObject {
 	
 	func load() {
 		guard !isLoading else { return }
-
+		
 		if let image = cache?[url] {
 			self.image = image
 			return

@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct megastonksApp: App {
-    var body: some Scene {
-        WindowGroup {
-            AppView()
-        }
-    }
+	var body: some Scene {
+		WindowGroup {
+			AppView()
+		}
+	}
 }
