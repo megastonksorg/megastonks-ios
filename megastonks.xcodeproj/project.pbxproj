@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */; };
+		D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */; };
+		D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE612847022F00BE886F /* WelcomePageView.swift */; };
 		D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09A2831BC6700EC397C /* megastonksApp.swift */; };
 		D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09C2831BC6700EC397C /* AppView.swift */; };
 		D0A2F09F2831BC6700EC397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A2F09E2831BC6700EC397C /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceHolderView.swift; sourceTree = "<group>"; };
+		D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedButtonStyle.swift; sourceTree = "<group>"; };
+		D0A1EE612847022F00BE886F /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
 		D0A2F0972831BC6700EC397C /* megastonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = megastonks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F09A2831BC6700EC397C /* megastonksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megastonksApp.swift; sourceTree = "<group>"; };
 		D0A2F09C2831BC6700EC397C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -54,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D0A1EE60284701E900BE886F /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				D0A1EE612847022F00BE886F /* WelcomePageView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		D0A2F08E2831BC6700EC397C = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A2F0C12832BD2900EC397C /* SubView */,
+				D0A1EE60284701E900BE886F /* Welcome */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +135,7 @@
 				D0A2F0B02831CB9E00EC397C /* Colors.swift */,
 				D0A2F0B92831E01C00EC397C /* Gradients.swift */,
 				D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */,
+				D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -242,11 +256,13 @@
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
+				D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */,
 				D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
+				D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

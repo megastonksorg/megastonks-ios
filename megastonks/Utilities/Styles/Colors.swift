@@ -11,3 +11,11 @@ extension Color {
 	static var megaStonksGreen: Color { .init(.init(hex: "A3F52F")) }
 	static var megaStonksGreenDark: Color { .init(.init(hex: "4BBD20")) }
 }
+
+public extension Color {
+	enum app {}
+}
+
+public extension Color.app {
+	static let background: Color = Color.black
+}
