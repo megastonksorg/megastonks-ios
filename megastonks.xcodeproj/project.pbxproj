@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D039C82628484B0300AA3AD2 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = D039C82528484B0300AA3AD2 /* SwiftProtobuf */; };
+		D039C82828484B0300AA3AD2 /* WalletCore in Frameworks */ = {isa = PBXBuildFile; productRef = D039C82728484B0300AA3AD2 /* WalletCore */; };
+		D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82A28484BAD00AA3AD2 /* WalletClient.swift */; };
+		D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82C28484DC100AA3AD2 /* Wallet.swift */; };
 		D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */; };
 		D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */; };
 		D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE612847022F00BE886F /* WelcomePageView.swift */; };
@@ -27,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D039C82A28484BAD00AA3AD2 /* WalletClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletClient.swift; sourceTree = "<group>"; };
+		D039C82C28484DC100AA3AD2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceHolderView.swift; sourceTree = "<group>"; };
 		D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedButtonStyle.swift; sourceTree = "<group>"; };
 		D0A1EE612847022F00BE886F /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
@@ -52,12 +58,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D039C82828484B0300AA3AD2 /* WalletCore in Frameworks */,
+				D039C82628484B0300AA3AD2 /* SwiftProtobuf in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D039C82928484B3400AA3AD2 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				D039C82A28484BAD00AA3AD2 /* WalletClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
 		D0A1EE60284701E900BE886F /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +101,7 @@
 		D0A2F0992831BC6700EC397C /* megastonks */ = {
 			isa = PBXGroup;
 			children = (
+				D039C82928484B3400AA3AD2 /* Clients */,
 				D0A2F0AC2831BF0600EC397C /* Utilities */,
 				D0A2F0A82831BE4100EC397C /* Model */,
 				D0A2F0A92831BE4A00EC397C /* View */,
@@ -109,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A2F0B72831D61E00EC397C /* Tournament.swift */,
+				D039C82C28484DC100AA3AD2 /* Wallet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +212,10 @@
 			dependencies = (
 			);
 			name = megastonks;
+			packageProductDependencies = (
+				D039C82528484B0300AA3AD2 /* SwiftProtobuf */,
+				D039C82728484B0300AA3AD2 /* WalletCore */,
+			);
 			productName = megastonks;
 			productReference = D0A2F0972831BC6700EC397C /* megastonks.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +244,9 @@
 				Base,
 			);
 			mainGroup = D0A2F08E2831BC6700EC397C;
+			packageReferences = (
+				D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */,
+			);
 			productRefGroup = D0A2F0982831BC6700EC397C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,6 +278,7 @@
 				D0FF25052834CFFD004E98BD /* GameCardView.swift in Sources */,
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
 				D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */,
+				D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
@@ -262,6 +288,7 @@
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
+				D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */,
 				D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +490,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/trustwallet/wallet-core";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D039C82528484B0300AA3AD2 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */;
+			productName = SwiftProtobuf;
+		};
+		D039C82728484B0300AA3AD2 /* WalletCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */;
+			productName = WalletCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D0A2F08F2831BC6700EC397C /* Project object */;
 }
