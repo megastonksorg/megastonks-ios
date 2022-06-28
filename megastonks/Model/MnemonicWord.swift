@@ -9,6 +9,7 @@ import Foundation
 
 struct MnemonicWord {
 	let text: String
+	var isSelected: Bool = false
 	let isSelectable: Bool
 	let isAlternateStyle: Bool
 }

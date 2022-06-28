@@ -14,12 +14,12 @@ struct ExpandedButtonStyle: ButtonStyle {
 	
 	@Environment(\.isEnabled) private var isEnabled
 	
-	public init (shouldAnimate: Bool = true, invertedStyle: Bool = false) {
+	init (shouldAnimate: Bool = true, invertedStyle: Bool = false) {
 		self.shouldAnimate = shouldAnimate
 		self.invertedStyle = invertedStyle
 	}
 	
-	public func makeBody(configuration: Configuration) -> some View {
+	func makeBody(configuration: Configuration) -> some View {
 		HStack {
 			Spacer()
 			configuration.label
@@ -55,5 +55,13 @@ struct ExpandedButtonStyle: ButtonStyle {
 					.stroke(lineWidth: 1)
 					.fill(Color.gray)
 			)
+	}
+}
+
+struct AnimatedButtonStyle: ButtonStyle {
+	func makeBody(configuration: Configuration) -> some View {
+		configuration.label
+			.scaleEffect(configuration.isPressed ? 1.05 : 1)
+			.animation(.easeOut(duration: 0.6), value: configuration.isPressed)
 	}
 }
