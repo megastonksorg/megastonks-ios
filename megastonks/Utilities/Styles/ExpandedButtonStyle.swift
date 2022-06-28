@@ -23,7 +23,7 @@ struct ExpandedButtonStyle: ButtonStyle {
 		HStack {
 			Spacer()
 			configuration.label
-				.foregroundColor(.white)
+				.foregroundColor(invertedStyle ? .gray : .black)
 				.padding()
 			Spacer()
 		}
@@ -32,8 +32,8 @@ struct ExpandedButtonStyle: ButtonStyle {
 				invertedButtonStyleView()
 			} else {
 				if isEnabled {
-					Capsule()
-						.fill(LinearGradient.megaStonksGreen)
+					shape()
+						.fill(Color.megaStonksGreen)
 				} else {
 					invertedButtonStyleView()
 				}
@@ -43,11 +43,15 @@ struct ExpandedButtonStyle: ButtonStyle {
 		.animation(.easeOut(duration: 0.6), value: shouldAnimate && configuration.isPressed)
 	}
 	
+	private func shape() -> some Shape {
+		RoundedRectangle(cornerRadius: 10)
+	}
+	
 	private func invertedButtonStyleView() -> some View {
-		Capsule()
+		shape()
 			.fill(.black)
 			.overlay(
-				Capsule()
+				shape()
 					.stroke(lineWidth: 1)
 					.fill(Color.gray)
 			)

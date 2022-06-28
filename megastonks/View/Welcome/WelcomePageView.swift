@@ -9,33 +9,35 @@ import SwiftUI
 import WalletCore
 
 struct WelcomePageView: View {
-    @State var wallet: HDWallet?
-    
+	@State var wallet: HDWallet?
+	
 	var body: some View {
-		VStack {
+		VStack(spacing: 0) {
 			Spacer()
-            
-            Group {
-                Button(action: {
-                   let wallet = WalletClient.shared.generateNewWallet()!
-                    self.wallet = wallet
-                    print("Wallet: \(wallet.getAddressForCoin(coin: .ethereum))")
-                }) {
-                    Text("Create a new Wallet")
-                }
-                
-                Button(action: {
-                    let signature = WalletClient.shared.signMessage(wallet: wallet!)
-                    print("Signature: \(signature)")
-                }) {
-                    Text("Sign Message")
-                }
-            }
-			.buttonStyle(ExpandedButtonStyle())
-			.padding()
-			.padding(.horizontal)
+			
+			Group {
+				Button(action: {
+					let wallet = WalletClient.shared.generateNewWallet()!
+					self.wallet = wallet
+					print("Wallet: \(wallet.getAddressForCoin(coin: .ethereum))")
+				}) {
+					Text("Create a new Wallet")
+				}
+				.buttonStyle(ExpandedButtonStyle())
+				
+				Button(action: {
+					let signature = WalletClient.shared.signMessage(wallet: wallet!)
+					print("Signature: \(signature)")
+				}) {
+					Text("Import an existing  wallet")
+				}
+				.buttonStyle(ExpandedButtonStyle(invertedStyle: true))
+			}
+			.textCase(.uppercase)
+			.padding(10)
+			.padding(.horizontal, 4)
 		}
-		.background(Color.app.background)
+		.background(AppBackgroundView())
 	}
 }
 
