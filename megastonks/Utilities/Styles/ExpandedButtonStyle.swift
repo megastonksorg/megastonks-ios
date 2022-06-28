@@ -39,7 +39,7 @@ struct ExpandedButtonStyle: ButtonStyle {
 				}
 			}
 		}
-		.scaleEffect(shouldAnimate && configuration.isPressed ? 1.12 : 1)
+		.scaleEffect(shouldAnimate && configuration.isPressed ? 1.05 : 1)
 		.animation(.easeOut(duration: 0.6), value: shouldAnimate && configuration.isPressed)
 	}
 	
