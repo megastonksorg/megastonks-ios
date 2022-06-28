@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AppView: View {
 	var body: some View {
-		MnemonicPhraseView(phrase: Array(repeating: MnemonicWord(text: "boy", isSelectable: true, isAlternateStyle: false), count: 12))
+		WelcomePageView()
 	}
 }
 
