@@ -21,4 +21,7 @@ extension View {
 		ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
 	}
 	
+	func pushOutFrame() -> some View {
+		frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+	}
 }

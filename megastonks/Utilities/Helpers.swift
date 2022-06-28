@@ -11,5 +11,5 @@ import SwiftUI
 struct SizeConstants {
 	static let cardInnerPadding: CGFloat = 4
 	static let cornerRadius: CGFloat = 10
-	static let wordSize: CGSize = CGSize(width: 110, height: 30)
+	static let wordSize: CGSize = CGSize(width: 100, height: 30)
 }
