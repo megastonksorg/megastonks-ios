@@ -12,7 +12,4 @@ struct SizeConstants {
 	static let cardInnerPadding: CGFloat = 4
 	static let cornerRadius: CGFloat = 10
 	static let wordSize: CGSize = CGSize(width: 110, height: 30)
-	static let tournamentCardHeight: CGFloat = 200
-	static let gameCardSize: CGSize = CGSize(width: 140, height: 200)
-	static let overlayButtonSize: CGSize = CGSize(width: 100, height: 40)
 }

@@ -23,14 +23,10 @@
 		D0A2F0A22831BC6700EC397C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A2F0A12831BC6700EC397C /* Preview Assets.xcassets */; };
 		D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */; };
 		D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B02831CB9E00EC397C /* Colors.swift */; };
-		D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B22831D25700EC397C /* TournamentView.swift */; };
-		D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B72831D61E00EC397C /* Tournament.swift */; };
 		D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0B92831E01C00EC397C /* Gradients.swift */; };
 		D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BB2831E31000EC397C /* Helpers.swift */; };
 		D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BD2831E3F800EC397C /* View+Frame.swift */; };
 		D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */; };
-		D0A2F0C32832BDC800EC397C /* OverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0C22832BDC800EC397C /* OverlayButton.swift */; };
-		D0FF25052834CFFD004E98BD /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF25042834CFFD004E98BD /* GameCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,14 +45,10 @@
 		D0A2F0A12831BC6700EC397C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0A2F0AE2831C6A800EC397C /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D0A2F0B02831CB9E00EC397C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		D0A2F0B22831D25700EC397C /* TournamentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentView.swift; sourceTree = "<group>"; };
-		D0A2F0B72831D61E00EC397C /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		D0A2F0B92831E01C00EC397C /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		D0A2F0BB2831E31000EC397C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		D0A2F0BD2831E3F800EC397C /* View+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Frame.swift"; sourceTree = "<group>"; };
 		D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
-		D0A2F0C22832BDC800EC397C /* OverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayButton.swift; sourceTree = "<group>"; };
-		D0FF25042834CFFD004E98BD /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +123,6 @@
 		D0A2F0A82831BE4100EC397C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D0A2F0B72831D61E00EC397C /* Tournament.swift */,
 				D039C82C28484DC100AA3AD2 /* Wallet.swift */,
 				D04B3D45286B1BBD00543816 /* MnemonicWord.swift */,
 			);
@@ -188,7 +179,6 @@
 		D0A2F0B42831D39900EC397C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D0A2F0C22832BDC800EC397C /* OverlayButton.swift */,
 				D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */,
 				D003DB55286A8E3200BCE964 /* AppBackgroundView.swift */,
 				D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */,
@@ -199,8 +189,6 @@
 		D0A2F0C12832BD2900EC397C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				D0A2F0B22831D25700EC397C /* TournamentView.swift */,
-				D0FF25042834CFFD004E98BD /* GameCardView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -282,12 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A2F0C32832BDC800EC397C /* OverlayButton.swift in Sources */,
 				D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */,
-				D0FF25052834CFFD004E98BD /* GameCardView.swift in Sources */,
 				D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */,
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
-				D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */,
 				D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */,
@@ -298,7 +283,6 @@
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
-				D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
 				D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */,
 				D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */,
