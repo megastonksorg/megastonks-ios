@@ -44,7 +44,7 @@ struct ExpandedButtonStyle: ButtonStyle {
 	}
 	
 	private func shape() -> some Shape {
-		RoundedRectangle(cornerRadius: 10)
+		RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
 	}
 	
 	private func invertedButtonStyleView() -> some View {

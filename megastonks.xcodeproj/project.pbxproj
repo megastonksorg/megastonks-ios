@@ -12,6 +12,8 @@
 		D039C82828484B0300AA3AD2 /* WalletCore in Frameworks */ = {isa = PBXBuildFile; productRef = D039C82728484B0300AA3AD2 /* WalletCore */; };
 		D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82A28484BAD00AA3AD2 /* WalletClient.swift */; };
 		D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82C28484DC100AA3AD2 /* Wallet.swift */; };
+		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
+		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */; };
 		D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */; };
 		D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE612847022F00BE886F /* WelcomePageView.swift */; };
@@ -35,6 +37,8 @@
 		D003DB55286A8E3200BCE964 /* AppBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundView.swift; sourceTree = "<group>"; };
 		D039C82A28484BAD00AA3AD2 /* WalletClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletClient.swift; sourceTree = "<group>"; };
 		D039C82C28484DC100AA3AD2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
+		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceHolderView.swift; sourceTree = "<group>"; };
 		D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedButtonStyle.swift; sourceTree = "<group>"; };
 		D0A1EE612847022F00BE886F /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			children = (
 				D0A2F0B72831D61E00EC397C /* Tournament.swift */,
 				D039C82C28484DC100AA3AD2 /* Wallet.swift */,
+				D04B3D45286B1BBD00543816 /* MnemonicWord.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				D0A2F0C22832BDC800EC397C /* OverlayButton.swift */,
 				D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */,
 				D003DB55286A8E3200BCE964 /* AppBackgroundView.swift */,
+				D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 				D0A2F0C32832BDC800EC397C /* OverlayButton.swift in Sources */,
 				D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */,
 				D0FF25052834CFFD004E98BD /* GameCardView.swift in Sources */,
+				D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */,
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
 				D0A2F0B82831D61E00EC397C /* Tournament.swift in Sources */,
 				D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */,
@@ -290,6 +297,7 @@
 				D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
+				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
 				D0A2F0B32831D25700EC397C /* TournamentView.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
 				D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */,
