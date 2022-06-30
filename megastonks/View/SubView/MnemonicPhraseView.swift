@@ -11,7 +11,9 @@ struct MnemonicPhraseView: View {
 	let phrase: [MnemonicWord]
 	
 	var body: some View {
-		VStack(spacing: 10) {
+		VStack(spacing: 20) {
+            Spacer()
+            
 			Text("Secret recovery phrase")
 				.font(.app.title)
 				.foregroundColor(.white)
@@ -28,7 +30,32 @@ struct MnemonicPhraseView: View {
 				}
 			}
 			.padding(.horizontal, 4)
+            
+            Button(action: {} ) {
+                HStack {
+                    Spacer()
+                    Image(systemName: "doc.on.doc.fill")
+                    Text("Copy to clipboard")
+                    Spacer()
+                }
+                .font(.app.subTitle)
+                .foregroundColor(.white)
+                .padding(.vertical)
+            }
+            
+            Spacer()
+            
+            Text("You won’t be able to contiune to the next step unless you have clicked ‘Copy to clipboard’ above. This is our way to make sure you have saved the phrase.")
+                .font(.app.footer)
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+            
+            Button(action: {}) {
+                Text("I saved it somewhere safe")
+            }
+            .buttonStyle(ExpandedButtonStyle(invertedStyle: true))
 		}
+        .padding()
 		.multilineTextAlignment(.center)
 		.pushOutFrame()
 		.background(Color.app.background)

@@ -20,6 +20,8 @@ extension MnemonicWord {
 }
 
 struct MnemonicPhrase {
+    var phrase: [MnemonicWord]
+    
 	static var preview: [MnemonicWord] = {
 		[
 			MnemonicWord(text: "boy", isSelectable: false, isAlternateStyle: false),
