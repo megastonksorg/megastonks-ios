@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MnemonicPhraseView: View {
+struct SecretPhraseView: View {
 	let phrase: [MnemonicWord]
 	
 	var body: some View {
@@ -62,8 +62,8 @@ struct MnemonicPhraseView: View {
 	}
 }
 
-struct MnemonicPhraseView_Previews: PreviewProvider {
+struct SecretPhraseView_Previews: PreviewProvider {
 	static var previews: some View {
-		MnemonicPhraseView(phrase: MnemonicPhrase.preview)
+        SecretPhraseView(phrase: MnemonicPhrase.preview)
 	}
 }

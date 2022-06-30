@@ -14,7 +14,7 @@
 		D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82C28484DC100AA3AD2 /* Wallet.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
-		D04B3D48286BB43400543816 /* MnemonicPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* MnemonicPhraseView.swift */; };
+		D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* SecretPhraseView.swift */; };
 		D04B3D4A286BB59700543816 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D49286BB59700543816 /* Font+Extension.swift */; };
 		D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */; };
 		D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */; };
@@ -37,7 +37,7 @@
 		D039C82C28484DC100AA3AD2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
-		D04B3D47286BB43400543816 /* MnemonicPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicPhraseView.swift; sourceTree = "<group>"; };
+		D04B3D47286BB43400543816 /* SecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretPhraseView.swift; sourceTree = "<group>"; };
 		D04B3D49286BB59700543816 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceHolderView.swift; sourceTree = "<group>"; };
 		D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedButtonStyle.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 		D0A2F0C12832BD2900EC397C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				D04B3D47286BB43400543816 /* MnemonicPhraseView.swift */,
+				D04B3D47286BB43400543816 /* SecretPhraseView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
 				D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
-				D04B3D48286BB43400543816 /* MnemonicPhraseView.swift in Sources */,
+				D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */,
 				D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */,
