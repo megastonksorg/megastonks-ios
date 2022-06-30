@@ -23,7 +23,7 @@ struct SecretPhraseView: View {
 				.foregroundColor(.gray)
 				.padding(.horizontal)
 			
-			LazyVGrid(columns: Array(repeating: GridItem(), count: 3), spacing: 10) {
+            LazyVGrid(columns: Array(repeating: GridItem(), count: SizeConstants.phraseGridCount), spacing: SizeConstants.phraseGridSpacing) {
 				ForEach(phrase){ word in
 					MnemonicWordView(word: word, viewHandler: {print(phrase.count)})
 						.padding(.vertical)
@@ -52,6 +52,7 @@ struct SecretPhraseView: View {
             
             Button(action: {}) {
                 Text("I saved it somewhere safe")
+                    .fontWeight(.medium)
             }
             .buttonStyle(ExpandedButtonStyle(invertedStyle: true))
 		}

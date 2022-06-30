@@ -8,6 +8,7 @@
 import Foundation
 
 struct MnemonicWord: Identifiable {
+    let id: UUID = UUID()
 	let text: String
 	var isSelected: Bool = false
 	let isSelectable: Bool
@@ -15,7 +16,6 @@ struct MnemonicWord: Identifiable {
 }
 
 extension MnemonicWord {
-	var id: String { text }
 	var isEmpty: Bool { text.isEmpty }
 }
 
@@ -24,18 +24,52 @@ struct MnemonicPhrase {
     
 	static var preview: [MnemonicWord] = {
 		[
-			MnemonicWord(text: "boy", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "girl", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "shoe", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "can", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "baby", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "geez", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "bad", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "rain", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "trouble", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "uncanny", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "journey", isSelectable: false, isAlternateStyle: false),
-			MnemonicWord(text: "look", isSelectable: false, isAlternateStyle: false),
+			MnemonicWord(text: "boy", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "girl", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "shoe", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "can", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "baby", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "geez", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "bad", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "rain", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "trouble", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "uncanny", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "journey", isSelectable: true, isAlternateStyle: false),
+			MnemonicWord(text: "look", isSelectable: true, isAlternateStyle: false),
 		]
 	}()
+    
+    static var previewAlternateStyle: [MnemonicWord] = {
+        [
+            MnemonicWord(text: "boy", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "girl", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "shoe", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "can", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "baby", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "geez", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "bad", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "rain", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "trouble", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "uncanny", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "journey", isSelectable: true, isAlternateStyle: true),
+            MnemonicWord(text: "look", isSelectable: true, isAlternateStyle: true),
+        ]
+    }()
+    
+    static var previewEmpty: [MnemonicWord] = {
+        [
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+            MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
+        ]
+    }()
 }

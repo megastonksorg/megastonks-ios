@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct MnemonicWordView: View {
-	var word: MnemonicWord
 	var viewHandler: (() -> Void)
 	
+    @State var word: MnemonicWord
+    
+    init(word: MnemonicWord, viewHandler: @escaping () -> Void) {
+        self._word = State(initialValue: word)
+        self.viewHandler = viewHandler
+    }
+    
 	var body: some View {
-		Button(action: { viewHandler() }) {
+		Button(action: {
+            self.word.isSelected.toggle()
+            self.viewHandler()
+        }) {
 			buttonLabel()
 		}
 		.buttonStyle(AnimatedButtonStyle())
@@ -24,19 +33,23 @@ struct MnemonicWordView: View {
 		let size = SizeConstants.wordSize
 		let cornerRadius: CGFloat = 5.0
 		let textColor: Color = word.isAlternateStyle ? .white : .black
-		if word.isEmpty {
-			RoundedRectangle(cornerRadius: cornerRadius)
-				.stroke(
-					word.isSelected ? Color.megaStonksGreen : Color.white.opacity(0.6),
-					style: StrokeStyle(
-						lineWidth: 1,
-						lineCap: .round,
-						lineJoin: .miter,
-						miterLimit: 4,
-						dash: [4],
-						dashPhase: 4
-					)
-				)
+        if word.text.isEmpty {
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .fill(Color.black)
+                .overlay(
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .stroke(
+                            word.isSelected ? Color.megaStonksGreen : Color.white.opacity(0.6),
+                            style: StrokeStyle(
+                                lineWidth: 1,
+                                lineCap: .round,
+                                lineJoin: .miter,
+                                miterLimit: 4,
+                                dash: [4],
+                                dashPhase: 4
+                            )
+                        )
+                )
 				.frame(size: size)
 		}
 		else {

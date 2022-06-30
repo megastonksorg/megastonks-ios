@@ -23,6 +23,7 @@ struct ExpandedButtonStyle: ButtonStyle {
 		HStack {
 			Spacer()
 			configuration.label
+                .textCase(.uppercase)
 				.foregroundColor(invertedStyle ? .gray : .black)
 				.padding()
 			Spacer()
