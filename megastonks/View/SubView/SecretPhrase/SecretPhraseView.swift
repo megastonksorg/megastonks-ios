@@ -1,5 +1,5 @@
 //
-//  MnemonicPhraseView.swift
+//  SecretPhraseView.swift
 //  megastonks
 //
 //  Created by Kingsley Okeke on 2022-06-28.
@@ -57,7 +57,6 @@ struct SecretPhraseView: View {
 		}
         .padding()
 		.multilineTextAlignment(.center)
-		.pushOutFrame()
 		.background(Color.app.background)
 	}
 }
