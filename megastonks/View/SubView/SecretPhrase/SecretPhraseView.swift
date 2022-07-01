@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import IdentifiedCollections
 
 struct SecretPhraseView: View {
-	let phrase: [MnemonicWord]
+	@State var phrase: IdentifiedArrayOf<MnemonicWord>
 	
 	var body: some View {
 		VStack(spacing: 20) {
@@ -25,7 +26,7 @@ struct SecretPhraseView: View {
 			
             LazyVGrid(columns: Array(repeating: GridItem(), count: SizeConstants.phraseGridCount), spacing: SizeConstants.phraseGridSpacing) {
 				ForEach(phrase){ word in
-					MnemonicWordView(word: word, viewHandler: {print(phrase.count)})
+                    MnemonicWordView(word: self.$phrase[id: word.id], viewHandler: {print(phrase.count)})
 						.padding(.vertical)
 				}
 			}

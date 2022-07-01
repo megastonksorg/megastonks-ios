@@ -10,36 +10,37 @@ import SwiftUI
 struct MnemonicWordView: View {
 	var viewHandler: (() -> Void)
 	
-    @State var word: MnemonicWord
+    @Binding var word: MnemonicWord?
     
-    init(word: MnemonicWord, viewHandler: @escaping () -> Void) {
-        self._word = State(initialValue: word)
+    init(word: Binding<MnemonicWord?>, viewHandler: @escaping () -> Void) {
+        self._word = word
         self.viewHandler = viewHandler
     }
     
 	var body: some View {
-		Button(action: {
-            self.word.isSelected.toggle()
-            self.viewHandler()
-        }) {
-			buttonLabel()
-		}
-		.buttonStyle(AnimatedButtonStyle())
-		.disabled(!word.isSelectable)
+        if self.word != nil {
+            Button(action: {
+                self.viewHandler()
+            }) {
+                buttonLabel()
+            }
+            .buttonStyle(AnimatedButtonStyle())
+            .disabled(!word!.isSelectable)
+        }
 	}
 	
 	@ViewBuilder
 	func buttonLabel() -> some View {
 		let size = SizeConstants.wordSize
 		let cornerRadius: CGFloat = 5.0
-		let textColor: Color = word.isAlternateStyle ? .white : .black
-        if word.text.isEmpty {
+		let textColor: Color = word!.isAlternateStyle ? .white : .black
+        if word!.text.isEmpty {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(Color.black)
                 .overlay(
                     RoundedRectangle(cornerRadius: cornerRadius)
                         .stroke(
-                            word.isSelected ? Color.megaStonksGreen : Color.white.opacity(0.6),
+                            word!.isSelected ? Color.megaStonksGreen : Color.white.opacity(0.6),
                             style: StrokeStyle(
                                 lineWidth: 1,
                                 lineCap: .round,
@@ -53,14 +54,14 @@ struct MnemonicWordView: View {
 				.frame(size: size)
 		}
 		else {
-			Text(word.text)
+			Text(word!.text)
 				.font(.subheadline)
 				.bold()
 				.foregroundColor(textColor)
 				.minimumScaleFactor(0.6)
 				.lineLimit(1)
 				.background {
-					if word.isAlternateStyle {
+					if word!.isAlternateStyle {
 						RoundedRectangle(cornerRadius: cornerRadius)
 							.stroke(Color.white, lineWidth: 2)
 							.frame(size: size)
@@ -71,13 +72,14 @@ struct MnemonicWordView: View {
 							.frame(size: size)
 					}
 				}
+                .frame(size: size)
 		}
 	}
 }
 
 struct MnemonicWordView_Previews: PreviewProvider {
 	static var previews: some View {
-		MnemonicWordView(word: MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false), viewHandler: {})
+        MnemonicWordView(word: Binding.constant(MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false)), viewHandler: {})
 			.preferredColorScheme(.dark)
 	}
 }

@@ -6,14 +6,16 @@
 //
 
 import SwiftUI
+import IdentifiedCollections
 
 struct VerifySecretPhraseView: View {
-    @State var phraseInput: [MnemonicWord]
-    @State var phraseOptions: [MnemonicWord]
+    @State var phraseInput: IdentifiedArrayOf<MnemonicWord>
+    @State var phraseOptions: IdentifiedArrayOf<MnemonicWord>
+    
+    @State var currentSelection: UUID?
     
     var body: some View {
-        VStack(spacing: 20) {
-            Spacer()
+        VStack(spacing: 10) {
             Text("Verify your secret phrase to continue")
                 .font(.app.subTitle)
                 .foregroundColor(.white)
@@ -23,21 +25,43 @@ struct VerifySecretPhraseView: View {
                 .foregroundColor(.white)
             
             LazyVGrid(columns: Array(repeating: GridItem(), count: SizeConstants.phraseGridCount), spacing: SizeConstants.phraseGridSpacing) {
-                ForEach(phraseInput) { word in
-                    MnemonicWordView(word: word, viewHandler: { })
-                        .padding(.vertical, 10)
+                ForEach(phraseInput) { input in
+                    MnemonicWordView(
+                        word: self.$phraseInput[id: input.id],
+                        viewHandler: {
+                            self.phraseInput.forEach { word in
+                                self.phraseInput[id: word.id]?.isSelected = false
+                            }
+                            self.phraseInput[id: input.id]?.isSelected = true
+                            self.currentSelection = input.id
+                            
+                        }
+                    )
+                    .padding(.vertical, 10)
                 }
             }
             
-            Divider()
+            Rectangle()
+                .fill(Color.gray.opacity(0.4))
+                .frame(height: 2)
             
             LazyVGrid(columns: Array(repeating: GridItem(), count: SizeConstants.phraseGridCount), spacing: SizeConstants.phraseGridSpacing) {
                 ForEach(phraseOptions) { word in
-                    MnemonicWordView(word: word, viewHandler: {})
-                        .padding(.vertical, 10)
+                    MnemonicWordView(
+                        word: self.$phraseOptions[id: word.id],
+                        viewHandler: {
+                            guard let currentSelection = currentSelection else {
+                                return
+                            }
+                            self.phraseInput[id: currentSelection]?.text = word.text
+                        }
+                    )
+                    .padding(.vertical, 10)
                 }
             }
             .padding(.bottom)
+            
+            Spacer()
             
             Button(action: {}) {
                 Text("Continue")

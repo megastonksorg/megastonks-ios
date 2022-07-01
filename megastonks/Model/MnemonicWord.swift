@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import IdentifiedCollections
 
 struct MnemonicWord: Identifiable {
     let id: UUID = UUID()
-	let text: String
+	var text: String
 	var isSelected: Bool = false
 	let isSelectable: Bool
 	let isAlternateStyle: Bool
@@ -20,9 +21,7 @@ extension MnemonicWord {
 }
 
 struct MnemonicPhrase {
-    var phrase: [MnemonicWord]
-    
-	static var preview: [MnemonicWord] = {
+	static var preview: IdentifiedArrayOf<MnemonicWord> = {
 		[
 			MnemonicWord(text: "boy", isSelectable: true, isAlternateStyle: false),
 			MnemonicWord(text: "girl", isSelectable: true, isAlternateStyle: false),
@@ -39,7 +38,7 @@ struct MnemonicPhrase {
 		]
 	}()
     
-    static var previewAlternateStyle: [MnemonicWord] = {
+    static var previewAlternateStyle: IdentifiedArrayOf<MnemonicWord> = {
         [
             MnemonicWord(text: "boy", isSelectable: true, isAlternateStyle: true),
             MnemonicWord(text: "girl", isSelectable: true, isAlternateStyle: true),
@@ -56,7 +55,7 @@ struct MnemonicPhrase {
         ]
     }()
     
-    static var previewEmpty: [MnemonicWord] = {
+    static var previewEmpty: IdentifiedArrayOf<MnemonicWord> = {
         [
             MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
             MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
