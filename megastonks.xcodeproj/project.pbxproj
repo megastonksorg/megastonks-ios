@@ -13,6 +13,7 @@
 		D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82A28484BAD00AA3AD2 /* WalletClient.swift */; };
 		D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82C28484DC100AA3AD2 /* Wallet.swift */; };
 		D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */; };
+		D042C2AF286F69ED00EF62BF /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D042C2AE286F69ED00EF62BF /* IdentifiedCollections */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* SecretPhraseView.swift */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D042C2AF286F69ED00EF62BF /* IdentifiedCollections in Frameworks */,
 				D039C82828484B0300AA3AD2 /* WalletCore in Frameworks */,
 				D039C82628484B0300AA3AD2 /* SwiftProtobuf in Frameworks */,
 			);
@@ -229,6 +231,7 @@
 			packageProductDependencies = (
 				D039C82528484B0300AA3AD2 /* SwiftProtobuf */,
 				D039C82728484B0300AA3AD2 /* WalletCore */,
+				D042C2AE286F69ED00EF62BF /* IdentifiedCollections */,
 			);
 			productName = megastonks;
 			productReference = D0A2F0972831BC6700EC397C /* megastonks.app */;
@@ -260,6 +263,7 @@
 			mainGroup = D0A2F08E2831BC6700EC397C;
 			packageReferences = (
 				D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */,
+				D042C2AD286F69ED00EF62BF /* XCRemoteSwiftPackageReference "swift-identified-collections" */,
 			);
 			productRefGroup = D0A2F0982831BC6700EC397C /* Products */;
 			projectDirPath = "";
@@ -516,6 +520,14 @@
 				kind = branch;
 			};
 		};
+		D042C2AD286F69ED00EF62BF /* XCRemoteSwiftPackageReference "swift-identified-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-identified-collections.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -528,6 +540,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */;
 			productName = WalletCore;
+		};
+		D042C2AE286F69ED00EF62BF /* IdentifiedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D042C2AD286F69ED00EF62BF /* XCRemoteSwiftPackageReference "swift-identified-collections" */;
+			productName = IdentifiedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
