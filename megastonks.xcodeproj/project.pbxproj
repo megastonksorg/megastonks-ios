@@ -15,6 +15,8 @@
 		D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */; };
 		D042C2AF286F69ED00EF62BF /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D042C2AE286F69ED00EF62BF /* IdentifiedCollections */; };
 		D042C2B4287464F400EF62BF /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B3287464F400EF62BF /* AppViewModel.swift */; };
+		D042C2B62874678B00EF62BF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B52874678B00EF62BF /* APIClient.swift */; };
+		D042C2B92874680D00EF62BF /* APIClientHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B82874680D00EF62BF /* APIClientHelpers.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* SecretPhraseView.swift */; };
@@ -40,6 +42,8 @@
 		D039C82C28484DC100AA3AD2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseView.swift; sourceTree = "<group>"; };
 		D042C2B3287464F400EF62BF /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		D042C2B52874678B00EF62BF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D042C2B82874680D00EF62BF /* APIClientHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientHelpers.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D04B3D47286BB43400543816 /* SecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretPhraseView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 		D039C82928484B3400AA3AD2 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				D042C2B7287467F400EF62BF /* APIClient */,
 				D039C82A28484BAD00AA3AD2 /* WalletClient.swift */,
 			);
 			path = Clients;
@@ -97,6 +102,15 @@
 				D042C2B3287464F400EF62BF /* AppViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D042C2B7287467F400EF62BF /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				D042C2B52874678B00EF62BF /* APIClient.swift */,
+				D042C2B82874680D00EF62BF /* APIClientHelpers.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 		D0A1EE60284701E900BE886F /* Welcome */ = {
@@ -302,6 +316,7 @@
 				D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */,
 				D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
+				D042C2B62874678B00EF62BF /* APIClient.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */,
 				D003DB56286A8E3200BCE964 /* AppBackgroundView.swift in Sources */,
 				D042C2B4287464F400EF62BF /* AppViewModel.swift in Sources */,
@@ -314,6 +329,7 @@
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
 				D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */,
 				D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */,
+				D042C2B92874680D00EF62BF /* APIClientHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
