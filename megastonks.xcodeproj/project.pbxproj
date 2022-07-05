@@ -14,6 +14,7 @@
 		D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82C28484DC100AA3AD2 /* Wallet.swift */; };
 		D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */; };
 		D042C2AF286F69ED00EF62BF /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D042C2AE286F69ED00EF62BF /* IdentifiedCollections */; };
+		D042C2B4287464F400EF62BF /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B3287464F400EF62BF /* AppViewModel.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* SecretPhraseView.swift */; };
@@ -38,6 +39,7 @@
 		D039C82A28484BAD00AA3AD2 /* WalletClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletClient.swift; sourceTree = "<group>"; };
 		D039C82C28484DC100AA3AD2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseView.swift; sourceTree = "<group>"; };
+		D042C2B3287464F400EF62BF /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D04B3D47286BB43400543816 /* SecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretPhraseView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			path = SecretPhrase;
 			sourceTree = "<group>";
 		};
+		D042C2B2287464DC00EF62BF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D042C2B3287464F400EF62BF /* AppViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D0A1EE60284701E900BE886F /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +126,11 @@
 		D0A2F0992831BC6700EC397C /* megastonks */ = {
 			isa = PBXGroup;
 			children = (
+				D042C2B2287464DC00EF62BF /* ViewModel */,
 				D039C82928484B3400AA3AD2 /* Clients */,
 				D0A2F0AC2831BF0600EC397C /* Utilities */,
 				D0A2F0A82831BE4100EC397C /* Model */,
 				D0A2F0A92831BE4A00EC397C /* View */,
-				D0A2F0AA2831BE5500EC397C /* ViewModel */,
 				D0A2F09A2831BC6700EC397C /* megastonksApp.swift */,
 				D0A2F09C2831BC6700EC397C /* AppView.swift */,
 				D0A2F09E2831BC6700EC397C /* Assets.xcassets */,
@@ -153,13 +163,6 @@
 				D0A1EE60284701E900BE886F /* Welcome */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D0A2F0AA2831BE5500EC397C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D0A2F0AB2831BEE100EC397C /* Styles */ = {
@@ -301,6 +304,7 @@
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */,
 				D003DB56286A8E3200BCE964 /* AppBackgroundView.swift in Sources */,
+				D042C2B4287464F400EF62BF /* AppViewModel.swift in Sources */,
 				D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
