@@ -17,8 +17,6 @@ struct ImportSecretPhraseView: View {
 		}
 	}
 	
-	let fieldSize = SizeConstants.wordSize
-	
 	@State private var word1: String = ""
 	@State private var word2: String = ""
 	@State private var word3: String = ""
@@ -61,6 +59,13 @@ struct ImportSecretPhraseView: View {
 						}
 					}()
 					
+					let isFocusedField = {
+						return field == focusedField
+					}()
+					
+					let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
+					let frame: CGSize = SizeConstants.wordSize
+					
 					TextField("", text: word)
 						.foregroundColor(.black)
 						.font(.system(.subheadline, weight: .bold))
@@ -69,12 +74,19 @@ struct ImportSecretPhraseView: View {
 						.lineLimit(1)
 						.focused($focusedField, equals: field)
 						.padding(.horizontal, 4)
-						.background(
-							RoundedRectangle(cornerRadius: SizeConstants.wordCornerRadius)
-								.fill(Color.megaStonksGreen)
-								.frame(size: fieldSize)
-						)
-						.frame(size: fieldSize)
+						.background {
+							if word.wrappedValue.isEmpty {
+								RoundedRectangle(cornerRadius: cornerRadius)
+									.stroke(Color.gray.opacity(isFocusedField ? 1.0 : 0.5), lineWidth: 2)
+									.frame(size: frame)
+							}
+							else {
+								RoundedRectangle(cornerRadius: cornerRadius)
+									.fill(Color.megaStonksGreen)
+									.frame(size: frame)
+							}
+						}
+						.frame(size: frame)
 						.padding(.vertical)
 				}
 			}
