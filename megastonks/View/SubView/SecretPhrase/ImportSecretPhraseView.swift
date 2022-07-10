@@ -88,6 +88,7 @@ struct ImportSecretPhraseView: View {
 						}
 						.frame(size: frame)
 						.padding(.vertical)
+						.animation(.easeInOut, value: word.wrappedValue)
 				}
 			}
 			
