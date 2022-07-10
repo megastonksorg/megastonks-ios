@@ -10,23 +10,23 @@ import SwiftUI
 struct MnemonicWordView: View {
 	var viewHandler: (() -> Void)
 	
-    @Binding var word: MnemonicWord?
-    
-    init(word: Binding<MnemonicWord?>, viewHandler: @escaping () -> Void) {
-        self._word = word
-        self.viewHandler = viewHandler
-    }
-    
+	@Binding var word: MnemonicWord?
+	
+	init(word: Binding<MnemonicWord?>, viewHandler: @escaping () -> Void) {
+		self._word = word
+		self.viewHandler = viewHandler
+	}
+	
 	var body: some View {
-        if self.word != nil {
-            Button(action: {
-                self.viewHandler()
-            }) {
-                buttonLabel()
-            }
-            .buttonStyle(AnimatedButtonStyle())
-            .disabled(!word!.isSelectable)
-        }
+		if self.word != nil {
+			Button(action: {
+				self.viewHandler()
+			}) {
+				buttonLabel()
+			}
+			.buttonStyle(AnimatedButtonStyle())
+			.disabled(!word!.isSelectable)
+		}
 	}
 	
 	@ViewBuilder
@@ -34,23 +34,23 @@ struct MnemonicWordView: View {
 		let size = SizeConstants.wordSize
 		let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
 		let textColor: Color = word!.isAlternateStyle ? .white : .black
-        if word!.text.isEmpty {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(Color.black)
-                .overlay(
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .stroke(
-                            word!.isSelected ? Color.megaStonksGreen : Color.white.opacity(0.6),
-                            style: StrokeStyle(
-                                lineWidth: 1,
-                                lineCap: .round,
-                                lineJoin: .miter,
-                                miterLimit: 4,
-                                dash: [4],
-                                dashPhase: 4
-                            )
-                        )
-                )
+		if word!.text.isEmpty {
+			RoundedRectangle(cornerRadius: cornerRadius)
+				.fill(Color.black)
+				.overlay(
+					RoundedRectangle(cornerRadius: cornerRadius)
+						.stroke(
+							word!.isSelected ? Color.megaStonksGreen : Color.white.opacity(0.6),
+							style: StrokeStyle(
+								lineWidth: 1,
+								lineCap: .round,
+								lineJoin: .miter,
+								miterLimit: 4,
+								dash: [4],
+								dashPhase: 4
+							)
+						)
+				)
 				.frame(size: size)
 		}
 		else {
@@ -72,14 +72,14 @@ struct MnemonicWordView: View {
 							.frame(size: size)
 					}
 				}
-                .frame(size: size)
+				.frame(size: size)
 		}
 	}
 }
 
 struct MnemonicWordView_Previews: PreviewProvider {
 	static var previews: some View {
-        MnemonicWordView(word: Binding.constant(MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false)), viewHandler: {})
+		MnemonicWordView(word: Binding.constant(MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false)), viewHandler: {})
 			.preferredColorScheme(.dark)
 	}
 }
