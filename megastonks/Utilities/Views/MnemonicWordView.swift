@@ -32,7 +32,7 @@ struct MnemonicWordView: View {
 	@ViewBuilder
 	func buttonLabel() -> some View {
 		let size = SizeConstants.wordSize
-		let cornerRadius: CGFloat = 5.0
+		let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
 		let textColor: Color = word!.isAlternateStyle ? .white : .black
         if word!.text.isEmpty {
             RoundedRectangle(cornerRadius: cornerRadius)
