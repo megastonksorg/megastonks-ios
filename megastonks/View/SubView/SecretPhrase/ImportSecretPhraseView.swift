@@ -108,10 +108,25 @@ struct ImportSecretPhraseView: View {
 				}
 			}
 			
+			Button(action: { self.resetWordFields() }) {
+				Text("Tap to reset")
+					.font(.app.footer)
+					.fontWeight(.bold)
+					.foregroundColor(.gray)
+			}
+			
+			
 			Spacer()
+			
+			Button(action: {}) {
+				Text("Continue to Import")
+			}
+			.buttonStyle(ExpandedButtonStyle())
+			.disabled(!isContinueButtonEnabled())
 		}
+		.padding(.horizontal)
 		.background(Color.app.background)
-		.ignoresSafeArea(.keyboard)
+		.ignoresSafeArea()
 	}
 	
 	func advanceToNextField() {
@@ -136,6 +151,28 @@ struct ImportSecretPhraseView: View {
 			}()
 			if shouldNavigate { self.focusedField = nextField }
 		}
+	}
+	
+	func isContinueButtonEnabled() -> Bool {
+		return word1.isReal && word2.isReal && word3.isReal
+		&& word4.isReal && word5.isReal && word6.isReal
+		&& word7.isReal && word8.isReal && word9.isReal
+		&& word10.isReal && word11.isReal && word12.isReal
+	}
+	
+	func resetWordFields() {
+		self.word1 = ""
+		self.word2 = ""
+		self.word3 = ""
+		self.word4 = ""
+		self.word5 = ""
+		self.word6 = ""
+		self.word7 = ""
+		self.word8 = ""
+		self.word9 = ""
+		self.word10 = ""
+		self.word11 = ""
+		self.word12 = ""
 	}
 }
 

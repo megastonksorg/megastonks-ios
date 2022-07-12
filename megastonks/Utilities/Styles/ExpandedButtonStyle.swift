@@ -20,11 +20,20 @@ struct ExpandedButtonStyle: ButtonStyle {
 	}
 	
 	func makeBody(configuration: Configuration) -> some View {
+		let foregroundColor: Color = {
+			if self.invertedStyle { return .gray }
+			if self.isEnabled {
+				return .black
+			} else {
+				return .gray
+			}
+		}()
+		
 		HStack {
 			Spacer()
 			configuration.label
 				.textCase(.uppercase)
-				.foregroundColor(isEnabled ? .black : .gray)
+				.foregroundColor(foregroundColor)
 				.padding()
 			Spacer()
 		}
