@@ -9,10 +9,21 @@ import SwiftUI
 
 struct ImportSecretPhraseView: View {
 	
-	enum Field: String, CaseIterable, Hashable, Identifiable {
-		case one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve
+	enum Field: Int, CaseIterable, Hashable, Identifiable {
+		case one = 1
+		case two = 2
+		case three = 3
+		case four = 4
+		case five = 5
+		case six = 6
+		case seven = 7
+		case eight = 8
+		case nine = 9
+		case ten = 10
+		case eleven = 11
+		case twelve = 12
 		
-		var id: String {
+		var id: Int {
 			return self.rawValue
 		}
 	}
@@ -44,58 +55,69 @@ struct ImportSecretPhraseView: View {
 				ForEach(Field.allCases) { field in
 					let word: Binding<String> = {
 						switch field {
-						case .one: return $word1
-						case .two: return $word2
-						case .three: return $word3
-						case .four: return $word4
-						case .five: return $word5
-						case .six: return $word6
-						case .seven: return $word7
-						case .eight: return $word8
-						case .nine: return $word9
-						case .ten: return $word10
-						case .eleven: return $word11
-						case .twelve: return $word12
+							case .one: return $word1
+							case .two: return $word2
+							case .three: return $word3
+							case .four: return $word4
+							case .five: return $word5
+							case .six: return $word6
+							case .seven: return $word7
+							case .eight: return $word8
+							case .nine: return $word9
+							case .ten: return $word10
+							case .eleven: return $word11
+							case .twelve: return $word12
 						}
 					}()
 					
-                    let isFocusedField: Bool = {
+					let isFocusedField: Bool = {
 						return field == focusedField
 					}()
 					
 					let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
 					let frame: CGSize = SizeConstants.wordSize
-                    let isWordReal: Bool = word.wrappedValue.isReal
-                    
-					TextField("", text: word)
-                        .foregroundColor(isWordReal ? .black : .white)
-						.font(.system(.subheadline, weight: .bold))
-						.multilineTextAlignment(.center)
-						.minimumScaleFactor(0.6)
-						.lineLimit(1)
-						.focused($focusedField, equals: field)
-						.padding(.horizontal, 4)
-						.background {
-							if isWordReal {
-								RoundedRectangle(cornerRadius: cornerRadius)
-                                    .fill(Color.megaStonksGreen)
-                                    .frame(size: frame)
-							}
-							else {
-								RoundedRectangle(cornerRadius: cornerRadius)
-                                    .stroke(Color.gray.opacity(isFocusedField ? 1.0 : 0.5), lineWidth: 2)
-                                    .frame(size: frame)
-							}
+					let isWordReal: Bool = word.wrappedValue.isReal
+					
+					TextField(
+						"",
+						text: word,
+						onCommit: { self.advanceToNextField() }
+					)
+					.foregroundColor(isWordReal ? .black : .white)
+					.font(.system(.subheadline, weight: .bold))
+					.multilineTextAlignment(.center)
+					.minimumScaleFactor(0.6)
+					.lineLimit(1)
+					.focused($focusedField, equals: field)
+					.padding(.horizontal, 4)
+					.background {
+						if isWordReal {
+							RoundedRectangle(cornerRadius: cornerRadius)
+								.fill(Color.megaStonksGreen)
+								.frame(size: frame)
 						}
-						.frame(size: frame)
-						.padding(.vertical)
-						.animation(.easeInOut, value: word.wrappedValue)
+						else {
+							RoundedRectangle(cornerRadius: cornerRadius)
+								.stroke(Color.gray.opacity(isFocusedField ? 1.0 : 0.5), lineWidth: 2)
+								.frame(size: frame)
+						}
+					}
+					.frame(size: frame)
+					.padding(.vertical)
+					.animation(.easeInOut, value: word.wrappedValue)
 				}
 			}
 			
 			Spacer()
 		}
 		.background(Color.app.background)
+	}
+	
+	func advanceToNextField() {
+		guard let currentField = self.focusedField?.rawValue else { return }
+		if focusedField != .twelve {
+			self.focusedField = Field(rawValue: currentField + 1)
+		}
 	}
 }
 
