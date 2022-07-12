@@ -59,7 +59,7 @@ struct ImportSecretPhraseView: View {
 						}
 					}()
 					
-					let isFocusedField = {
+                    let isFocusedField: Bool = {
 						return field == focusedField
 					}()
 					
