@@ -117,7 +117,24 @@ struct ImportSecretPhraseView: View {
 	func advanceToNextField() {
 		guard let currentField = self.focusedField?.rawValue else { return }
 		if focusedField != .twelve {
-			self.focusedField = Field(rawValue: currentField + 1)
+			let nextField = Field(rawValue: currentField + 1)
+			let shouldNavigate: Bool = {
+				switch nextField {
+					case .two: return self.word2.isEmpty
+					case .three: return self.word3.isEmpty
+					case .four: return self.word4.isEmpty
+					case .five: return self.word5.isEmpty
+					case .six: return self.word6.isEmpty
+					case .seven: return self.word7.isEmpty
+					case .eight: return self.word8.isEmpty
+					case .nine: return self.word9.isEmpty
+					case .ten: return self.word10.isEmpty
+					case .eleven: return self.word11.isEmpty
+					case .twelve: return self.word12.isEmpty
+					default: return false
+				}
+			}()
+			if shouldNavigate { self.focusedField = nextField }
 		}
 	}
 }
