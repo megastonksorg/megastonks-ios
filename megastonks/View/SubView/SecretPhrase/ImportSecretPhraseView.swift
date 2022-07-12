@@ -65,9 +65,10 @@ struct ImportSecretPhraseView: View {
 					
 					let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
 					let frame: CGSize = SizeConstants.wordSize
-					
+                    let isWordReal: Bool = word.wrappedValue.isReal
+                    
 					TextField("", text: word)
-						.foregroundColor(.black)
+                        .foregroundColor(isWordReal ? .black : .white)
 						.font(.system(.subheadline, weight: .bold))
 						.multilineTextAlignment(.center)
 						.minimumScaleFactor(0.6)
@@ -75,15 +76,15 @@ struct ImportSecretPhraseView: View {
 						.focused($focusedField, equals: field)
 						.padding(.horizontal, 4)
 						.background {
-							if word.wrappedValue.isEmpty {
+							if isWordReal {
 								RoundedRectangle(cornerRadius: cornerRadius)
-									.stroke(Color.gray.opacity(isFocusedField ? 1.0 : 0.5), lineWidth: 2)
-									.frame(size: frame)
+                                    .fill(Color.megaStonksGreen)
+                                    .frame(size: frame)
 							}
 							else {
 								RoundedRectangle(cornerRadius: cornerRadius)
-									.fill(Color.megaStonksGreen)
-									.frame(size: frame)
+                                    .stroke(Color.gray.opacity(isFocusedField ? 1.0 : 0.5), lineWidth: 2)
+                                    .frame(size: frame)
 							}
 						}
 						.frame(size: frame)
