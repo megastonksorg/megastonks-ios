@@ -111,6 +111,7 @@ struct ImportSecretPhraseView: View {
 			Spacer()
 		}
 		.background(Color.app.background)
+		.ignoresSafeArea(.keyboard)
 	}
 	
 	func advanceToNextField() {
