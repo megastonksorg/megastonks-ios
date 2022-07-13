@@ -87,6 +87,11 @@ struct ProfileEditingView: View {
 		.sheet(isPresented: $viewModel.isShowingImagePicker) {
 			ImagePicker(image: $viewModel.image)
 		}
+		.onAppear {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+				self.focusField = .name
+			}
+		}
 	}
 }
 

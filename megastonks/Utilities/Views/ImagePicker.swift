@@ -42,7 +42,9 @@ struct ImagePicker: UIViewControllerRepresentable {
 				provider.loadObject(ofClass: UIImage.self) { item, _ in
 					if let image = item as? UIImage {
 						DispatchQueue.main.async {
-							self.parent.image = image
+							withAnimation(.easeInOut.speed(0.4)) {
+								self.parent.image = image
+							}
 						}
 					}
 				}
