@@ -44,89 +44,91 @@ struct ImportSecretPhraseView: View {
 	@FocusState private var focusedField: Field?
 	
 	var body: some View {
-		VStack(spacing: 20) {
-			Text("Type in your wallet phrase into each box to import it. You must type the phrase in the correct order for valid authentication")
-				.font(.app.subTitle)
-				.foregroundColor(.white)
-				.multilineTextAlignment(.center)
-				.padding(.vertical, 30)
-			
-			LazyVGrid(columns: Array(repeating: GridItem(), count: SizeConstants.phraseGridCount), spacing: SizeConstants.phraseGridSpacing) {
-				ForEach(Field.allCases) { field in
-					let word: Binding<String> = {
-						switch field {
-							case .one: return $word1
-							case .two: return $word2
-							case .three: return $word3
-							case .four: return $word4
-							case .five: return $word5
-							case .six: return $word6
-							case .seven: return $word7
-							case .eight: return $word8
-							case .nine: return $word9
-							case .ten: return $word10
-							case .eleven: return $word11
-							case .twelve: return $word12
-						}
-					}()
-					
-					let isFocusedField: Bool = {
-						return field == focusedField
-					}()
-					
-					let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
-					let frame: CGSize = SizeConstants.wordSize
-					let isWordReal: Bool = word.wrappedValue.isReal
-					
-					TextField(
-						"",
-						text: word,
-						onCommit: { self.advanceToNextField() }
-					)
-					.foregroundColor(isWordReal ? .black : .white)
-					.font(.system(.subheadline, weight: .bold))
+		ScrollView {
+			VStack(spacing: 20) {
+				Text("Type in your wallet phrase into each box to import it. You must type the phrase in the correct order for valid authentication")
+					.font(.app.subTitle)
+					.foregroundColor(.white)
 					.multilineTextAlignment(.center)
-					.minimumScaleFactor(0.6)
-					.lineLimit(1)
-					.focused($focusedField, equals: field)
-					.padding(.horizontal, 4)
-					.background {
-						if isWordReal {
-							RoundedRectangle(cornerRadius: cornerRadius)
-								.fill(Color.megaStonksGreen)
-								.frame(size: frame)
+					.padding(.vertical, 30)
+				
+				LazyVGrid(columns: Array(repeating: GridItem(), count: SizeConstants.phraseGridCount), spacing: SizeConstants.phraseGridSpacing) {
+					ForEach(Field.allCases) { field in
+						let word: Binding<String> = {
+							switch field {
+								case .one: return $word1
+								case .two: return $word2
+								case .three: return $word3
+								case .four: return $word4
+								case .five: return $word5
+								case .six: return $word6
+								case .seven: return $word7
+								case .eight: return $word8
+								case .nine: return $word9
+								case .ten: return $word10
+								case .eleven: return $word11
+								case .twelve: return $word12
+							}
+						}()
+						
+						let isFocusedField: Bool = {
+							return field == focusedField
+						}()
+						
+						let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
+						let frame: CGSize = SizeConstants.wordSize
+						let isWordReal: Bool = word.wrappedValue.isReal
+						
+						TextField(
+							"",
+							text: word,
+							onCommit: { self.advanceToNextField() }
+						)
+						.foregroundColor(isWordReal ? .black : .white)
+						.font(.system(.subheadline, weight: .bold))
+						.multilineTextAlignment(.center)
+						.minimumScaleFactor(0.6)
+						.lineLimit(1)
+						.focused($focusedField, equals: field)
+						.padding(.horizontal, 4)
+						.background {
+							if isWordReal {
+								RoundedRectangle(cornerRadius: cornerRadius)
+									.fill(Color.megaStonksGreen)
+									.frame(size: frame)
+							}
+							else {
+								RoundedRectangle(cornerRadius: cornerRadius)
+									.stroke(Color.gray.opacity(isFocusedField ? 1.0 : 0.5), lineWidth: 2)
+									.frame(size: frame)
+							}
 						}
-						else {
-							RoundedRectangle(cornerRadius: cornerRadius)
-								.stroke(Color.gray.opacity(isFocusedField ? 1.0 : 0.5), lineWidth: 2)
-								.frame(size: frame)
-						}
+						.frame(size: frame)
+						.padding(.vertical)
+						.animation(.easeInOut, value: word.wrappedValue)
 					}
-					.frame(size: frame)
-					.padding(.vertical)
-					.animation(.easeInOut, value: word.wrappedValue)
+				}
+				
+				Button(action: { self.resetWordFields() }) {
+					Text("Tap to reset")
+						.font(.app.footer)
+						.fontWeight(.bold)
+						.foregroundColor(.gray)
 				}
 			}
-			
-			Button(action: { self.resetWordFields() }) {
-				Text("Tap to reset")
-					.font(.app.footer)
-					.fontWeight(.bold)
-					.foregroundColor(.gray)
-			}
-			
-			
-			Spacer()
-			
+			.padding()
+		}
+		.safeAreaInset(edge: .bottom) {
 			Button(action: {}) {
 				Text("Continue to Import")
 			}
 			.buttonStyle(ExpandedButtonStyle())
 			.disabled(!isContinueButtonEnabled())
+			.padding()
+			.padding(.bottom, 20)
 		}
-		.padding(.horizontal)
 		.background(Color.app.background)
-		.ignoresSafeArea()
+		.edgesIgnoringSafeArea(.bottom)
 	}
 	
 	func advanceToNextField() {
