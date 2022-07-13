@@ -1,25 +1,22 @@
 //
-//  ImagePlaceHolderView.swift
+//  ImagePlaceholderView.swift
 //  megastonks
 //
-//  Created by Kingsley Okeke on 2022-05-31.
+//  Created by Kingsley Okeke on 2022-07-13.
 //
 
 import SwiftUI
 
-struct ImagePlaceHolderView: View {
+struct ImagePlaceholderView: View {
 	var body: some View {
-		Color.black.opacity(0.8)
-			.background(.ultraThinMaterial)
-			.overlay(
-				ProgressView().frame(width: .infinity, height: .infinity)
-					.tint(.white)
-			)
+		Circle()
+			.stroke(Color.white, lineWidth: 2)
+			.overlay(Circle().fill(Color.black))
 	}
 }
 
-struct ImagePlaceHolderView_Previews: PreviewProvider {
+struct ImagePlaceholderView_Previews: PreviewProvider {
 	static var previews: some View {
-		ImagePlaceHolderView()
+		ImagePlaceholderView()
 	}
 }

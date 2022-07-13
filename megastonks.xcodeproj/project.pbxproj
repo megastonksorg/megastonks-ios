@@ -26,8 +26,10 @@
 		D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* SecretPhraseView.swift */; };
 		D04B3D4A286BB59700543816 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D49286BB59700543816 /* Font+Extension.swift */; };
 		D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF83287D4A9B00428711 /* String+Extension.swift */; };
+		D06EFF88287F387000428711 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF87287F387000428711 /* FieldValidation.swift */; };
+		D06EFF8B287F38D700428711 /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8A287F38D700428711 /* ProfileEditingView.swift */; };
+		D06EFF8F287F3C1A00428711 /* ImagePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */; };
 		D07A6601287B75DF00F6EF8C /* ImportSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A6600287B75DF00F6EF8C /* ImportSecretPhraseView.swift */; };
-		D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */; };
 		D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */; };
 		D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE612847022F00BE886F /* WelcomePageView.swift */; };
 		D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09A2831BC6700EC397C /* megastonksApp.swift */; };
@@ -59,8 +61,10 @@
 		D04B3D47286BB43400543816 /* SecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretPhraseView.swift; sourceTree = "<group>"; };
 		D04B3D49286BB59700543816 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		D06EFF83287D4A9B00428711 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D06EFF87287F387000428711 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
+		D06EFF8A287F38D700428711 /* ProfileEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
+		D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholderView.swift; sourceTree = "<group>"; };
 		D07A6600287B75DF00F6EF8C /* ImportSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSecretPhraseView.swift; sourceTree = "<group>"; };
-		D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceHolderView.swift; sourceTree = "<group>"; };
 		D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedButtonStyle.swift; sourceTree = "<group>"; };
 		D0A1EE612847022F00BE886F /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
 		D0A2F0972831BC6700EC397C /* megastonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = megastonks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +141,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D06EFF89287F38C600428711 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D06EFF8A287F38D700428711 /* ProfileEditingView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		D0A1EE60284701E900BE886F /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +203,7 @@
 				D039C82C28484DC100AA3AD2 /* Wallet.swift */,
 				D04B3D45286B1BBD00543816 /* MnemonicWord.swift */,
 				D042C2C328746F3500EF62BF /* Token.swift */,
+				D06EFF87287F387000428711 /* FieldValidation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,9 +253,9 @@
 		D0A2F0B42831D39900EC397C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D0A1EE5C2846FCBF00BE886F /* ImagePlaceHolderView.swift */,
 				D003DB55286A8E3200BCE964 /* AppBackgroundView.swift */,
 				D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */,
+				D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -250,6 +263,7 @@
 		D0A2F0C12832BD2900EC397C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				D06EFF89287F38C600428711 /* Profile */,
 				D042C2AC286D4BA300EF62BF /* SecretPhrase */,
 			);
 			path = SubView;
@@ -341,7 +355,6 @@
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D07A6601287B75DF00F6EF8C /* ImportSecretPhraseView.swift in Sources */,
 				D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */,
-				D0A1EE5D2846FCBF00BE886F /* ImagePlaceHolderView.swift in Sources */,
 				D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D042C2B62874678B00EF62BF /* APIClient.swift in Sources */,
@@ -354,8 +367,11 @@
 				D042C2C028746CAD00EF62BF /* URLSession+Validation.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
+				D06EFF88287F387000428711 /* FieldValidation.swift in Sources */,
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
 				D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */,
+				D06EFF8F287F3C1A00428711 /* ImagePlaceholderView.swift in Sources */,
+				D06EFF8B287F38D700428711 /* ProfileEditingView.swift in Sources */,
 				D042C2C228746CE500EF62BF /* APPUrlRequest.swift in Sources */,
 				D042C2BC28746C3800EF62BF /* HttpMethod.swift in Sources */,
 				D04B3D4A286BB59700543816 /* Font+Extension.swift in Sources */,
