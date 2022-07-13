@@ -51,9 +51,9 @@ struct ProfileEditingView: View {
 				.foregroundColor(.white)
 				.padding(.vertical)
 			
-			TextFieldView(title: "Name", text: $viewModel.name)
+			TextFieldView(title: "Name", validation: viewModel.nameValidation, text: $viewModel.name)
 			
-			TextFieldView(title: "Username", text: $viewModel.userName)
+			TextFieldView(title: "Username", validation: viewModel.userNameValidation, text: $viewModel.userName)
 			
 			Spacer()
 			

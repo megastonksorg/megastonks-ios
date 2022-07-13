@@ -77,7 +77,7 @@ struct ImportSecretPhraseView: View {
 						
 						let cornerRadius: CGFloat = SizeConstants.wordCornerRadius
 						let frame: CGSize = SizeConstants.wordSize
-						let isWordReal: Bool = word.wrappedValue.isReal
+						let isWordReal: Bool = word.wrappedValue.isRealWord
 						
 						TextField(
 							"",
@@ -156,10 +156,10 @@ struct ImportSecretPhraseView: View {
 	}
 	
 	func isContinueButtonEnabled() -> Bool {
-		return word1.isReal && word2.isReal && word3.isReal
-		&& word4.isReal && word5.isReal && word6.isReal
-		&& word7.isReal && word8.isReal && word9.isReal
-		&& word10.isReal && word11.isReal && word12.isReal
+		return word1.isRealWord && word2.isRealWord && word3.isRealWord
+		&& word4.isRealWord && word5.isRealWord && word6.isRealWord
+		&& word7.isRealWord && word8.isRealWord && word9.isRealWord
+		&& word10.isRealWord && word11.isRealWord && word12.isRealWord
 	}
 	
 	func resetWordFields() {

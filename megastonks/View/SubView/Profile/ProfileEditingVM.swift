@@ -13,10 +13,24 @@ extension ProfileEditingView {
 		@Published var image: UIImage?
 		@Published var name: String = ""
 		@Published var userName: String = ""
-		@Published var nameValidation: FieldValidation = .unknown
-		@Published var usernameValidation: FieldValidation = .unknown
 		
 		@Published var isShowingImagePicker: Bool = false
+		
+		var nameValidation: FieldValidation {
+			if name.isEmpty { return .unknown }
+			else {
+				if name.isValidName { return .valid }
+				else { return .invalid }
+			}
+		}
+		
+		var userNameValidation: FieldValidation {
+			if userName.isEmpty { return .unknown }
+			else {
+				if userName.isValidUserName { return .valid }
+				else { return .invalid }
+			}
+		}
 		
 		init() {}
 		

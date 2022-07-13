@@ -10,16 +10,17 @@ import SwiftUI
 struct TextFieldView: View {
 	
 	let title: String
+	let validation: FieldValidation
+	
 	@Binding var text: String
-	@Binding var validation: FieldValidation
 	
 	init(title: String,
-		 text: Binding<String>,
-		 validation: Binding<FieldValidation> = Binding.constant(FieldValidation.unknown)
+		 validation: FieldValidation = FieldValidation.unknown,
+		 text: Binding<String>
 	) {
 		self.title = title
 		self._text = text
-		self._validation = validation
+		self.validation = validation
 	}
 	
 	var body: some View {
@@ -54,6 +55,6 @@ struct TextFieldView: View {
 
 struct TextFieldView_Previews: PreviewProvider {
 	static var previews: some View {
-		TextFieldView(title: "Name", text: Binding.constant(""), validation: Binding.constant(.valid))
+		TextFieldView(title: "Name", validation: .unknown, text: Binding.constant(""))
 	}
 }
