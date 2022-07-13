@@ -37,6 +37,7 @@ struct ProfileEditingView: View {
 												.font(.title)
 												.foregroundColor(.gray)
 										)
+										.clipShape(Circle())
 								)
 						}
 					}
@@ -68,6 +69,21 @@ struct ProfileEditingView: View {
 		}
 		.padding(.horizontal)
 		.background(Color.app.background)
+		.toolbar {
+			ToolbarItem(placement: .navigationBarLeading) {
+				Image(systemName: "arrow.left")
+			}
+			ToolbarItem(placement: .principal) {
+				Text("Profile")
+					.fontWeight(.bold)
+			}
+			ToolbarItem(placement: .navigationBarTrailing) {
+				Button(action: {}) {
+					Text("Done")
+						.foregroundColor(.white)
+				}
+			}
+		}
 		.sheet(isPresented: $viewModel.isShowingImagePicker) {
 			ImagePicker(image: $viewModel.image)
 		}
