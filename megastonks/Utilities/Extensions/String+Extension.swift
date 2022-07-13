@@ -20,7 +20,7 @@ extension String {
 	var isValidName: Bool {
 		do
 		{
-			let regex = try NSRegularExpression(pattern: "^[\\p{L}'-][\\p{L}' -]{2,20}$", options: .caseInsensitive)
+			let regex = try NSRegularExpression(pattern: "^[\\p{L}'-][\\p{L}' -]{2,30}$", options: .caseInsensitive)
 			if regex.matches(in: self, options: [], range: NSMakeRange(0, self.count)).count > 0 {return true}
 		}
 		catch {}
@@ -30,7 +30,7 @@ extension String {
 	var isValidUserName: Bool {
 		do
 		{
-			let regex = try NSRegularExpression(pattern: "^[0-9a-zA-Z\\_]{4,10}$", options: .caseInsensitive)
+			let regex = try NSRegularExpression(pattern: "^[0-9a-zA-Z\\_]{4,20}$", options: .caseInsensitive)
 			if regex.matches(in: self, options: [], range: NSMakeRange(0, self.count)).count > 0 {return true}
 		}
 		catch {}

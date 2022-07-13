@@ -17,17 +17,17 @@ extension ProfileEditingView {
 		@Published var isShowingImagePicker: Bool = false
 		
 		var nameValidation: FieldValidation {
-			if name.isEmpty { return .unknown }
+			if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return .unknown }
 			else {
-				if name.isValidName { return .valid }
+				if name.trimmingCharacters(in: .whitespacesAndNewlines).isValidName { return .valid }
 				else { return .invalid }
 			}
 		}
 		
 		var userNameValidation: FieldValidation {
-			if userName.isEmpty { return .unknown }
+			if userName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return .unknown }
 			else {
-				if userName.isValidUserName { return .valid }
+				if userName.trimmingCharacters(in: .whitespacesAndNewlines).isValidUserName { return .valid }
 				else { return .invalid }
 			}
 		}
