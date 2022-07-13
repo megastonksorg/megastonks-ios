@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileEditingView: View {
 	
-	@StateObject private var viewModel: ProfileEditingView.ViewModel
+	@StateObject private var viewModel: ViewModel
+	@FocusState private var focusField: ViewModel.FocusField?
 	
 	init() {
 		self._viewModel = StateObject.init(wrappedValue: ViewModel())
@@ -51,9 +52,16 @@ struct ProfileEditingView: View {
 				.foregroundColor(.white)
 				.padding(.vertical)
 			
-			TextFieldView(title: "Name", validation: viewModel.nameValidation, text: $viewModel.name)
+			TextFieldView(
+				title: "Name",
+				validation: viewModel.nameValidation,
+				onCommit: { self.focusField = .userName },
+				text: $viewModel.name
+			)
+			.focused(self.$focusField, equals: .name)
 			
 			TextFieldView(title: "Username", validation: viewModel.userNameValidation, text: $viewModel.userName)
+				.focused(self.$focusField, equals: .userName)
 			
 			Spacer()
 			

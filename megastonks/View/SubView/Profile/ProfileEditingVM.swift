@@ -6,10 +6,17 @@
 //
 
 import Combine
-import UIKit
+import SwiftUI
 
 extension ProfileEditingView {
 	@MainActor class ViewModel: ObservableObject {
+		
+		//MARK: - Subtypes
+		enum FocusField {
+			case name
+			case userName
+		}
+		
 		@Published var image: UIImage?
 		@Published var name: String = ""
 		@Published var userName: String = ""

@@ -11,16 +11,18 @@ struct TextFieldView: View {
 	
 	let title: String
 	let validation: FieldValidation
-	
+	let onCommit: () -> ()
 	@Binding var text: String
 	
 	init(title: String,
 		 validation: FieldValidation = FieldValidation.unknown,
+		 onCommit: @escaping () -> () = {},
 		 text: Binding<String>
 	) {
 		self.title = title
-		self._text = text
 		self.validation = validation
+		self.onCommit = onCommit
+		self._text = text
 	}
 	
 	var body: some View {
@@ -29,7 +31,7 @@ struct TextFieldView: View {
 				Text(title)
 					.font(.system(.footnote, weight: .light))
 					.foregroundColor(.white)
-				TextField("", text: $text)
+				TextField("", text: $text, onCommit: { onCommit() })
 					.font(.system(size: 15, weight: .semibold))
 					.foregroundColor(.white)
 			}
