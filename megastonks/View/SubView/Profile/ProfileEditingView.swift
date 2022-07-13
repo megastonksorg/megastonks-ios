@@ -18,12 +18,12 @@ struct ProfileEditingView: View {
 	var body: some View {
 		VStack(spacing: 20) {
 			Group {
-				Button(action: {}) {
+				Button(action: { viewModel.selectImageFromLibrary() }) {
 					Group {
 						if let image = viewModel.image {
 							Image(uiImage: image)
 								.resizable()
-								.aspectRatio(contentMode: .fit)
+								.aspectRatio(contentMode: .fill)
 								.clipShape(Circle())
 						}
 						else {
@@ -60,6 +60,9 @@ struct ProfileEditingView: View {
 		}
 		.padding(.horizontal)
 		.background(Color.app.background)
+		.sheet(isPresented: $viewModel.isShowingImagePicker) {
+			ImagePicker(image: $viewModel.image)
+		}
 	}
 }
 
