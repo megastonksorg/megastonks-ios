@@ -23,13 +23,22 @@ struct TextFieldView: View {
 	}
 	
 	var body: some View {
-		VStack(alignment: .leading, spacing: 4) {
-			Text(title)
-				.font(.system(.footnote, weight: .light))
-				.foregroundColor(.white)
-			TextField("", text: $text)
-				.font(.system(size: 15, weight: .semibold))
-				.foregroundColor(.white)
+		HStack {
+			VStack(alignment: .leading, spacing: 4) {
+				Text(title)
+					.font(.system(.footnote, weight: .light))
+					.foregroundColor(.white)
+				TextField("", text: $text)
+					.font(.system(size: 15, weight: .semibold))
+					.foregroundColor(.white)
+			}
+			Group {
+				switch self.validation {
+					case .valid: Image(systemName: "checkmark.circle.fill").foregroundColor(.megaStonksGreen)
+					case .invalid: Image(systemName: "xmark.circle.fill").foregroundColor(.megaStonksRed)
+					case .unknown: EmptyView()
+				}
+			}
 		}
 		.padding(10)
 		.background (
@@ -45,6 +54,6 @@ struct TextFieldView: View {
 
 struct TextFieldView_Previews: PreviewProvider {
 	static var previews: some View {
-		TextFieldView(title: "Name", text: Binding.constant(""))
+		TextFieldView(title: "Name", text: Binding.constant(""), validation: Binding.constant(.valid))
 	}
 }

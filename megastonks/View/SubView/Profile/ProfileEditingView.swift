@@ -40,6 +40,7 @@ struct ProfileEditingView: View {
 					.frame(dimension: 150)
 				}
 				.buttonStyle(AnimatedButtonStyle())
+				.padding(.top)
 			}
 			
 			Text("Change your profile picture")
@@ -55,6 +56,7 @@ struct ProfileEditingView: View {
 			Spacer()
 			
 		}
+		.padding(.horizontal)
 		.background(Color.app.background)
 	}
 }
