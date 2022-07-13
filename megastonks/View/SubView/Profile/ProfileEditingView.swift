@@ -8,33 +8,50 @@
 import SwiftUI
 
 struct ProfileEditingView: View {
+	
 	@State var image: UIImage?
+	@State var name: String = ""
+	@State var userName: String = ""
+	
 	var body: some View {
-		VStack(spacing: 10) {
+		VStack(spacing: 20) {
 			Group {
-				if let image = self.image {
-					Image(uiImage: image)
-						.resizable()
-						.aspectRatio(contentMode: .fit)
-						.clipShape(Circle())
+				Button(action: {}) {
+					Group {
+						if let image = self.image {
+							Image(uiImage: image)
+								.resizable()
+								.aspectRatio(contentMode: .fit)
+								.clipShape(Circle())
+						}
+						else {
+							ImagePlaceholderView()
+								.opacity(0.4)
+								.overlay(
+									Color.black.opacity(0.2)
+										.overlay(
+											Image(systemName: "plus.circle")
+												.font(.title)
+												.foregroundColor(.gray)
+										)
+								)
+						}
+					}
+					.frame(dimension: 150)
 				}
-				else {
-					ImagePlaceholderView()
-				}
+				.buttonStyle(AnimatedButtonStyle())
 			}
-			.frame(dimension: 100)
-			.overlay(
-				Color.black.opacity(0.2)
-					.overlay(
-						Image(systemName: "plus.circle")
-							.font(.title)
-							.foregroundColor(.gray)
-					)
-			)
 			
 			Text("Change your profile picture")
 				.font(.app.subTitle)
+				.fontWeight(.regular)
 				.foregroundColor(.white)
+				.padding(.vertical)
+			
+			TextFieldView(title: "Name", text: $name)
+			
+			TextFieldView(title: "Username", text: $userName)
+			
 			Spacer()
 			
 		}

@@ -29,8 +29,9 @@
 		D06EFF88287F387000428711 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF87287F387000428711 /* FieldValidation.swift */; };
 		D06EFF8B287F38D700428711 /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8A287F38D700428711 /* ProfileEditingView.swift */; };
 		D06EFF8F287F3C1A00428711 /* ImagePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */; };
+		D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF90287F4BE500428711 /* TextFieldView.swift */; };
 		D07A6601287B75DF00F6EF8C /* ImportSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A6600287B75DF00F6EF8C /* ImportSecretPhraseView.swift */; };
-		D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */; };
+		D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ButtonStyles.swift */; };
 		D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE612847022F00BE886F /* WelcomePageView.swift */; };
 		D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09A2831BC6700EC397C /* megastonksApp.swift */; };
 		D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F09C2831BC6700EC397C /* AppView.swift */; };
@@ -64,8 +65,9 @@
 		D06EFF87287F387000428711 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
 		D06EFF8A287F38D700428711 /* ProfileEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
 		D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholderView.swift; sourceTree = "<group>"; };
+		D06EFF90287F4BE500428711 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		D07A6600287B75DF00F6EF8C /* ImportSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSecretPhraseView.swift; sourceTree = "<group>"; };
-		D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedButtonStyle.swift; sourceTree = "<group>"; };
+		D0A1EE5E2847010100BE886F /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		D0A1EE612847022F00BE886F /* WelcomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageView.swift; sourceTree = "<group>"; };
 		D0A2F0972831BC6700EC397C /* megastonks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = megastonks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2F09A2831BC6700EC397C /* megastonksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = megastonksApp.swift; sourceTree = "<group>"; };
@@ -223,7 +225,7 @@
 				D0A2F0B02831CB9E00EC397C /* Colors.swift */,
 				D0A2F0B92831E01C00EC397C /* Gradients.swift */,
 				D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */,
-				D0A1EE5E2847010100BE886F /* ExpandedButtonStyle.swift */,
+				D0A1EE5E2847010100BE886F /* ButtonStyles.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -256,6 +258,7 @@
 				D003DB55286A8E3200BCE964 /* AppBackgroundView.swift */,
 				D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */,
 				D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */,
+				D06EFF90287F4BE500428711 /* TextFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,8 +360,9 @@
 				D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */,
 				D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
+				D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */,
 				D042C2B62874678B00EF62BF /* APIClient.swift in Sources */,
-				D0A1EE5F2847010100BE886F /* ExpandedButtonStyle.swift in Sources */,
+				D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */,
 				D042C2BE28746C4700EF62BF /* APIClientError.swift in Sources */,
 				D042C2C428746F3500EF62BF /* Token.swift in Sources */,
 				D003DB56286A8E3200BCE964 /* AppBackgroundView.swift in Sources */,

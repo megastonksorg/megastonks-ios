@@ -20,5 +20,5 @@ extension Font {
 extension Font.app {
 	static var title: Font { .system(.title3, design: .rounded, weight: .medium) }
 	static var subTitle: Font { .system(size: 15, weight: .medium, design: .rounded) }
-    static var footer: Font { .system(size: 12, weight: .regular, design: .rounded) } 
+	static var footer: Font { .system(size: 12, weight: .regular, design: .rounded) }
 }
