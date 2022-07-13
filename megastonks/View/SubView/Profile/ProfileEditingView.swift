@@ -9,16 +9,18 @@ import SwiftUI
 
 struct ProfileEditingView: View {
 	
-	@State var image: UIImage?
-	@State var name: String = ""
-	@State var userName: String = ""
+	@StateObject private var viewModel: ProfileEditingView.ViewModel
+	
+	init() {
+		self._viewModel = StateObject.init(wrappedValue: ViewModel())
+	}
 	
 	var body: some View {
 		VStack(spacing: 20) {
 			Group {
 				Button(action: {}) {
 					Group {
-						if let image = self.image {
+						if let image = viewModel.image {
 							Image(uiImage: image)
 								.resizable()
 								.aspectRatio(contentMode: .fit)
@@ -49,9 +51,9 @@ struct ProfileEditingView: View {
 				.foregroundColor(.white)
 				.padding(.vertical)
 			
-			TextFieldView(title: "Name", text: $name)
+			TextFieldView(title: "Name", text: $viewModel.name)
 			
-			TextFieldView(title: "Username", text: $userName)
+			TextFieldView(title: "Username", text: $viewModel.userName)
 			
 			Spacer()
 			
