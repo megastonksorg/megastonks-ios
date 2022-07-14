@@ -1,5 +1,5 @@
 //
-//  SecretPhraseView.swift
+//  NewSecretPhraseView.swift
 //  megastonks
 //
 //  Created by Kingsley Okeke on 2022-06-28.
@@ -8,7 +8,7 @@
 import SwiftUI
 import IdentifiedCollections
 
-struct SecretPhraseView: View {
+struct NewSecretPhraseView: View {
 	@State var phrase: IdentifiedArrayOf<MnemonicWord>
 	
 	var body: some View {
@@ -63,8 +63,8 @@ struct SecretPhraseView: View {
 	}
 }
 
-struct SecretPhraseView_Previews: PreviewProvider {
+struct NewSecretPhraseView_Previews: PreviewProvider {
 	static var previews: some View {
-		SecretPhraseView(phrase: MnemonicPhrase.preview)
+		NewSecretPhraseView(phrase: MnemonicPhrase.preview)
 	}
 }

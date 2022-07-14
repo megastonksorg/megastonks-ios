@@ -50,7 +50,7 @@ struct ImportSecretPhraseView: View {
 					.font(.app.subTitle)
 					.foregroundColor(.white)
 					.multilineTextAlignment(.center)
-					.padding(.vertical, 30)
+					.padding(.bottom, 30)
 				
 				LazyVGrid(columns: Array(repeating: GridItem(), count: SizeConstants.phraseGridCount), spacing: SizeConstants.phraseGridSpacing) {
 					ForEach(Field.allCases) { field in
