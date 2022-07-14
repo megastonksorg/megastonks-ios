@@ -18,7 +18,7 @@ struct NewSecretPhraseView: View {
 		VStack(spacing: 20) {
 			let didUserAcceptTerms = viewModel.didUserAcceptTerms
 			
-			Spacer()
+			Spacer(minLength: 0)
 			
 			Text("Secret recovery phrase")
 				.font(.app.title)
