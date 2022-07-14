@@ -9,12 +9,8 @@ import SwiftUI
 
 struct ProfileEditingView: View {
 	
-	@StateObject private var viewModel: ViewModel
+	@StateObject private var viewModel: ViewModel = ViewModel()
 	@FocusState private var focusField: ViewModel.FocusField?
-	
-	init() {
-		self._viewModel = StateObject.init(wrappedValue: ViewModel())
-	}
 	
 	var body: some View {
 		VStack(spacing: 20) {
