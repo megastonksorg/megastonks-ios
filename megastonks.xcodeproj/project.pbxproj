@@ -13,7 +13,6 @@
 		D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82A28484BAD00AA3AD2 /* WalletClient.swift */; };
 		D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82C28484DC100AA3AD2 /* Wallet.swift */; };
 		D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */; };
-		D042C2AF286F69ED00EF62BF /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D042C2AE286F69ED00EF62BF /* IdentifiedCollections */; };
 		D042C2B4287464F400EF62BF /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B3287464F400EF62BF /* AppViewModel.swift */; };
 		D042C2B62874678B00EF62BF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B52874678B00EF62BF /* APIClient.swift */; };
 		D042C2BC28746C3800EF62BF /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2BB28746C3800EF62BF /* HttpMethod.swift */; };
@@ -25,6 +24,7 @@
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* SecretPhraseView.swift */; };
 		D04B3D4A286BB59700543816 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D49286BB59700543816 /* Font+Extension.swift */; };
+		D0555FC82880A01400BF241C /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D0555FC72880A01400BF241C /* IdentifiedCollections */; };
 		D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF83287D4A9B00428711 /* String+Extension.swift */; };
 		D06EFF88287F387000428711 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF87287F387000428711 /* FieldValidation.swift */; };
 		D06EFF8B287F38D700428711 /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8A287F38D700428711 /* ProfileEditingView.swift */; };
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D042C2AF286F69ED00EF62BF /* IdentifiedCollections in Frameworks */,
+				D0555FC82880A01400BF241C /* IdentifiedCollections in Frameworks */,
 				D039C82828484B0300AA3AD2 /* WalletCore in Frameworks */,
 				D039C82628484B0300AA3AD2 /* SwiftProtobuf in Frameworks */,
 			);
@@ -297,7 +297,7 @@
 			packageProductDependencies = (
 				D039C82528484B0300AA3AD2 /* SwiftProtobuf */,
 				D039C82728484B0300AA3AD2 /* WalletCore */,
-				D042C2AE286F69ED00EF62BF /* IdentifiedCollections */,
+				D0555FC72880A01400BF241C /* IdentifiedCollections */,
 			);
 			productName = megastonks;
 			productReference = D0A2F0972831BC6700EC397C /* megastonks.app */;
@@ -329,7 +329,7 @@
 			mainGroup = D0A2F08E2831BC6700EC397C;
 			packageReferences = (
 				D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */,
-				D042C2AD286F69ED00EF62BF /* XCRemoteSwiftPackageReference "swift-identified-collections" */,
+				D0555FC62880A01400BF241C /* XCRemoteSwiftPackageReference "swift-identified-collections" */,
 			);
 			productRefGroup = D0A2F0982831BC6700EC397C /* Products */;
 			projectDirPath = "";
@@ -446,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -500,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -600,9 +600,9 @@
 				kind = branch;
 			};
 		};
-		D042C2AD286F69ED00EF62BF /* XCRemoteSwiftPackageReference "swift-identified-collections" */ = {
+		D0555FC62880A01400BF241C /* XCRemoteSwiftPackageReference "swift-identified-collections" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-identified-collections.git";
+			repositoryURL = "https://github.com/pointfreeco/swift-identified-collections";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -621,9 +621,9 @@
 			package = D039C82428484B0300AA3AD2 /* XCRemoteSwiftPackageReference "wallet-core" */;
 			productName = WalletCore;
 		};
-		D042C2AE286F69ED00EF62BF /* IdentifiedCollections */ = {
+		D0555FC72880A01400BF241C /* IdentifiedCollections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D042C2AD286F69ED00EF62BF /* XCRemoteSwiftPackageReference "swift-identified-collections" */;
+			package = D0555FC62880A01400BF241C /* XCRemoteSwiftPackageReference "swift-identified-collections" */;
 			productName = IdentifiedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
