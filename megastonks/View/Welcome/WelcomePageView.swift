@@ -11,9 +11,22 @@ import WalletCore
 struct WelcomePageView: View {
 	@State var wallet: HDWallet?
 	
+	init() {
+		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.megaStonksGreen)
+		UIPageControl.appearance().pageIndicatorTintColor = UIColor(.megaStonksGreen).withAlphaComponent(0.2)
+	}
+	
 	var body: some View {
 		VStack(spacing: 0) {
-			Spacer()
+			TabView {
+				ForEach(0..<6, id: \.self) { num in
+					Text("Onboarding Page \(num)")
+						.font(.title3)
+						.foregroundColor(.white)
+				}
+			}
+			.tint(.megaStonksGreen)
+			.tabViewStyle(.page(indexDisplayMode: .always))
 			
 			Group {
 				Button(action: {
