@@ -46,6 +46,7 @@
 		D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BD2831E3F800EC397C /* View+Frame.swift */; };
 		D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */; };
 		D0CA6F122880A2E400CFE94D /* WelcomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */; };
+		D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D0A2F0BD2831E3F800EC397C /* View+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Frame.swift"; sourceTree = "<group>"; };
 		D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageVM.swift; sourceTree = "<group>"; };
+		D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 				D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */,
 				D06EFF90287F4BE500428711 /* TextFieldView.swift */,
 				D06EFF94287F570100428711 /* ImagePicker.swift */,
+				D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				D06EFF95287F570100428711 /* ImagePicker.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
+				D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */,
 				D06EFF88287F387000428711 /* FieldValidation.swift in Sources */,
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
 				D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */,

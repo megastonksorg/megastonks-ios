@@ -67,17 +67,13 @@ struct ProfileEditingView: View {
 		.background(Color.app.background)
 		.toolbar {
 			ToolbarItem(placement: .navigationBarLeading) {
-				Image(systemName: "arrow.left")
+				AppToolBar(.leading, leadingClosure: {})
 			}
 			ToolbarItem(placement: .principal) {
-				Text("Profile")
-					.fontWeight(.bold)
+				AppToolBar(.principal)
 			}
 			ToolbarItem(placement: .navigationBarTrailing) {
-				Button(action: {}) {
-					Text("Done")
-						.foregroundColor(.white)
-				}
+				AppToolBar(.trailing, trailingClosure: {})
 			}
 		}
 		.sheet(isPresented: $viewModel.isShowingImagePicker) {
