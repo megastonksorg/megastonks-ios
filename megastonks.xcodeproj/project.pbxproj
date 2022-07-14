@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D003DB56286A8E3200BCE964 /* AppBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003DB55286A8E3200BCE964 /* AppBackgroundView.swift */; };
+		D00E10262880CFA100E8E12E /* NavBarTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E10252880CFA100E8E12E /* NavBarTheme.swift */; };
 		D039C82628484B0300AA3AD2 /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = D039C82528484B0300AA3AD2 /* SwiftProtobuf */; };
 		D039C82828484B0300AA3AD2 /* WalletCore in Frameworks */ = {isa = PBXBuildFile; productRef = D039C82728484B0300AA3AD2 /* WalletCore */; };
 		D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82A28484BAD00AA3AD2 /* WalletClient.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		D003DB55286A8E3200BCE964 /* AppBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundView.swift; sourceTree = "<group>"; };
+		D00E10252880CFA100E8E12E /* NavBarTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarTheme.swift; sourceTree = "<group>"; };
 		D039C82A28484BAD00AA3AD2 /* WalletClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletClient.swift; sourceTree = "<group>"; };
 		D039C82C28484DC100AA3AD2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				D0A2F0B92831E01C00EC397C /* Gradients.swift */,
 				D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */,
 				D0A1EE5E2847010100BE886F /* ButtonStyles.swift */,
+				D00E10252880CFA100E8E12E /* NavBarTheme.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				D04B3D48286BB43400543816 /* SecretPhraseView.swift in Sources */,
 				D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
+				D00E10262880CFA100E8E12E /* NavBarTheme.swift in Sources */,
 				D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */,
 				D042C2B62874678B00EF62BF /* APIClient.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */,
