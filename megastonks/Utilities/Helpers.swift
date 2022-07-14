@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SizeConstants {
+	static let backgroundCircle: CGSize = CGSize(width: 300, height: 300)
 	static let cardInnerPadding: CGFloat = 4
 	static let cornerRadius: CGFloat = 10
 	static let wordCornerRadius: CGFloat = 5.0

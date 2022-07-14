@@ -11,6 +11,12 @@ struct AppBackgroundView: View {
 	var body: some View {
 		LinearGradient.background
 			.overlay(LinearGradient.black)
+			.overlay(
+				Circle()
+					.fill(Color.megaStonksGreen)
+					.frame(size: SizeConstants.backgroundCircle)
+					.blur(radius: 80)
+			)
 			.ignoresSafeArea()
 	}
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 public extension LinearGradient {
-	static let background = LinearGradient(colors: [.megaStonksGreen, .megaStonksGreen.opacity(0.8), .black, .black], startPoint: .top, endPoint: .bottom)
+	static let background = LinearGradient(colors: [.megaStonksGreen, .megaStonksGreen, .black, .black], startPoint: .top, endPoint: .bottom)
 	
 	static let dropShadow = LinearGradient(colors: [.clear, .black.opacity(0.2), .black.opacity(0.2), .black.opacity(0.2)], startPoint: .top, endPoint: .bottom)
 	
