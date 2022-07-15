@@ -16,8 +16,6 @@ struct WelcomePageView: View {
 	init() {
 		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.megaStonksGreen)
 		UIPageControl.appearance().pageIndicatorTintColor = UIColor(.megaStonksGreen).withAlphaComponent(0.2)
-		
-		NavBarTheme.setup()
 	}
 	
 	var body: some View {

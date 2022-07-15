@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AppView: View {
+	
+	init() { NavBarTheme.setup() }
+	
 	var body: some View {
 		WelcomePageView()
 	}
