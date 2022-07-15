@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 class APIClient {
-    var shared: APIClient = APIClient()
-    
+	var shared: APIClient = APIClient()
+	
 }
