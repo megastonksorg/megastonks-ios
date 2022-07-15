@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SwiftUI
 
 extension NewSecretPhraseView {
 	@MainActor class ViewModel: ObservableObject {
@@ -15,7 +16,11 @@ extension NewSecretPhraseView {
 		func openTerms() { self.isShowingTerms = true }
 		
 		func didDismissTerms() {
-			if !didUserAcceptTerms { self.didUserAcceptTerms = true }
+			if !didUserAcceptTerms {
+				withAnimation(.easeIn) {
+					self.didUserAcceptTerms = true
+				}
+			}
 		}
 	}
 }
