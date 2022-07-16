@@ -12,7 +12,7 @@ struct MnemonicWordView: View {
 	
 	@Binding var word: MnemonicWord?
 	
-	init(word: Binding<MnemonicWord?>, viewHandler: @escaping () -> Void) {
+	init(word: Binding<MnemonicWord?>, viewHandler: @escaping () -> Void = {}) {
 		self._word = word
 		self.viewHandler = viewHandler
 	}

@@ -54,7 +54,7 @@ class WalletClient {
 		KeychainWrapper.standard.set(mnemonic, forKey: KeychainWrapper.Key.mnemonic.rawValue)
 	}
 	
-	func getMnemonic(mnemonic: String) -> Result<String, WalletClientError> {
+	func getMnemonic() -> Result<String, WalletClientError> {
 		guard let mnemonic: String = KeychainWrapper.standard.string(forKey: .mnemonic)
 		else { return .failure(.errorRetrievingMnemonic) }
 		return .success(mnemonic)

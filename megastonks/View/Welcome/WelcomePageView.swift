@@ -53,7 +53,7 @@ struct WelcomePageView: View {
 				Group {
 					switch route {
 					case .createWallet:
-						NewSecretPhraseView(phrase: MnemonicPhrase.preview)
+						NewSecretPhraseView()
 					case .importWallet:
 						ImportSecretPhraseView()
 					}
