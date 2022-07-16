@@ -5,7 +5,7 @@
 //  Created by Kingsley Okeke on 2022-07-14.
 //
 
-import Combine
+import Foundation
 
 extension WelcomePageView {
 	@MainActor class ViewModel: ObservableObject {
