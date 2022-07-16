@@ -16,6 +16,8 @@ extension WelcomePageView {
 		
 		let walletClient: WalletClient = WalletClient.shared
 		
+		private var hasGeneratedWallet: Bool = false
+		
 		@Published var isLoading: Bool = false
 		
 		@Published var path: [Route] = []
@@ -23,12 +25,18 @@ extension WelcomePageView {
 		
 		func generateNewWallet() {
 			self.isLoading = true
-			switch walletClient.generateNewWallet() {
-			case .success(let wallet):
-				walletClient.saveMnemonic(mnemonic: wallet.mnemonic)
+			if !self.hasGeneratedWallet {
+				switch walletClient.generateNewWallet() {
+				case .success(let wallet):
+					self.hasGeneratedWallet = true
+					walletClient.saveMnemonic(mnemonic: wallet.mnemonic)
+					pushPath(route: .createWallet)
+				case .failure(let error):
+					self.banner = BannerData(title: error.title, detail: error.localizedDescription, type: .error)
+				}
+			}
+			else {
 				pushPath(route: .createWallet)
-			case .failure(let error):
-				self.banner = BannerData(title: error.title, detail: error.localizedDescription, type: .error)
 			}
 			self.isLoading = false
 		}
