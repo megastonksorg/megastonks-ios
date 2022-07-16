@@ -19,7 +19,7 @@ extension WelcomePageView {
 		@Published var isLoading: Bool = false
 		
 		@Published var path: [Route] = []
-		@Published var error: Error?
+		@Published var banner: BannerData?
 		
 		func generateNewWallet() {
 			self.isLoading = true
@@ -28,7 +28,7 @@ extension WelcomePageView {
 				walletClient.saveMnemonic(mnemonic: wallet.mnemonic)
 				pushPath(route: .createWallet)
 			case .failure(let error):
-				self.error = error
+				self.banner = BannerData(title: error.title, detail: error.localizedDescription, type: .error)
 			}
 			self.isLoading = false
 		}

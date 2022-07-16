@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+fileprivate let tintColorOpacity: CGFloat = 0.6
+
 struct BannerData: Equatable {
-	var title:String
+	var title:String = ""
 	var detail:String
 	var type: BannerType
 }
@@ -24,11 +26,11 @@ enum BannerType {
 		case .info:
 			return .white
 		case .success:
-			return .green
+			return .green.opacity(tintColorOpacity)
 		case .warning:
-			return .yellow
+			return .yellow.opacity(tintColorOpacity)
 		case .error:
-			return .red
+			return .red.opacity(tintColorOpacity)
 		}
 	}
 }
@@ -55,7 +57,7 @@ struct BannerViewModifier: ViewModifier {
 						VStack {
 							if(!data.title.isEmpty){
 								Text(data.title)
-									.font(.body)
+									.font(.app.subTitle)
 									.bold()
 							}
 							
@@ -64,7 +66,7 @@ struct BannerViewModifier: ViewModifier {
 									.font(.title)
 									.foregroundColor(data.type.tintColor)
 								Text(data.detail)
-									.font(.custom("Apple SD Gothic Neo", fixedSize: 12))
+									.font(.app.subTitle)
 							}
 						}
 					}

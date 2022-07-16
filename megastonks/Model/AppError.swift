@@ -14,11 +14,15 @@ enum AppError: Error {
 		case couldNotImportWallet
 		case errorSigningMessage
 		case errorRetrievingMnemonic
+		
+		var title: String { "Wallet Error" }
 	}
 	
 	enum APIClientError: Error {
 		case invalidURL
 		case httpError(response: URLResponse, data: Data)
+		
+		var title: String { "API Error" }
 	}
 	
 	case walletError(WalletError)
@@ -30,8 +34,8 @@ extension AppError.WalletError: LocalizedError {
 		switch self {
 		case .couldNotGenerateWallet:
 			return NSLocalizedString(
-				"Could not generate a new Wallet",
-				comment: "Unable to Generate new Wallet"
+				"Could not generate a new wallet",
+				comment: "Unable to Generate New Wallet"
 			)
 		case .couldNotImportWallet:
 			return NSLocalizedString(
@@ -45,7 +49,7 @@ extension AppError.WalletError: LocalizedError {
 			)
 		case .errorRetrievingMnemonic:
 			return NSLocalizedString(
-				"Error encountered while retrieving Mnemonic",
+				"Error encountered while retrieving mnemonic",
 				comment: "Error Retrieving Mnemonic"
 			)
 		}

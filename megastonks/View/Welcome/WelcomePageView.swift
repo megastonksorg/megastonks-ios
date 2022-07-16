@@ -47,6 +47,7 @@ struct WelcomePageView: View {
 			.overlay(isShown: viewModel.isLoading) {
 				AppProgressView()
 			}
+			.banner(data: $viewModel.banner)
 			.navigationTitle("")
 			.navigationDestination(for: ViewModel.Route.self) { route in
 				Group {
