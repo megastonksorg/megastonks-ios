@@ -12,6 +12,7 @@ enum AppError: Error {
 	enum WalletError: Error {
 		case couldNotGenerateWallet
 		case couldNotImportWallet
+		case couldNotImportWalletForSigning
 		case errorSigningMessage
 		case errorRetrievingMnemonic
 		
@@ -40,6 +41,11 @@ extension AppError.WalletError: LocalizedError {
 		case .couldNotImportWallet:
 			return NSLocalizedString(
 				"Could not import a valid wallet for the mnemonic",
+				comment: "Invalid Mnemonic"
+			)
+		case .couldNotImportWalletForSigning:
+			return NSLocalizedString(
+				"Could not import a valid wallet for your existing mnemonic",
 				comment: "Invalid Mnemonic"
 			)
 		case .errorSigningMessage:

@@ -34,7 +34,22 @@ class WalletClient {
 		return .success(wallet)
 	}
 	
-	func signMessage(wallet: HDWallet, message: String) -> Result<SignedMessage, WalletClientError> {
+	func saveMnemonic(mnemonic: String) {
+		KeychainWrapper.standard.set(mnemonic, forKey: KeychainWrapper.Key.mnemonic.rawValue)
+	}
+	
+	func getMnemonic() -> Result<String, WalletClientError> {
+		guard let mnemonic: String = KeychainWrapper.standard.string(forKey: .mnemonic)
+		else { return .failure(.errorRetrievingMnemonic) }
+		return .success(mnemonic)
+	}
+	
+	func signMessage(message: String) -> Result<SignedMessage, WalletClientError> {
+		guard
+			let mnemonic: String = KeychainWrapper.standard.string(forKey: .mnemonic),
+			let wallet: HDWallet = HDWallet(mnemonic: mnemonic, passphrase: passPhrase, check: true)
+		else { return .failure(.couldNotImportWalletForSigning) }
+		
 		let privateKey = wallet.getKeyForCoin(coin: coinType)
 
 		guard let messageData = message.data(using: .utf8)
@@ -48,15 +63,5 @@ class WalletClient {
 		let address = privateKey.getPublicKeySecp256k1(compressed: false).description
 		
 		return .success(SignedMessage(signature: signature.hexString, address: address))
-	}
-	
-	func saveMnemonic(mnemonic: String) {
-		KeychainWrapper.standard.set(mnemonic, forKey: KeychainWrapper.Key.mnemonic.rawValue)
-	}
-	
-	func getMnemonic() -> Result<String, WalletClientError> {
-		guard let mnemonic: String = KeychainWrapper.standard.string(forKey: .mnemonic)
-		else { return .failure(.errorRetrievingMnemonic) }
-		return .success(mnemonic)
 	}
 }
