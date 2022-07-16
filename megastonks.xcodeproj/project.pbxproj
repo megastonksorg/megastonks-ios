@@ -34,6 +34,8 @@
 		D06E27D0288230E800C773E9 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CF288230E800C773E9 /* AppError.swift */; };
 		D06E27D2288246E800C773E9 /* AppProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27D1288246E800C773E9 /* AppProgressView.swift */; };
 		D06E27D4288247B700C773E9 /* View+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27D3288247B700C773E9 /* View+Overlay.swift */; };
+		D06E27D628824B0D00C773E9 /* BannerViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27D528824B0D00C773E9 /* BannerViewModifier.swift */; };
+		D06E27D828824B9A00C773E9 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27D728824B9A00C773E9 /* View+Extensions.swift */; };
 		D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF83287D4A9B00428711 /* String+Extension.swift */; };
 		D06EFF88287F387000428711 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF87287F387000428711 /* FieldValidation.swift */; };
 		D06EFF8B287F38D700428711 /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8A287F38D700428711 /* ProfileEditingView.swift */; };
@@ -82,6 +84,8 @@
 		D06E27CF288230E800C773E9 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		D06E27D1288246E800C773E9 /* AppProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProgressView.swift; sourceTree = "<group>"; };
 		D06E27D3288247B700C773E9 /* View+Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Overlay.swift"; sourceTree = "<group>"; };
+		D06E27D528824B0D00C773E9 /* BannerViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModifier.swift; sourceTree = "<group>"; };
+		D06E27D728824B9A00C773E9 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		D06EFF83287D4A9B00428711 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		D06EFF87287F387000428711 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
 		D06EFF8A287F38D700428711 /* ProfileEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 				D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */,
 				D06E27CD28822FA500C773E9 /* Data+Hex.swift */,
 				D06E27D3288247B700C773E9 /* View+Overlay.swift */,
+				D06E27D728824B9A00C773E9 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */,
 				D00E102A2880DA1400E8E12E /* TermsAndConditionsView.swift */,
 				D06E27D1288246E800C773E9 /* AppProgressView.swift */,
+				D06E27D528824B0D00C773E9 /* BannerViewModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D07A6601287B75DF00F6EF8C /* ImportSecretPhraseView.swift in Sources */,
 				D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */,
+				D06E27D628824B0D00C773E9 /* BannerViewModifier.swift in Sources */,
 				D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */,
 				D00E102D2880DA7A00E8E12E /* EULA.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
@@ -426,6 +433,7 @@
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */,
+				D06E27D828824B9A00C773E9 /* View+Extensions.swift in Sources */,
 				D06EFF88287F387000428711 /* FieldValidation.swift in Sources */,
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
 				D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */,

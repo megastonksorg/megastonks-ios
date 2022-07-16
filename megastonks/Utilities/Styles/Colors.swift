@@ -12,6 +12,7 @@ extension Color {
 	static var megaStonksGray2: Color { .init(.init(hex: "2B2B30")) }
 	static var megaStonksGreen: Color { .init(.init(hex: "3AD77E")) }
 	static var megaStonksGreenDark: Color { .init(.init(hex: "4BBD20")) }
+	static var megaStonksBlack: Color { .init(.init(hex: "0D1114")) }
 	static var megaStonksRed: Color { .init(.init(hex: "D73A60")) }
 }
 
