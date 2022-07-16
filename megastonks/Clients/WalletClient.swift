@@ -10,6 +10,8 @@ import SwiftUI
 
 class WalletClient {
 	
+	typealias WalletClientError = AppError.WalletError
+	
 	struct SignedMessage {
 		let signature: String
 		let address: String
@@ -20,17 +22,19 @@ class WalletClient {
 	
 	static let shared = WalletClient()
 	
-	init() {}
-	
-	func generateNewWallet() -> HDWallet? {
-		return HDWallet(strength: 128, passphrase: passPhrase)
+	func generateNewWallet() -> Result<HDWallet, WalletClientError> {
+		guard let wallet = HDWallet(strength: 128, passphrase: passPhrase)
+		else { return .failure(.couldNotGenerateWallet) }
+		return .success(wallet)
 	}
 	
-	func importWallet(mnemonic: String) -> HDWallet? {
-		return HDWallet(mnemonic: mnemonic, passphrase: passPhrase, check: true)
+	func importWallet(mnemonic: String) -> Result<HDWallet, WalletClientError> {
+		guard let wallet = HDWallet(mnemonic: mnemonic, passphrase: passPhrase, check: true)
+		else { return .failure(.couldNotImportWallet) }
+		return .success(wallet)
 	}
 	
-	func signMessage(wallet: HDWallet, message: String) -> Result<SignedMessage, AppError.WalletError> {
+	func signMessage(wallet: HDWallet, message: String) -> Result<SignedMessage, WalletClientError> {
 		let privateKey = wallet.getKeyForCoin(coin: coinType)
 
 		guard let messageData = message.data(using: .utf8)

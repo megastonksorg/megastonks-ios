@@ -10,7 +10,8 @@ import Foundation
 enum AppError: Error {
 	
 	enum WalletError: Error {
-		case invalidWallet
+		case couldNotGenerateWallet
+		case couldNotImportWallet
 		case errorSigningMessage
 	}
 	
@@ -26,10 +27,15 @@ enum AppError: Error {
 extension AppError.WalletError: LocalizedError {
 	var errorDescription: String? {
 		switch self {
-		case .invalidWallet:
+		case .couldNotGenerateWallet:
 			return NSLocalizedString(
-				"Could not generate a valid wallet for the mnemonic",
-				comment: "Invalid Wallet"
+				"Could not generate a new Wallet",
+				comment: "Unable to Generate new Wallet"
+			)
+		case .couldNotImportWallet:
+			return NSLocalizedString(
+				"Could not import a valid wallet for the mnemonic",
+				comment: "Invalid Mnemonic"
 			)
 		case .errorSigningMessage:
 			return NSLocalizedString(
