@@ -9,7 +9,15 @@ import WalletCore
 import SwiftUI
 
 class WalletClient {
+	
+	struct SignedMessage {
+		let signature: String
+		let address: String
+	}
+	
 	private let passPhrase: String = ""
+	private let coinType: WalletCore.CoinType = .ethereum
+	
 	static let shared = WalletClient()
 	
 	init() {}
@@ -22,14 +30,19 @@ class WalletClient {
 		return HDWallet(mnemonic: mnemonic, passphrase: passPhrase, check: true)
 	}
 	
-	func signMessage(wallet: HDWallet) -> String {
-		let privateKey = wallet.getKeyForCoin(coin: .ethereum)
-		let publicKey = privateKey.getPublicKeySecp256k1(compressed: false)
-		print("Public Key: \(publicKey.description)")
-		let message = "Today I heard something new and unmemorable."
+	func signMessage(wallet: HDWallet, message: String) -> Result<SignedMessage, AppError.WalletError> {
+		let privateKey = wallet.getKeyForCoin(coin: coinType)
+
+		guard let messageData = message.data(using: .utf8)
+		else { return .failure(.errorSigningMessage) }
 		
-		let hash = WalletCore.Hash.keccak256(data: message.data(using: .utf8)!)
-		let signature = privateKey.sign(digest: hash, curve: .secp256k1)!
-		return signature.hexString
+		let hash: Data = WalletCore.Hash.keccak256(data: messageData)
+		
+		guard let signature = privateKey.sign(digest: hash, curve: .secp256k1)
+		else { return .failure(.errorSigningMessage) }
+		
+		let address = privateKey.getPublicKeySecp256k1(compressed: false).description
+		
+		return .success(SignedMessage(signature: signature.hexString, address: address))
 	}
 }
