@@ -16,7 +16,7 @@ struct WelcomePageView: View {
 	}
 	
 	var body: some View {
-		NavigationStack(path: $viewModel.path) {
+		NavigationStack(path: $viewModel.stack1) {
 			VStack(spacing: 0) {
 				TabView {
 					ForEach(0..<6, id: \.self) { num in
@@ -34,7 +34,7 @@ struct WelcomePageView: View {
 					}
 					.buttonStyle(ExpandedButtonStyle())
 					
-					Button(action: { viewModel.pushPath(route: .importWallet) }) {
+					Button(action: { viewModel.pushPath(route: .route1(.importWallet)) }) {
 						Text("Import an existing  wallet")
 					}
 					.buttonStyle(ExpandedButtonStyle(invertedStyle: true))
@@ -49,13 +49,14 @@ struct WelcomePageView: View {
 			}
 			.banner(data: $viewModel.banner)
 			.navigationTitle("")
-			.navigationDestination(for: ViewModel.Route.self) { route in
+			.navigationDestination(for: ViewModel.Route.Stack1.self) { route in
 				Group {
 					switch route {
 					case .createWallet:
 						NewSecretPhraseView()
 					case .importWallet:
 						ImportSecretPhraseView()
+					default: EmptyView()
 					}
 				}
 				.navigationBarTitleDisplayMode(.inline)

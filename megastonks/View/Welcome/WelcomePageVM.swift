@@ -8,11 +8,7 @@
 import Foundation
 
 extension WelcomePageView {
-	@MainActor class ViewModel: ObservableObject {
-		enum Route: Hashable {
-			case createWallet
-			case importWallet
-		}
+	@MainActor class ViewModel: AppRouter {
 		
 		let walletClient: WalletClient = WalletClient.shared
 		
@@ -20,7 +16,6 @@ extension WelcomePageView {
 		
 		@Published var isLoading: Bool = false
 		
-		@Published var path: [Route] = []
 		@Published var banner: BannerData?
 		
 		func generateNewWallet() {
@@ -30,27 +25,15 @@ extension WelcomePageView {
 				case .success(let wallet):
 					self.hasGeneratedWallet = true
 					walletClient.saveMnemonic(mnemonic: wallet.mnemonic)
-					pushPath(route: .createWallet)
+					self.pushPath(route: .route1(.createWallet))
 				case .failure(let error):
 					self.banner = BannerData(title: error.title, detail: error.localizedDescription, type: .error)
 				}
 			}
 			else {
-				pushPath(route: .createWallet)
+				self.pushPath(route: .route1(.createWallet))
 			}
 			self.isLoading = false
-		}
-		
-		func pushPath(route: Route) {
-			path.append(route)
-		}
-		
-		func popPath() {
-			path.removeLast()
-		}
-		
-		func popToRoot() {
-			path = []
 		}
 	}
 }
