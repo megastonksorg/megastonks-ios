@@ -6,12 +6,9 @@
 //
 
 import SwiftUI
-import WalletCore
 
 struct WelcomePageView: View {
 	@StateObject var viewModel: ViewModel = ViewModel()
-	
-	@State var wallet: HDWallet?
 	
 	init() {
 		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.megaStonksGreen)
@@ -32,20 +29,12 @@ struct WelcomePageView: View {
 				.tabViewStyle(.page(indexDisplayMode: .always))
 				
 				Group {
-					Button(action: {
-						let wallet = WalletClient.shared.generateNewWallet()!
-						self.wallet = wallet
-						viewModel.pushPath(route: .createWallet)
-					}) {
+					Button(action: { viewModel.generateNewWallet() }) {
 						Text("Create a new Wallet")
 					}
 					.buttonStyle(ExpandedButtonStyle())
 					
-					Button(action: {
-//						let signature = WalletClient.shared.signMessage(wallet: wallet!)
-//						print("Signature: \(signature)")
-						viewModel.pushPath(route: .importWallet)
-					}) {
+					Button(action: { viewModel.pushPath(route: .importWallet) }) {
 						Text("Import an existing  wallet")
 					}
 					.buttonStyle(ExpandedButtonStyle(invertedStyle: true))
@@ -55,6 +44,9 @@ struct WelcomePageView: View {
 				.padding(.horizontal, 4)
 			}
 			.background(AppBackgroundView())
+			.overlay(isShown: viewModel.isLoading) {
+				AppProgressView()
+			}
 			.navigationTitle("")
 			.navigationDestination(for: ViewModel.Route.self) { route in
 				Group {

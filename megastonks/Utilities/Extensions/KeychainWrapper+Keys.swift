@@ -8,5 +8,5 @@
 import SwiftKeychainWrapper
 
 extension KeychainWrapper.Key {
-	static let wallet: KeychainWrapper.Key = "wallet"
+	static let mnemonic: KeychainWrapper.Key = "mnemonic"
 }

@@ -6,7 +6,7 @@
 //
 
 import WalletCore
-import SwiftUI
+import SwiftKeychainWrapper
 
 class WalletClient {
 	
@@ -48,5 +48,15 @@ class WalletClient {
 		let address = privateKey.getPublicKeySecp256k1(compressed: false).description
 		
 		return .success(SignedMessage(signature: signature.hexString, address: address))
+	}
+	
+	func saveMnemonic(mnemonic: String) {
+		KeychainWrapper.standard.set(mnemonic, forKey: KeychainWrapper.Key.mnemonic.rawValue)
+	}
+	
+	func getMnemonic(mnemonic: String) -> Result<String, WalletClientError> {
+		guard let mnemonic: String = KeychainWrapper.standard.string(forKey: .mnemonic)
+		else { return .failure(.errorRetrievingMnemonic) }
+		return .success(mnemonic)
 	}
 }

@@ -13,6 +13,7 @@ enum AppError: Error {
 		case couldNotGenerateWallet
 		case couldNotImportWallet
 		case errorSigningMessage
+		case errorRetrievingMnemonic
 	}
 	
 	enum APIClientError: Error {
@@ -41,6 +42,11 @@ extension AppError.WalletError: LocalizedError {
 			return NSLocalizedString(
 				"Error encountered while signing message with wallet",
 				comment: "Error Signing Message"
+			)
+		case .errorRetrievingMnemonic:
+			return NSLocalizedString(
+				"Error encountered while retrieving Mnemonic",
+				comment: "Error Retrieving Mnemonic"
 			)
 		}
 	}
