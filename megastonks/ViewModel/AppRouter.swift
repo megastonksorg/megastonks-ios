@@ -21,35 +21,63 @@ import Foundation
 		case route2(Stack2? = nil)
 	}
 	
-	@Published var stack1: [Route.Stack1]
-	@Published var stack2: [Route.Stack2]
+	@Published var stack1: [Route.Stack1] = []
+	@Published var stack2: [Route.Stack2] = []
 	
-	init(stack1: [Route.Stack1] = [], stack2: [Route.Stack2] = []) {
-		self.stack1 = stack1
-		self.stack2 = stack2
+	init() {
+		NotificationCenter
+			.default.addObserver(
+				self,
+				selector: #selector(handlePushStackRequest),
+				name: .pushStack,
+				object: nil
+			)
+		NotificationCenter
+			.default.addObserver(
+				self,
+				selector: #selector(handlePopStackRequest),
+				name: .popStack,
+				object: nil
+			)
 	}
 	
-	func pushPath(route: Route) {
+	private func pushPath(route: Route) {
 		switch route {
-		case .route1(let route):
-			if let route = route { self.stack1.append(route) }
-			print("STACKS:: \(self.stack1.count)")
-		case .route2(let route):
-			if let route = route { self.stack2.append(route) }
+			case .route1(let route):
+				if let route = route { self.stack1.append(route) }
+				print("STACKS:: \(self.stack1.count)")
+			case .route2(let route):
+				if let route = route { self.stack2.append(route) }
 		}
 	}
 	
-	func popPath(route: Route) {
+	private func popPath(route: Route) {
 		switch route {
-		case .route1: self.stack1.removeLast()
-		case .route2: self.stack2.removeLast()
+			case .route1: if !self.stack1.isEmpty { self.stack1.removeLast() }
+			case .route2: if !self.stack2.isEmpty { self.stack2.removeLast() }
 		}
 	}
 	
-	func popToRoot(route: Route) {
+	private func popToRoot(route: Route) {
 		switch route {
-		case .route1: self.stack1 = []
-		case .route2: self.stack2 = []
+			case .route1: self.stack1 = []
+			case .route2: self.stack2 = []
+		}
+	}
+	
+	@objc func handlePushStackRequest(notification: NSNotification) {
+		if let dict = notification.userInfo as? NSDictionary {
+			if let route = dict[stackKeyNotification] as? Route{
+				pushPath(route: route)
+			}
+		}
+	}
+	
+	@objc func handlePopStackRequest(notification: NSNotification) {
+		if let dict = notification.userInfo as? NSDictionary {
+			if let route = dict[stackKeyNotification] as? Route{
+				popPath(route: route)
+			}
 		}
 	}
 }

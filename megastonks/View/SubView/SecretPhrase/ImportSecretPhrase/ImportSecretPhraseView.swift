@@ -44,6 +44,8 @@ struct ImportSecretPhraseView: View {
 	@FocusState private var focusedField: Field?
 	
 	@StateObject var viewModel: ViewModel = ViewModel()
+	
+	@EnvironmentObject var appRouter: AppRouter
 		
 	var body: some View {
 		ScrollView {
@@ -122,7 +124,7 @@ struct ImportSecretPhraseView: View {
 		}
 		.safeAreaInset(edge: .bottom) {
 			Button(action: {
-				self.viewModel.popPath(route: .route1())
+				self.viewModel.pushView()
 			}) {
 				Text("Continue to Import")
 			}

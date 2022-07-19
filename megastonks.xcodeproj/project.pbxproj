@@ -59,6 +59,7 @@
 		D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */; };
 		D0CA6F122880A2E400CFE94D /* WelcomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */; };
 		D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */; };
+		D0F2D6AF2886960A005EE41E /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2D6AE2886960A005EE41E /* Notification+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +112,7 @@
 		D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageVM.swift; sourceTree = "<group>"; };
 		D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolBar.swift; sourceTree = "<group>"; };
+		D0F2D6AE2886960A005EE41E /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 				D06E27CD28822FA500C773E9 /* Data+Hex.swift */,
 				D06E27D3288247B700C773E9 /* View+Overlay.swift */,
 				D06E27D728824B9A00C773E9 /* View+Extensions.swift */,
+				D0F2D6AE2886960A005EE41E /* Notification+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
 				D07A6601287B75DF00F6EF8C /* ImportSecretPhraseView.swift in Sources */,
+				D0F2D6AF2886960A005EE41E /* Notification+Extensions.swift in Sources */,
 				D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */,
 				D06E27DB28830DB500C773E9 /* ImportSecretPhraseVM.swift in Sources */,
 				D06E27D628824B0D00C773E9 /* BannerViewModifier.swift in Sources */,

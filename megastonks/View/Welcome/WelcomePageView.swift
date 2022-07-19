@@ -10,13 +10,15 @@ import SwiftUI
 struct WelcomePageView: View {
 	@StateObject var viewModel: ViewModel = ViewModel()
 	
+	@EnvironmentObject var appRouter: AppRouter
+	
 	init() {
 		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.megaStonksGreen)
 		UIPageControl.appearance().pageIndicatorTintColor = UIColor(.megaStonksGreen).withAlphaComponent(0.2)
 	}
 	
 	var body: some View {
-		NavigationStack(path: $viewModel.stack1) {
+		NavigationStack(path: $appRouter.stack1) {
 			VStack(spacing: 0) {
 				TabView {
 					ForEach(0..<6, id: \.self) { num in
@@ -56,6 +58,7 @@ struct WelcomePageView: View {
 						NewSecretPhraseView()
 					case .importWallet:
 						ImportSecretPhraseView()
+								.environmentObject(appRouter)
 					default: EmptyView()
 					}
 				}

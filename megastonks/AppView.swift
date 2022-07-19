@@ -9,10 +9,13 @@ import SwiftUI
 
 struct AppView: View {
 	
+	@StateObject var appRouter = AppRouter()
+	
 	init() { NavBarTheme.setup() }
 	
 	var body: some View {
 		WelcomePageView()
+			.environmentObject(appRouter)
 	}
 }
 
