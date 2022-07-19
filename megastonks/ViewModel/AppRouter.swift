@@ -21,13 +21,19 @@ import Foundation
 		case route2(Stack2? = nil)
 	}
 	
-	@Published var stack1: [Route.Stack1] = []
-	@Published var stack2: [Route.Stack2] = []
+	@Published var stack1: [Route.Stack1]
+	@Published var stack2: [Route.Stack2]
+	
+	init(stack1: [Route.Stack1] = [], stack2: [Route.Stack2] = []) {
+		self.stack1 = stack1
+		self.stack2 = stack2
+	}
 	
 	func pushPath(route: Route) {
 		switch route {
 		case .route1(let route):
 			if let route = route { self.stack1.append(route) }
+			print("STACKS:: \(self.stack1.count)")
 		case .route2(let route):
 			if let route = route { self.stack2.append(route) }
 		}

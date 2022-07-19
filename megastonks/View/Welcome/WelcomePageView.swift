@@ -34,7 +34,7 @@ struct WelcomePageView: View {
 					}
 					.buttonStyle(ExpandedButtonStyle())
 					
-					Button(action: { viewModel.pushPath(route: .route1(.importWallet)) }) {
+					Button(action: { viewModel.importWallet() }) {
 						Text("Import an existing  wallet")
 					}
 					.buttonStyle(ExpandedButtonStyle(invertedStyle: true))
@@ -49,7 +49,7 @@ struct WelcomePageView: View {
 			}
 			.banner(data: $viewModel.banner)
 			.navigationTitle("")
-			.navigationDestination(for: ViewModel.Route.Stack1.self) { route in
+			.navigationDestination(for: AppRouter.Route.Stack1.self) { route in
 				Group {
 					switch route {
 					case .createWallet:

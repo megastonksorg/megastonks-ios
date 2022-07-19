@@ -35,5 +35,10 @@ extension WelcomePageView {
 			}
 			self.isLoading = false
 		}
+		
+		func importWallet() {
+			self.pushPath(route: .route1(.importWallet))
+			print("STACKS WELCOME:: \(self.stack1.count)")
+		}
 	}
 }

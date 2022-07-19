@@ -63,7 +63,7 @@ struct NewSecretPhraseView: View {
 					.foregroundColor(.gray)
 					.multilineTextAlignment(.center)
 				
-				Button(action: {}) {
+				Button(action: { }) {
 					Text("I saved it somewhere safe")
 						.fontWeight(.medium)
 				}

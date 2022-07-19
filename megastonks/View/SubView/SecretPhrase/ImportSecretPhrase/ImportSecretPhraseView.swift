@@ -43,6 +43,8 @@ struct ImportSecretPhraseView: View {
 	
 	@FocusState private var focusedField: Field?
 	
+	@StateObject var viewModel: ViewModel = ViewModel()
+		
 	var body: some View {
 		ScrollView {
 			VStack(spacing: 20) {
@@ -119,11 +121,13 @@ struct ImportSecretPhraseView: View {
 			.padding()
 		}
 		.safeAreaInset(edge: .bottom) {
-			Button(action: {}) {
+			Button(action: {
+				self.viewModel.popPath(route: .route1())
+			}) {
 				Text("Continue to Import")
 			}
 			.buttonStyle(ExpandedButtonStyle())
-			.disabled(!isContinueButtonEnabled())
+			//.disabled(!isContinueButtonEnabled())
 			.padding()
 			.padding(.bottom, 20)
 		}
