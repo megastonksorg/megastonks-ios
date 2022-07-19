@@ -11,7 +11,7 @@ extension ImportSecretPhraseView {
 	@MainActor class ViewModel: ObservableObject {
 		
 		func pushView() {
-			NotificationCenter.default.post(Notification.pushStack(stack: .route1(.importWallet)))
+			AppRouter.pushStack(stack: .route1(.importWallet))
 		}
 	}
 }

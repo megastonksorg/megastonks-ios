@@ -7,6 +7,8 @@
 
 import Foundation
 
+fileprivate let stackKeyNotification: String = "stack"
+
 @MainActor class AppRouter: ObservableObject {
 	enum Route: Hashable {
 		enum Stack1: Hashable {
@@ -45,7 +47,6 @@ import Foundation
 		switch route {
 			case .route1(let route):
 				if let route = route { self.stack1.append(route) }
-				print("STACKS:: \(self.stack1.count)")
 			case .route2(let route):
 				if let route = route { self.stack2.append(route) }
 		}
@@ -79,5 +80,17 @@ import Foundation
 				popPath(route: route)
 			}
 		}
+	}
+	
+	static func pushStack(stack: AppRouter.Route) {
+		let notification = Notification(name: .pushStack, userInfo: [stackKeyNotification: stack])
+		
+		NotificationCenter.default.post(notification)
+	}
+	
+	static func popStack(stack: AppRouter.Route) {
+		let notification = Notification(name: .popStack, userInfo: [stackKeyNotification: stack])
+		
+		NotificationCenter.default.post(notification)
 	}
 }
