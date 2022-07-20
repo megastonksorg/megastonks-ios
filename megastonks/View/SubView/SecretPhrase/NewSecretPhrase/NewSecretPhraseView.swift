@@ -12,6 +12,8 @@ struct NewSecretPhraseView: View {
 	
 	@StateObject var viewModel: ViewModel = ViewModel()
 	
+	@EnvironmentObject var appRouter: AppRouter
+	
 	var body: some View {
 		VStack(spacing: 20) {
 			if viewModel.phrase.isEmpty {
@@ -63,7 +65,7 @@ struct NewSecretPhraseView: View {
 					.foregroundColor(.gray)
 					.multilineTextAlignment(.center)
 				
-				Button(action: { }) {
+				Button(action: { viewModel.createProfile() }) {
 					Text("I saved it somewhere safe")
 						.fontWeight(.medium)
 				}

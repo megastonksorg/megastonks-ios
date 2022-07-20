@@ -56,13 +56,17 @@ struct WelcomePageView: View {
 					switch route {
 					case .createWallet:
 						NewSecretPhraseView()
+								.environmentObject(appRouter)
 					case .importWallet:
 						ImportSecretPhraseView()
 								.environmentObject(appRouter)
-					default: EmptyView()
+					case .createProfile:
+						ProfileEditingView()
+								.environmentObject(appRouter)
 					}
 				}
 				.navigationBarTitleDisplayMode(.inline)
+				.navigationTitle("")
 			}
 		}
 	}

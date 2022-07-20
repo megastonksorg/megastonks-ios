@@ -40,5 +40,9 @@ extension NewSecretPhraseView {
 				}
 			}
 		}
+		
+		func createProfile() {
+			AppRouter.pushStack(stack: .route1(.createProfile))
+		}
 	}
 }

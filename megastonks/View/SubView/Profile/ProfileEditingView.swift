@@ -12,6 +12,8 @@ struct ProfileEditingView: View {
 	@StateObject private var viewModel: ViewModel = ViewModel()
 	@FocusState private var focusField: ViewModel.FocusField?
 	
+	@EnvironmentObject var appRouter: AppRouter
+	
 	var body: some View {
 		VStack(spacing: 20) {
 			Group {
@@ -66,9 +68,6 @@ struct ProfileEditingView: View {
 		.padding(.horizontal)
 		.background(Color.app.background)
 		.toolbar {
-			ToolbarItem(placement: .navigationBarLeading) {
-				AppToolBar(.leading, leadingClosure: {})
-			}
 			ToolbarItem(placement: .principal) {
 				AppToolBar(.principal)
 			}
