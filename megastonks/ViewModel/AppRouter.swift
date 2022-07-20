@@ -41,6 +41,13 @@ fileprivate let stackKeyNotification: String = "stack"
 				name: .popStack,
 				object: nil
 			)
+		NotificationCenter
+			.default.addObserver(
+				self,
+				selector: #selector(handlePopStackRequest),
+				name: .popToRoot,
+				object: nil
+			)
 	}
 	
 	private func pushPath(route: Route) {
@@ -82,6 +89,16 @@ fileprivate let stackKeyNotification: String = "stack"
 		}
 	}
 	
+	@objc func handlePopToRootRequest(notification: NSNotification) {
+		if let dict = notification.userInfo as? NSDictionary {
+			if let route = dict[stackKeyNotification] as? Route{
+				popToRoot(route: route)
+			}
+		}
+	}
+}
+
+extension AppRouter {
 	static func pushStack(stack: AppRouter.Route) {
 		let notification = Notification(name: .pushStack, userInfo: [stackKeyNotification: stack])
 		
@@ -90,6 +107,12 @@ fileprivate let stackKeyNotification: String = "stack"
 	
 	static func popStack(stack: AppRouter.Route) {
 		let notification = Notification(name: .popStack, userInfo: [stackKeyNotification: stack])
+		
+		NotificationCenter.default.post(notification)
+	}
+	
+	static func popToRoot(stack: AppRouter.Route) {
+		let notification = Notification(name: .popToRoot, userInfo: [stackKeyNotification: stack])
 		
 		NotificationCenter.default.post(notification)
 	}
