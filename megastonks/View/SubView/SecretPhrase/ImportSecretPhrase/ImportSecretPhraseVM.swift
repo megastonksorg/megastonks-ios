@@ -29,6 +29,8 @@ extension ImportSecretPhraseView {
 			}
 		}
 		
+		let walletClient: WalletClient = WalletClient.shared
+		
 		@Published var word1: String = ""
 		@Published var word2: String = ""
 		@Published var word3: String = ""
@@ -41,6 +43,9 @@ extension ImportSecretPhraseView {
 		@Published var word10: String = ""
 		@Published var word11: String = ""
 		@Published var word12: String = ""
+		
+		@Published var isLoading: Bool = false
+		@Published var banner: BannerData?
 		
 		@Published var focusedField: Field?
 		
@@ -88,6 +93,20 @@ extension ImportSecretPhraseView {
 			&& self.word4.isRealWord && self.word5.isRealWord && self.word6.isRealWord
 			&& self.word7.isRealWord && self.word8.isRealWord && self.word9.isRealWord
 			&& self.word10.isRealWord && self.word11.isRealWord && self.word12.isRealWord
+		}
+		
+		func importWallet() {
+			let mnemonic: String = [
+				self.word1, self.word2, self.word3, self.word4, self.word5, self.word6,
+				self.word7, self.word8, self.word9, self.word10, self.word11, self.word12
+			].joined()
+			
+			switch walletClient.importWallet(mnemonic: mnemonic) {
+			case .success(_): return
+			case .failure(let error):
+				self.banner = BannerData(detail: error.localizedDescription, type: .error)
+				return
+			}
 		}
 		
 		func pushView() {

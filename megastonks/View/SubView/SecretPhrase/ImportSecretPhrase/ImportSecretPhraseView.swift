@@ -90,9 +90,7 @@ struct ImportSecretPhraseView: View {
 			.padding()
 		}
 		.safeAreaInset(edge: .bottom) {
-			Button(action: {
-				self.viewModel.pushView()
-			}) {
+			Button(action: { self.viewModel.importWallet() }) {
 				Text("Continue to Import")
 			}
 			.buttonStyle(ExpandedButtonStyle())
@@ -102,6 +100,13 @@ struct ImportSecretPhraseView: View {
 		}
 		.background(Color.app.background)
 		.edgesIgnoringSafeArea(.bottom)
+		.overlay(isShown: viewModel.isLoading) {
+			AppProgressView()
+		}
+		.overlay(isShown: self.viewModel.banner != nil) {
+			Color.black.opacity(0.8)
+				.banner(data: $viewModel.banner)
+		}
 		.onChange(of: self.focusedField) { focusedField in
 			self.viewModel.focusedField = focusedField
 		}
