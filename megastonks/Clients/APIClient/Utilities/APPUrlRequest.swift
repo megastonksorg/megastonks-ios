@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APPUrlRequest<Body: Codable> {
+struct APPUrlRequest {
 #if DEBUG
 	let domain = "megastonksdev.azurewebsites.net"
 #else
@@ -18,7 +18,7 @@ struct APPUrlRequest<Body: Codable> {
 	let httpMethod: HTTPMethod
 	let pathComponents: [String]
 	let query: [URLQueryItem]
-	let body: Body?
+	let body: Codable?
 	
 	var urlRequest: URLRequest {
 		get throws {
@@ -53,7 +53,7 @@ struct APPUrlRequest<Body: Codable> {
 		httpMethod: HTTPMethod,
 		pathComponents: [String],
 		query: [URLQueryItem] = [],
-		body: Body?
+		body: Data? = nil
 	) {
 		self.token = token
 		self.httpMethod = httpMethod

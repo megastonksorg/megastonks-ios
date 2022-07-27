@@ -18,7 +18,6 @@
 		D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D039C82C28484DC100AA3AD2 /* Wallet.swift */; };
 		D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */; };
 		D042C2B4287464F400EF62BF /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B3287464F400EF62BF /* AppRouter.swift */; };
-		D042C2B62874678B00EF62BF /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2B52874678B00EF62BF /* APIClient.swift */; };
 		D042C2BC28746C3800EF62BF /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2BB28746C3800EF62BF /* HttpMethod.swift */; };
 		D042C2C028746CAD00EF62BF /* URLSession+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2BF28746CAD00EF62BF /* URLSession+Validation.swift */; };
 		D042C2C228746CE500EF62BF /* APPUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2C128746CE500EF62BF /* APPUrlRequest.swift */; };
@@ -60,6 +59,7 @@
 		D0CA6F122880A2E400CFE94D /* WelcomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */; };
 		D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */; };
 		D0F2D6AF2886960A005EE41E /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2D6AE2886960A005EE41E /* Notification+Name.swift */; };
+		D0F2D6B1289195E0005EE41E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2D6B0289195E0005EE41E /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +72,6 @@
 		D039C82C28484DC100AA3AD2 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseView.swift; sourceTree = "<group>"; };
 		D042C2B3287464F400EF62BF /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
-		D042C2B52874678B00EF62BF /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		D042C2BB28746C3800EF62BF /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		D042C2BF28746CAD00EF62BF /* URLSession+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Validation.swift"; sourceTree = "<group>"; };
 		D042C2C128746CE500EF62BF /* APPUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPUrlRequest.swift; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageVM.swift; sourceTree = "<group>"; };
 		D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolBar.swift; sourceTree = "<group>"; };
 		D0F2D6AE2886960A005EE41E /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
+		D0F2D6B0289195E0005EE41E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				D042C2BA28746C2500EF62BF /* Utilities */,
-				D042C2B52874678B00EF62BF /* APIClient.swift */,
+				D0F2D6B0289195E0005EE41E /* APIClient.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -435,7 +435,6 @@
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D00E10262880CFA100E8E12E /* NavBarTheme.swift in Sources */,
 				D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */,
-				D042C2B62874678B00EF62BF /* APIClient.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */,
 				D042C2C428746F3500EF62BF /* Token.swift in Sources */,
 				D06E27CC2882289E00C773E9 /* KeychainWrapper+Keys.swift in Sources */,
@@ -458,6 +457,7 @@
 				D06EFF93287F52DD00428711 /* ProfileEditingVM.swift in Sources */,
 				D042C2C228746CE500EF62BF /* APPUrlRequest.swift in Sources */,
 				D042C2BC28746C3800EF62BF /* HttpMethod.swift in Sources */,
+				D0F2D6B1289195E0005EE41E /* APIClient.swift in Sources */,
 				D04B3D4A286BB59700543816 /* Font+Extension.swift in Sources */,
 				D0A2F09B2831BC6700EC397C /* megastonksApp.swift in Sources */,
 				D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */,

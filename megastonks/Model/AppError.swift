@@ -22,7 +22,8 @@ enum AppError: Error {
 	enum APIClientError: Error {
 		case invalidURL
 		case httpError(response: URLResponse, data: Data)
-		
+		case decodingError
+		case rawError(String)
 		var title: String { "API Error" }
 	}
 	
@@ -75,6 +76,16 @@ extension AppError.APIClientError: LocalizedError {
 				"Error Processing Request: \(String(decoding: data, as: UTF8.self))",
 				comment: "HTTP Error"
 			)
+		case .decodingError:
+				return NSLocalizedString(
+					"Error Decoding Object: Please try that again",
+					comment: "Decoder Error"
+				)
+		case .rawError(let error):
+				return NSLocalizedString(
+					"\(error)",
+					comment: "Raw Error"
+				)
 		}
 	}
 }
