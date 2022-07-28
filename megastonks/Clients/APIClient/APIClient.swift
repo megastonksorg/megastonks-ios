@@ -8,18 +8,9 @@
 import Combine
 import Foundation
 
-struct WeatherForecastElement: Codable {
-	let date: String?
-	let temperatureC, temperatureF: Int?
-	let summary: String?
-}
-
-typealias WeatherForecast = [WeatherForecastElement]
-
 typealias APIClientError = AppError.APIClientError
 
 protocol APIRequests {
-	func testAPI() -> AnyPublisher<WeatherForecast, APIClientError>
 	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError>
 }
 
@@ -28,16 +19,6 @@ final class APIClient: APIRequests {
 	static let shared: APIClient = APIClient()
 
 	let decoder: JSONDecoder = JSONDecoder()
-	
-	func testAPI() -> AnyPublisher<WeatherForecast, APIClientError> {
-		let appRequest = APPUrlRequest(
-			token: nil,
-			httpMethod: .get,
-			pathComponents: ["weatherforecast"]
-		)
-		
-		return apiRequest(appRequest: appRequest, output: WeatherForecast.self)
-	}
 	
 	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError> {
 		let appRequest = APPUrlRequest(

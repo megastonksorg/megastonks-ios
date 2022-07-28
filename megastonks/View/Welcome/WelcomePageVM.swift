@@ -42,20 +42,5 @@ extension WelcomePageView {
 		func importWallet() {
 			AppRouter.pushStack(stack: .route1(.importWallet))
 		}
-		
-		func testAPI() {
-			apiClient.testAPI()
-				.receive(on: DispatchQueue.main)
-				.sink(receiveCompletion: { completion in
-					switch completion {
-						case .failure(let error):
-							self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
-						case .finished: return
-					}
-				}, receiveValue: { forecasts in
-					print("forecasts:\(forecasts)")
-				})
-				.store(in: &cancellables)
-		}
 	}
 }
