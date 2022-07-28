@@ -64,6 +64,10 @@ struct ProfileEditingView: View {
 			
 			Spacer()
 			
+			Button(action: { viewModel.uploadImage() }) {
+				Text("Upload")
+			}
+			.buttonStyle(ExpandedButtonStyle())
 		}
 		.padding(.horizontal)
 		.background(Color.app.background)

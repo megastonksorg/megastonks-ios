@@ -17,6 +17,10 @@ extension ProfileEditingView {
 			case userName
 		}
 		
+		let apiClient: APIClient = APIClient.shared
+		
+		private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
+		
 		@Published var image: UIImage?
 		@Published var name: String = ""
 		@Published var userName: String = ""
@@ -43,6 +47,24 @@ extension ProfileEditingView {
 		
 		func selectImageFromLibrary() {
 			self.isShowingImagePicker = true
+		}
+		
+		func uploadImage() {
+			guard let image = self.image,
+				  let resizedImage = image.resizedTo(megaBytes: 2.0),
+				  let croppedImageData = resizedImage.croppedAndScaled(toFill: SizeConstants.profileImageSize).pngData() else { return }
+			apiClient.uploadImage(imageData: croppedImageData)
+				.receive(on: DispatchQueue.main)
+				.sink(receiveCompletion: { completion in
+					switch completion {
+						case .finished: return
+						case .failure(let error):
+							print("UPLOAD: \(error.title) \(error.errorDescription ?? "")")
+					}
+				}, receiveValue: { url in
+					print("UPLOAD: \(String(describing: url))")
+				})
+				.store(in: &cancellables)
 		}
 	}
 }

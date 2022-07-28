@@ -43,7 +43,7 @@ final class APIClient: APIRequests {
 		let appRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .put,
-			pathComponents: ["fileUpload", "image"],
+			pathComponents: ["mediaUpload", "image"],
 			body: imageData
 		)
 		return apiRequest(appRequest: appRequest, output: URL.self)

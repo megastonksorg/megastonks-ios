@@ -58,6 +58,7 @@
 		D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */; };
 		D0CA6F122880A2E400CFE94D /* WelcomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */; };
 		D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */; };
+		D0DFFBB128927BA500784BAE /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DFFBB028927BA500784BAE /* UIImage+Extensions.swift */; };
 		D0F2D6AF2886960A005EE41E /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2D6AE2886960A005EE41E /* Notification+Name.swift */; };
 		D0F2D6B1289195E0005EE41E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2D6B0289195E0005EE41E /* APIClient.swift */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,8 @@
 		D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageVM.swift; sourceTree = "<group>"; };
 		D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolBar.swift; sourceTree = "<group>"; };
+		D0DFFBB028927BA500784BAE /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		D0DFFBB62892874100784BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0F2D6AE2886960A005EE41E /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 		D0F2D6B0289195E0005EE41E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -231,6 +234,7 @@
 		D0A2F0992831BC6700EC397C /* megastonks */ = {
 			isa = PBXGroup;
 			children = (
+				D0DFFBB62892874100784BAE /* Info.plist */,
 				D042C2B2287464DC00EF62BF /* ViewModel */,
 				D039C82928484B3400AA3AD2 /* Clients */,
 				D0A2F0AC2831BF0600EC397C /* Utilities */,
@@ -309,6 +313,7 @@
 				D06E27D3288247B700C773E9 /* View+Overlay.swift */,
 				D06E27D728824B9A00C773E9 /* View+Extensions.swift */,
 				D0F2D6AE2886960A005EE41E /* Notification+Name.swift */,
+				D0DFFBB028927BA500784BAE /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				D00E102D2880DA7A00E8E12E /* EULA.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D00E10262880CFA100E8E12E /* NavBarTheme.swift in Sources */,
+				D0DFFBB128927BA500784BAE /* UIImage+Extensions.swift in Sources */,
 				D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */,
 				D042C2C428746F3500EF62BF /* Token.swift in Sources */,
@@ -597,6 +603,7 @@
 				DEVELOPMENT_TEAM = HMK8J32K98;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = megastonks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -626,6 +633,7 @@
 				DEVELOPMENT_TEAM = HMK8J32K98;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = megastonks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
