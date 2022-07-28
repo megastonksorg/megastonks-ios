@@ -21,7 +21,7 @@ enum AppError: Error {
 	
 	enum APIClientError: Error {
 		case invalidURL
-		case httpError(response: URLResponse, data: Data)
+		case httpError(statusCode: Int, data: Data)
 		case decodingError
 		case rawError(String)
 		var title: String { "API Error" }
@@ -71,9 +71,9 @@ extension AppError.APIClientError: LocalizedError {
 				"Request URL could not be formed or is Invalid",
 				comment: "Invalid Url"
 			)
-		case let .httpError(response: _, data: data):
+		case let .httpError(statusCode: statusCode, data: data):
 			return NSLocalizedString(
-				"Error Processing Request: \(String(decoding: data, as: UTF8.self))",
+				"Error \(statusCode) Processing Request: \(String(decoding: data, as: UTF8.self))",
 				comment: "HTTP Error"
 			)
 		case .decodingError:

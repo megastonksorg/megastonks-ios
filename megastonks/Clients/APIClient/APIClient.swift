@@ -16,45 +16,55 @@ struct WeatherForecastElement: Codable {
 
 typealias WeatherForecast = [WeatherForecastElement]
 
+typealias APIClientError = AppError.APIClientError
+
 protocol APIRequests {
-	func testAPI() -> AnyPublisher<WeatherForecast, AppError.APIClientError>
-	func uploadImage(imageData: Data) -> AnyPublisher<URL, AppError.APIClientError>
+	func testAPI() -> AnyPublisher<WeatherForecast, APIClientError>
+	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError>
 }
 
 final class APIClient: APIRequests {
-	let shared: APIClient = APIClient()
+	
+	static let shared: APIClient = APIClient()
 
 	let decoder: JSONDecoder = JSONDecoder()
 	
-	func testAPI() -> AnyPublisher<WeatherForecast, AppError.APIClientError> {
+	func testAPI() -> AnyPublisher<WeatherForecast, APIClientError> {
 		let appRequest = APPUrlRequest(
 			token: nil,
-			httpMethod: .put,
+			httpMethod: .get,
 			pathComponents: ["weatherforecast"]
 		)
 		
-		return apiRequest(appRequest: appRequest)
+		return apiRequest(appRequest: appRequest, output: WeatherForecast.self)
 	}
 	
-	func uploadImage(imageData: Data) -> AnyPublisher<URL, AppError.APIClientError> {
+	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError> {
 		let appRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .put,
 			pathComponents: ["fileUpload", "image"],
 			body: imageData
 		)
-		return apiRequest(appRequest: appRequest)
+		return apiRequest(appRequest: appRequest, output: URL.self)
 	}
 	
-	private func apiRequest<Output: Codable>(appRequest: APPUrlRequest) -> AnyPublisher<Output, AppError.APIClientError> {
+	private func apiRequest<Output: Codable>(appRequest: APPUrlRequest, output: Output.Type) -> AnyPublisher<Output, APIClientError> {
 		do {
 			return try urlRequest(urlRequest: appRequest.urlRequest)
 				.decode(type: Output.self, decoder: self.decoder)
-				.mapError { _ in AppError.APIClientError.decodingError }
+				.mapError{ error in
+					if let error = error as? AppError.APIClientError {
+						return error
+					}
+					else {
+						return AppError.APIClientError.rawError(error.localizedDescription)
+					}
+				}
 				.eraseToAnyPublisher()
 		}
 		catch let error {
-			return Fail(error: AppError.APIClientError.rawError(error.localizedDescription))
+			return Fail(error: AppError.APIClientError.rawError(String(describing: error)))
 					.eraseToAnyPublisher()
 		}
 	}
