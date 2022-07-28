@@ -33,7 +33,7 @@ final class APIClient: APIRequests {
 	private func apiRequest<Output: Codable>(appRequest: APPUrlRequest, output: Output.Type) -> AnyPublisher<Output, APIClientError> {
 		do {
 			return try urlRequest(urlRequest: appRequest.urlRequest)
-				.decode(type: Output.self, decoder: self.decoder)
+				.decode(type: output, decoder: self.decoder)
 				.mapError{ error in
 					if let error = error as? AppError.APIClientError {
 						return error

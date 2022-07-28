@@ -27,6 +27,7 @@
 		D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */; };
 		D04B3D4A286BB59700543816 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D49286BB59700543816 /* Font+Extension.swift */; };
 		D0555FC82880A01400BF241C /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D0555FC72880A01400BF241C /* IdentifiedCollections */; };
+		D05FA81D2892E20300D05B1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FA81C2892E20300D05B1A /* ErrorResponse.swift */; };
 		D06E27CA2882284A00C773E9 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = D06E27C92882284A00C773E9 /* SwiftKeychainWrapper */; };
 		D06E27CC2882289E00C773E9 /* KeychainWrapper+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */; };
 		D06E27CE28822FA500C773E9 /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CD28822FA500C773E9 /* Data+Hex.swift */; };
@@ -81,6 +82,7 @@
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecretPhraseView.swift; sourceTree = "<group>"; };
 		D04B3D49286BB59700543816 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		D05FA81C2892E20300D05B1A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainWrapper+Keys.swift"; sourceTree = "<group>"; };
 		D06E27CD28822FA500C773E9 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
 		D06E27CF288230E800C773E9 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -188,6 +190,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D05FA81B2892E08900D05B1A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D05FA81C2892E20300D05B1A /* ErrorResponse.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		D06E27D928830D9A00C773E9 /* ImportSecretPhrase */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +269,7 @@
 		D0A2F0A82831BE4100EC397C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D05FA81B2892E08900D05B1A /* API */,
 				D039C82C28484DC100AA3AD2 /* Wallet.swift */,
 				D04B3D45286B1BBD00543816 /* MnemonicWord.swift */,
 				D042C2C328746F3500EF62BF /* Token.swift */,
@@ -472,6 +483,7 @@
 				D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */,
 				D00E10292880D80100E8E12E /* NewSecretPhraseVM.swift in Sources */,
 				D06E27D4288247B700C773E9 /* View+Overlay.swift in Sources */,
+				D05FA81D2892E20300D05B1A /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
