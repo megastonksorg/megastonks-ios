@@ -6,13 +6,16 @@
 //
 
 import Foundation
+import Combine
 
 extension WelcomePageView {
 	@MainActor class ViewModel: ObservableObject {
 		
+		let apiClient: APIClient = APIClient.shared
 		let walletClient: WalletClient = WalletClient.shared
 		
 		private var hasGeneratedWallet: Bool = false
+		private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 		
 		@Published var isLoading: Bool = false
 		
@@ -38,6 +41,21 @@ extension WelcomePageView {
 		
 		func importWallet() {
 			AppRouter.pushStack(stack: .route1(.importWallet))
+		}
+		
+		func testAPI() {
+			apiClient.testAPI()
+				.receive(on: DispatchQueue.main)
+				.sink(receiveCompletion: { completion in
+					switch completion {
+						case .failure(let error):
+							self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
+						case .finished: return
+					}
+				}, receiveValue: { forecasts in
+					print("forecasts:\(forecasts)")
+				})
+				.store(in: &cancellables)
 		}
 	}
 }

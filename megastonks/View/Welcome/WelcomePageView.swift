@@ -22,9 +22,11 @@ struct WelcomePageView: View {
 			VStack(spacing: 0) {
 				TabView {
 					ForEach(0..<6, id: \.self) { num in
-						Text("Onboarding Page \(num)")
-							.font(.title3)
-							.foregroundColor(.white)
+						Button(action: { viewModel.testAPI() }) {
+							Text("Onboarding Page \(num)")
+								.font(.title3)
+								.foregroundColor(.white)
+						}
 					}
 				}
 				.tint(.megaStonksGreen)
