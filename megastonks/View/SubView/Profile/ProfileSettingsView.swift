@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct ProfileEditingView: View {
+struct ProfileSettingsView: View {
 	
-	@StateObject private var viewModel: ViewModel = ViewModel()
+	@StateObject private var viewModel: ViewModel
 	@FocusState private var focusField: ViewModel.FocusField?
 	
 	@EnvironmentObject var appRouter: AppRouter
+	
+	init(viewModel: ProfileSettingsView.ViewModel) {
+		self._viewModel = StateObject(wrappedValue: viewModel)
+	}
 	
 	var body: some View {
 		VStack(spacing: 20) {
@@ -92,6 +96,6 @@ struct ProfileEditingView: View {
 
 struct ProfileEditingView_Previews: PreviewProvider {
 	static var previews: some View {
-		ProfileEditingView()
+		ProfileSettingsView(viewModel: .init(mode: .creation))
 	}
 }

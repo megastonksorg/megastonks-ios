@@ -41,10 +41,10 @@
 		D06E27DB28830DB500C773E9 /* ImportSecretPhraseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27DA28830DB500C773E9 /* ImportSecretPhraseVM.swift */; };
 		D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF83287D4A9B00428711 /* String+Extension.swift */; };
 		D06EFF88287F387000428711 /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF87287F387000428711 /* FieldValidation.swift */; };
-		D06EFF8B287F38D700428711 /* ProfileEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8A287F38D700428711 /* ProfileEditingView.swift */; };
+		D06EFF8B287F38D700428711 /* ProfileSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8A287F38D700428711 /* ProfileSettingsView.swift */; };
 		D06EFF8F287F3C1A00428711 /* ImagePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */; };
 		D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF90287F4BE500428711 /* TextFieldView.swift */; };
-		D06EFF93287F52DD00428711 /* ProfileEditingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF92287F52DD00428711 /* ProfileEditingVM.swift */; };
+		D06EFF93287F52DD00428711 /* ProfileSettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF92287F52DD00428711 /* ProfileSettingsVM.swift */; };
 		D06EFF95287F570100428711 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EFF94287F570100428711 /* ImagePicker.swift */; };
 		D07A6601287B75DF00F6EF8C /* ImportSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07A6600287B75DF00F6EF8C /* ImportSecretPhraseView.swift */; };
 		D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A1EE5E2847010100BE886F /* ButtonStyles.swift */; };
@@ -97,10 +97,10 @@
 		D06E27DA28830DB500C773E9 /* ImportSecretPhraseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSecretPhraseVM.swift; sourceTree = "<group>"; };
 		D06EFF83287D4A9B00428711 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		D06EFF87287F387000428711 /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
-		D06EFF8A287F38D700428711 /* ProfileEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditingView.swift; sourceTree = "<group>"; };
+		D06EFF8A287F38D700428711 /* ProfileSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsView.swift; sourceTree = "<group>"; };
 		D06EFF8E287F3C1A00428711 /* ImagePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePlaceholderView.swift; sourceTree = "<group>"; };
 		D06EFF90287F4BE500428711 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
-		D06EFF92287F52DD00428711 /* ProfileEditingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditingVM.swift; sourceTree = "<group>"; };
+		D06EFF92287F52DD00428711 /* ProfileSettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsVM.swift; sourceTree = "<group>"; };
 		D06EFF94287F570100428711 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D07A6600287B75DF00F6EF8C /* ImportSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSecretPhraseView.swift; sourceTree = "<group>"; };
 		D0A1EE5E2847010100BE886F /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
@@ -224,8 +224,8 @@
 		D06EFF89287F38C600428711 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				D06EFF8A287F38D700428711 /* ProfileEditingView.swift */,
-				D06EFF92287F52DD00428711 /* ProfileEditingVM.swift */,
+				D06EFF8A287F38D700428711 /* ProfileSettingsView.swift */,
+				D06EFF92287F52DD00428711 /* ProfileSettingsVM.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -486,8 +486,8 @@
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
 				D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */,
 				D06EFF8F287F3C1A00428711 /* ImagePlaceholderView.swift in Sources */,
-				D06EFF8B287F38D700428711 /* ProfileEditingView.swift in Sources */,
-				D06EFF93287F52DD00428711 /* ProfileEditingVM.swift in Sources */,
+				D06EFF8B287F38D700428711 /* ProfileSettingsView.swift in Sources */,
+				D06EFF93287F52DD00428711 /* ProfileSettingsVM.swift in Sources */,
 				D042C2C228746CE500EF62BF /* APPUrlRequest.swift in Sources */,
 				D042C2BC28746C3800EF62BF /* HttpMethod.swift in Sources */,
 				D0F2D6B1289195E0005EE41E /* APIClient.swift in Sources */,

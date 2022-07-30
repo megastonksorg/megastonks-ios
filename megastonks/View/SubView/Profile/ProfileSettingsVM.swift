@@ -8,16 +8,25 @@
 import Combine
 import SwiftUI
 
-extension ProfileEditingView {
+extension ProfileSettingsView {
 	@MainActor class ViewModel: ObservableObject {
 		
 		//MARK: - Subtypes
+		enum Mode {
+			case creation
+			case editing
+		}
+		
 		enum FocusField {
 			case name
 			case userName
 		}
 		
 		let apiClient: APIClient = APIClient.shared
+		
+		let mode: ProfileSettingsView.ViewModel.Mode
+		
+		var walletAddress: String = ""
 		
 		private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 		
@@ -43,7 +52,9 @@ extension ProfileEditingView {
 			}
 		}
 		
-		init() {}
+		init(mode: ProfileSettingsView.ViewModel.Mode) {
+			self.mode = mode
+		}
 		
 		func selectImageFromLibrary() {
 			self.isShowingImagePicker = true

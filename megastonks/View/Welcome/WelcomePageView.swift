@@ -63,7 +63,7 @@ struct WelcomePageView: View {
 						ImportSecretPhraseView()
 								.environmentObject(appRouter)
 					case .createProfile:
-						ProfileEditingView()
+							ProfileSettingsView(viewModel: .init(mode: .creation))
 								.environmentObject(appRouter)
 					}
 				}
