@@ -9,6 +9,7 @@ import Foundation
 
 struct User: Encodable {
 	let walletAddress: String
+	let fullName: String
 	let userName: String
 	let profilePhoto: URL
 	let currency: String

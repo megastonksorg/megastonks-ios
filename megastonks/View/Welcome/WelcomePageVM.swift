@@ -11,9 +11,6 @@ import Combine
 extension WelcomePageView {
 	@MainActor class ViewModel: ObservableObject {
 		
-		let apiClient: APIClient = APIClient.shared
-		let walletClient: WalletClient = WalletClient.shared
-		
 		private var hasGeneratedWallet: Bool = false
 		private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 		
@@ -24,10 +21,10 @@ extension WelcomePageView {
 		func generateNewWallet() {
 			self.isLoading = true
 			if !self.hasGeneratedWallet {
-				switch walletClient.generateNewWallet() {
+				switch WalletClient.shared.generateNewWallet() {
 				case .success(let wallet):
 					self.hasGeneratedWallet = true
-					walletClient.saveMnemonic(mnemonic: wallet.mnemonic)
+						WalletClient.shared.saveMnemonic(mnemonic: wallet.mnemonic)
 						AppRouter.pushStack(stack: .route1(.createWallet))
 				case .failure(let error):
 					self.banner = BannerData(title: error.title, detail: error.localizedDescription, type: .error)

@@ -30,6 +30,8 @@
 		D05856D4289512090073BDBC /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D3289512090073BDBC /* Register.swift */; };
 		D05856D7289516C80073BDBC /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D6289516C80073BDBC /* Authenticate.swift */; };
 		D05856D92895218E0073BDBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D82895218E0073BDBC /* User.swift */; };
+		D05856DC289533F10073BDBC /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856DB289533F10073BDBC /* AuthenticateView.swift */; };
+		D05856DE289533FE0073BDBC /* AuthenticateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856DD289533FE0073BDBC /* AuthenticateVM.swift */; };
 		D05FA81D2892E20300D05B1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FA81C2892E20300D05B1A /* ErrorResponse.swift */; };
 		D06E27CA2882284A00C773E9 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = D06E27C92882284A00C773E9 /* SwiftKeychainWrapper */; };
 		D06E27CC2882289E00C773E9 /* KeychainWrapper+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */; };
@@ -88,6 +90,8 @@
 		D05856D3289512090073BDBC /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		D05856D6289516C80073BDBC /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		D05856D82895218E0073BDBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D05856DB289533F10073BDBC /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
+		D05856DD289533FE0073BDBC /* AuthenticateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateVM.swift; sourceTree = "<group>"; };
 		D05FA81C2892E20300D05B1A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainWrapper+Keys.swift"; sourceTree = "<group>"; };
 		D06E27CD28822FA500C773E9 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
@@ -203,6 +207,15 @@
 				D05856D6289516C80073BDBC /* Authenticate.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D05856DA289533C90073BDBC /* AuthenticateView */ = {
+			isa = PBXGroup;
+			children = (
+				D05856DB289533F10073BDBC /* AuthenticateView.swift */,
+				D05856DD289533FE0073BDBC /* AuthenticateVM.swift */,
+			);
+			path = AuthenticateView;
 			sourceTree = "<group>";
 		};
 		D05FA81B2892E08900D05B1A /* API */ = {
@@ -365,6 +378,7 @@
 		D0A2F0C12832BD2900EC397C /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				D05856DA289533C90073BDBC /* AuthenticateView */,
 				D06EFF89287F38C600428711 /* Profile */,
 				D042C2AC286D4BA300EF62BF /* SecretPhrase */,
 			);
@@ -487,7 +501,9 @@
 				D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */,
 				D06E27D828824B9A00C773E9 /* View+Extensions.swift in Sources */,
 				D06EFF88287F387000428711 /* FieldValidation.swift in Sources */,
+				D05856DE289533FE0073BDBC /* AuthenticateVM.swift in Sources */,
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
+				D05856DC289533F10073BDBC /* AuthenticateView.swift in Sources */,
 				D042C2AB286D4B8500EF62BF /* VerifySecretPhraseView.swift in Sources */,
 				D06EFF8F287F3C1A00428711 /* ImagePlaceholderView.swift in Sources */,
 				D06EFF8B287F38D700428711 /* ProfileSettingsView.swift in Sources */,

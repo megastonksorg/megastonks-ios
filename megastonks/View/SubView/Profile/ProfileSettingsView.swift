@@ -68,13 +68,17 @@ struct ProfileSettingsView: View {
 			
 			Spacer()
 			
-			Button(action: { viewModel.uploadImage() }) {
+			Button(action: { viewModel.complete() }) {
 				Text(self.viewModel.buttonTitle)
 			}
 			.buttonStyle(ExpandedButtonStyle())
 		}
 		.padding(.horizontal)
 		.background(Color.app.background)
+		.overlay(isShown: viewModel.isLoading) {
+			AppProgressView()
+		}
+		.banner(data: $viewModel.banner)
 		.toolbar {
 			ToolbarItem(placement: .principal) {
 				AppToolBar(.principal)
