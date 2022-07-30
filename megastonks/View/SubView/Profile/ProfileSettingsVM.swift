@@ -1,5 +1,5 @@
 //
-//  ProfileEditingViewModel.swift
+//  ProfileSettingsViewModel.swift
 //  megastonks
 //
 //  Created by Kingsley Okeke on 2022-07-13.
@@ -27,6 +27,7 @@ extension ProfileSettingsView {
 		let mode: ProfileSettingsView.ViewModel.Mode
 		
 		var walletAddress: String = ""
+		var user: User?
 		
 		private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 		
@@ -35,6 +36,20 @@ extension ProfileSettingsView {
 		@Published var userName: String = ""
 		
 		@Published var isShowingImagePicker: Bool = false
+		
+		var profilePictureTitle: String {
+			switch self.mode {
+				case .creation: return "Select a profile picture"
+				case .editing: return "Change your profile picture"
+			}
+		}
+		
+		var buttonTitle: String {
+			switch self.mode {
+				case .creation: return "Create User"
+				case .editing: return "Update User"
+			}
+		}
 		
 		var nameValidation: FieldValidation {
 			if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return .unknown }

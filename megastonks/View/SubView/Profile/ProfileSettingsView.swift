@@ -1,5 +1,5 @@
 //
-//  ProfileEditingView.swift
+//  ProfileSettingsView.swift
 //  megastonks
 //
 //  Created by Kingsley Okeke on 2022-07-13.
@@ -49,7 +49,7 @@ struct ProfileSettingsView: View {
 				.padding(.top)
 			}
 			
-			Text("Change your profile picture")
+			Text(self.viewModel.profilePictureTitle)
 				.font(.app.subTitle)
 				.fontWeight(.regular)
 				.foregroundColor(.white)
@@ -69,7 +69,7 @@ struct ProfileSettingsView: View {
 			Spacer()
 			
 			Button(action: { viewModel.uploadImage() }) {
-				Text("Upload")
+				Text(self.viewModel.buttonTitle)
 			}
 			.buttonStyle(ExpandedButtonStyle())
 		}

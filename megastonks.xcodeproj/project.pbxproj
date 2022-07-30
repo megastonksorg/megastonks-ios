@@ -29,6 +29,7 @@
 		D0555FC82880A01400BF241C /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D0555FC72880A01400BF241C /* IdentifiedCollections */; };
 		D05856D4289512090073BDBC /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D3289512090073BDBC /* Register.swift */; };
 		D05856D7289516C80073BDBC /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D6289516C80073BDBC /* Authenticate.swift */; };
+		D05856D92895218E0073BDBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D82895218E0073BDBC /* User.swift */; };
 		D05FA81D2892E20300D05B1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FA81C2892E20300D05B1A /* ErrorResponse.swift */; };
 		D06E27CA2882284A00C773E9 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = D06E27C92882284A00C773E9 /* SwiftKeychainWrapper */; };
 		D06E27CC2882289E00C773E9 /* KeychainWrapper+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */; };
@@ -86,6 +87,7 @@
 		D04B3D49286BB59700543816 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
 		D05856D3289512090073BDBC /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		D05856D6289516C80073BDBC /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		D05856D82895218E0073BDBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D05FA81C2892E20300D05B1A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainWrapper+Keys.swift"; sourceTree = "<group>"; };
 		D06E27CD28822FA500C773E9 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				D06EFF87287F387000428711 /* FieldValidation.swift */,
 				D00E102C2880DA7A00E8E12E /* EULA.swift */,
 				D06E27CF288230E800C773E9 /* AppError.swift */,
+				D05856D82895218E0073BDBC /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D05856D92895218E0073BDBC /* User.swift in Sources */,
 				D00E102B2880DA1400E8E12E /* TermsAndConditionsView.swift in Sources */,
 				D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */,
 				D05856D4289512090073BDBC /* Register.swift in Sources */,
