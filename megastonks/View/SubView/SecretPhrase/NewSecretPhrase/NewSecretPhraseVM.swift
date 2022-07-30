@@ -12,7 +12,7 @@ import IdentifiedCollections
 extension NewSecretPhraseView {
 	@MainActor class ViewModel: ObservableObject {
 		
-		let walletClient: WalletClient = WalletClient.shared
+		var walletAddress: String?
 		
 		@Published var isShowingTerms: Bool = false
 		@Published var didUserAcceptTerms: Bool = false
@@ -21,13 +21,21 @@ extension NewSecretPhraseView {
 		@Published var banner: BannerData?
 		
 		init() {
-			switch walletClient.getMnemonic() {
+			switch WalletClient.shared.getMnemonic() {
 			case .success(let mnemonic):
 				let mnemonicWords: [MnemonicWord] =
 				mnemonic.split(separator: " ").map{ MnemonicWord(text: String($0), isSelectable: false, isAlternateStyle: false) }
-				
-				self.phrase = IdentifiedArray(uniqueElements: mnemonicWords)
-			default: return
+	
+				let walletResult = WalletClient.shared.importWallet(mnemonic: mnemonic)
+					switch walletResult {
+						case .success(let hdWallet):
+							self.walletAddress = hdWallet.getAddressForCoin(coin: .ethereum)
+							self.phrase = IdentifiedArray(uniqueElements: mnemonicWords)
+						case .failure(let error):
+							self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
+					}
+				case .failure(let error):
+					self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
 			}
 		}
 		
@@ -42,7 +50,8 @@ extension NewSecretPhraseView {
 		}
 		
 		func createProfile() {
-			AppRouter.pushStack(stack: .route1(.createProfile))
+			guard let walletAddress = self.walletAddress else { return }
+			AppRouter.pushStack(stack: .route1(.createProfile(walletAddress: walletAddress)))
 		}
 	}
 }

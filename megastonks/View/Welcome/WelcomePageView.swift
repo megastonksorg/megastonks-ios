@@ -62,8 +62,9 @@ struct WelcomePageView: View {
 					case .importWallet:
 						ImportSecretPhraseView()
 								.environmentObject(appRouter)
-					case .createProfile:
-							ProfileSettingsView(viewModel: .init(mode: .creation))
+					case .createProfile(let walletAddress):
+							let viewModel = ProfileSettingsView.ViewModel(mode: .creation, walletAddress: walletAddress)
+							ProfileSettingsView(viewModel: viewModel)
 								.environmentObject(appRouter)
 					}
 				}

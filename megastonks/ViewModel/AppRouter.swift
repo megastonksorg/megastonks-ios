@@ -14,7 +14,7 @@ fileprivate let stackKeyNotification: String = "stack"
 		enum Stack1: Hashable {
 			case createWallet
 			case importWallet
-			case createProfile
+			case createProfile(walletAddress: String)
 		}
 		enum Stack2: Hashable {
 		}

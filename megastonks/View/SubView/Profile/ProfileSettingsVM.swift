@@ -98,7 +98,7 @@ extension ProfileSettingsView {
 						  let image = self.image,
 						  let resizedImage = image.resizedTo(megaBytes: 2.0),
 						  let croppedImageData = resizedImage.croppedAndScaled(toFill: SizeConstants.profileImageSize).pngData() else { return }
-					
+
 					APIClient.shared.uploadImage(imageData: croppedImageData)
 						.flatMap { url -> AnyPublisher<RegisterResponse, APIClientError>  in
 							let registerRequestModel: RegisterRequest = RegisterRequest(
@@ -107,7 +107,7 @@ extension ProfileSettingsView {
 								fullName: self.name,
 								userName: self.userName
 							)
-							
+
 							return APIClient.shared.registerUser(model: registerRequestModel)
 						}
 						.receive(on: DispatchQueue.main)
