@@ -18,7 +18,7 @@ struct APPUrlRequest {
 	let httpMethod: HTTPMethod
 	let pathComponents: [String]
 	let query: [URLQueryItem]
-	let body: Codable?
+	let body: Encodable?
 	
 	var urlRequest: URLRequest {
 		get throws {
@@ -53,7 +53,7 @@ struct APPUrlRequest {
 		httpMethod: HTTPMethod,
 		pathComponents: [String],
 		query: [URLQueryItem] = [],
-		body: Data? = nil
+		body: Encodable? = nil
 	) {
 		self.token = token
 		self.httpMethod = httpMethod

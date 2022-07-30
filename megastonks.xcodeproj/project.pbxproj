@@ -27,6 +27,8 @@
 		D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */; };
 		D04B3D4A286BB59700543816 /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D49286BB59700543816 /* Font+Extension.swift */; };
 		D0555FC82880A01400BF241C /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = D0555FC72880A01400BF241C /* IdentifiedCollections */; };
+		D05856D4289512090073BDBC /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D3289512090073BDBC /* Register.swift */; };
+		D05856D7289516C80073BDBC /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D6289516C80073BDBC /* Authenticate.swift */; };
 		D05FA81D2892E20300D05B1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FA81C2892E20300D05B1A /* ErrorResponse.swift */; };
 		D06E27CA2882284A00C773E9 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = D06E27C92882284A00C773E9 /* SwiftKeychainWrapper */; };
 		D06E27CC2882289E00C773E9 /* KeychainWrapper+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */; };
@@ -82,6 +84,8 @@
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecretPhraseView.swift; sourceTree = "<group>"; };
 		D04B3D49286BB59700543816 /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
+		D05856D3289512090073BDBC /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		D05856D6289516C80073BDBC /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
 		D05FA81C2892E20300D05B1A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainWrapper+Keys.swift"; sourceTree = "<group>"; };
 		D06E27CD28822FA500C773E9 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
@@ -190,9 +194,19 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		D05856D5289513320073BDBC /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D05856D3289512090073BDBC /* Register.swift */,
+				D05856D6289516C80073BDBC /* Authenticate.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		D05FA81B2892E08900D05B1A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D05856D5289513320073BDBC /* Authentication */,
 				D05FA81C2892E20300D05B1A /* ErrorResponse.swift */,
 			);
 			path = API;
@@ -437,6 +451,7 @@
 			files = (
 				D00E102B2880DA1400E8E12E /* TermsAndConditionsView.swift in Sources */,
 				D0A2F0BE2831E3F800EC397C /* View+Frame.swift in Sources */,
+				D05856D4289512090073BDBC /* Register.swift in Sources */,
 				D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */,
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
 				D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */,
@@ -460,6 +475,7 @@
 				D06E27D2288246E800C773E9 /* AppProgressView.swift in Sources */,
 				D06E27D0288230E800C773E9 /* AppError.swift in Sources */,
 				D0A2F0BA2831E01C00EC397C /* Gradients.swift in Sources */,
+				D05856D7289516C80073BDBC /* Authenticate.swift in Sources */,
 				D042C2C028746CAD00EF62BF /* URLSession+Validation.swift in Sources */,
 				D06EFF95287F570100428711 /* ImagePicker.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,

@@ -8,5 +8,5 @@
 import Foundation
 
 struct Token {
-    let rawValue: String
+	let rawValue: String
 }

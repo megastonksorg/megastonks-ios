@@ -11,6 +11,9 @@ import Foundation
 typealias APIClientError = AppError.APIClientError
 
 protocol APIRequests {
+	func requestAuthentication() -> AnyPublisher<String, APIClientError>
+	func authenticateUser(model: AuthenticateRequest) -> AnyPublisher<AuthenticateResponse, APIClientError>
+	func registerUser(model: RegisterRequest) -> AnyPublisher<RegisterResponse, APIClientError>
 	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError>
 }
 
@@ -20,17 +23,47 @@ final class APIClient: APIRequests {
 
 	let decoder: JSONDecoder = JSONDecoder()
 	
+	func requestAuthentication() -> AnyPublisher<String, APIClientError> {
+		let authenticationRequest = APPUrlRequest(
+			token: nil,
+			httpMethod: .get,
+			pathComponents: ["requestAuthentication"],
+			body: nil
+		)
+		return apiRequest(appRequest: authenticationRequest, output: String.self)
+	}
+	
+	func authenticateUser(model: AuthenticateRequest) -> AnyPublisher<AuthenticateResponse, APIClientError> {
+		let authenticateRequest = APPUrlRequest(
+			token: nil,
+			httpMethod: .post,
+			pathComponents: ["authenticate"],
+			body: model
+		)
+		return apiRequest(appRequest: authenticateRequest, output: AuthenticateResponse.self)
+	}
+	
+	func registerUser(model: RegisterRequest) -> AnyPublisher<RegisterResponse, APIClientError> {
+		let registerRequest = APPUrlRequest(
+			token: nil,
+			httpMethod: .post,
+			pathComponents: ["register"],
+			body: model
+		)
+		return apiRequest(appRequest: registerRequest, output: RegisterResponse.self)
+	}
+	
 	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError> {
-		let appRequest = APPUrlRequest(
+		let imageUploadRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .put,
 			pathComponents: ["mediaUpload", "image"],
 			body: imageData
 		)
-		return apiRequest(appRequest: appRequest, output: URL.self)
+		return apiRequest(appRequest: imageUploadRequest, output: URL.self)
 	}
 	
-	private func apiRequest<Output: Codable>(appRequest: APPUrlRequest, output: Output.Type) -> AnyPublisher<Output, APIClientError> {
+	private func apiRequest<Output: Decodable>(appRequest: APPUrlRequest, output: Output.Type) -> AnyPublisher<Output, APIClientError> {
 		do {
 			return try urlRequest(urlRequest: appRequest.urlRequest)
 				.decode(type: output, decoder: self.decoder)
