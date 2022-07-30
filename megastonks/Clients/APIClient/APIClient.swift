@@ -27,7 +27,7 @@ final class APIClient: APIRequests {
 		let authenticationRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .get,
-			pathComponents: ["requestAuthentication"],
+			pathComponents: ["account", "requestAuthentication"],
 			body: nil
 		)
 		return apiRequest(appRequest: authenticationRequest, output: String.self)
@@ -37,7 +37,7 @@ final class APIClient: APIRequests {
 		let authenticateRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .post,
-			pathComponents: ["authenticate"],
+			pathComponents: ["account", "authenticate"],
 			body: model
 		)
 		return apiRequest(appRequest: authenticateRequest, output: AuthenticateResponse.self)
@@ -47,7 +47,7 @@ final class APIClient: APIRequests {
 		let registerRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .post,
-			pathComponents: ["register"],
+			pathComponents: ["account", "register"],
 			body: model
 		)
 		return apiRequest(appRequest: registerRequest, output: RegisterResponse.self)
