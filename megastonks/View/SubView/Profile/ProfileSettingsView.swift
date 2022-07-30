@@ -43,7 +43,7 @@ struct ProfileSettingsView: View {
 								)
 						}
 					}
-					.frame(dimension: 150)
+					.frame(dimension: SizeConstants.profileImageFrame)
 				}
 				.buttonStyle(AnimatedButtonStyle())
 				.padding(.top)

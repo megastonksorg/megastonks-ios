@@ -9,6 +9,10 @@ import Combine
 
 extension AuthenticateView {
 	@MainActor class ViewModel: ObservableObject {
+		@Published var user: User
 		
+		init(user: User) {
+			self.user = user
+		}
 	}
 }

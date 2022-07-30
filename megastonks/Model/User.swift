@@ -16,3 +16,15 @@ struct User: Encodable {
 	let acceptTerms: Bool
 	let isOnboarded: Bool
 }
+
+extension User {
+	static let noop: User = User(
+		walletAddress: "Wallet Address",
+		fullName: "Full Name",
+		userName: "UserName",
+		profilePhoto: URL(string: "https://megastonksfilestoragedev.blob.core.windows.net/images/001d0c1e-a971-47cd-ad53-eb468e4d3d94.png")!,
+		currency: "USD",
+		acceptTerms: false,
+		isOnboarded: false
+	)
+}
