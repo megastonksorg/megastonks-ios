@@ -14,5 +14,13 @@ extension AuthenticateView {
 		init(user: User) {
 			self.user = user
 		}
+		
+		func cancel() {
+			
+		}
+		
+		func authenticate() {
+			
+		}
 	}
 }

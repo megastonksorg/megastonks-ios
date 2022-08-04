@@ -48,14 +48,7 @@ struct TextFieldView: View {
 			}
 		}
 		.padding(10)
-		.background (
-			RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
-				.stroke(Color.megaStonksGray2, lineWidth: 1)
-				.overlay(
-					RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
-						.fill(Color.megaStonksGray)
-				)
-		)
+		.background(TextFieldBackgroundView())
 	}
 }
 

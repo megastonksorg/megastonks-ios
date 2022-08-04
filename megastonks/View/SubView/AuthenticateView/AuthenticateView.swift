@@ -17,7 +17,7 @@ struct AuthenticateView: View {
 	
 	var body: some View {
 		let user = viewModel.user
-		VStack(spacing: 20) {
+		VStack {
 			AsyncImage(url: user.profilePhoto) { image in
 				image
 					.resizable()
@@ -27,28 +27,102 @@ struct AuthenticateView: View {
 				ImagePlaceholderView()
 			}
 			.frame(dimension: SizeConstants.profileImageFrame)
+			.padding(.top, 40)
 			
-			Group {
-				Text("Welcome ")
-					.foregroundColor(.gray)
-				+
-				Text(user.fullName)
-					.font(.title3)
-				Text("@\(user.userName)")
-				Text("\(user.currency)")
-				Text("Wallet \(user.walletAddress)")
+			Text(viewModel.user.fullName)
+				.font(.title3)
+				.fontWeight(.semibold)
+				.foregroundColor(.white)
+				.padding(.top)
+			
+			Text(viewModel.user.userName)
+				.font(.app.subTitle)
+				.foregroundColor(.gray)
+			
+			VStack(spacing: 4) {
+				ExpandedHStack {
+					Text("ETHEREUM")
+						.font(.app.footer)
+						.foregroundColor(.gray)
+				}
+
+				ExpandedHStack {
+					Text(String(stringLiteral: "$_,_ _ _._ _ USD"))
+						.font(.title3)
+						.foregroundColor(.white)
+						.overlay {
+							Text(String(stringLiteral: "* * * * * * *"))
+								.offset(x: -18)
+						}
+				}
+				
+				ExpandedHStack {
+					Text("WALLET ADDRESS")
+						.font(.app.footer)
+						.foregroundColor(.gray)
+				}
+				.padding(.top, 30)
+
+				HStack {
+					Text(viewModel.user.walletAddress.uppercased())
+						.font(.title3)
+						.foregroundColor(.white)
+					
+					Spacer()
+					
+					Button(action: {}) {
+						Image(systemName: "doc.on.doc.fill")
+					}
+				}
 			}
-			.font(.body)
 			.foregroundColor(.white)
+			.multilineTextAlignment(.leading)
+			.lineLimit(1)
+			.padding()
+			.background(TextFieldBackgroundView())
+			.padding(.top, 60)
 			
 			Spacer()
+			
+			Text("By clicking authenticate, you will sign a message with your wallet for verification")
+				.font(.caption)
+				.foregroundColor(.gray)
+				.multilineTextAlignment(.center)
+			
 			Button(action: {}) {
-				Text("Click to Sign in")
+				Text("Authenticate")
 			}
 			.buttonStyle(ExpandedButtonStyle())
-			.padding(.horizontal)
+		}
+		.padding(.horizontal)
+		.toolbar {
+			ToolbarItem(placement: .principal) {
+				AppToolBar(.principal, principalTitle: "Authentication")
+			}
+			ToolbarItem(placement: .navigationBarTrailing) {
+				AppToolBar(
+					.trailing,
+					trailingTitle: "Cancel",
+					trailingClosure: { self.viewModel.cancel() }
+				)
+			}
 		}
 		.background(Color.app.background)
+	}
+}
+
+fileprivate struct ExpandedHStack<Content: View>: View {
+	@ViewBuilder var content: Content
+	
+	init(@ViewBuilder content: @escaping () -> Content) {
+		self.content = content()
+	}
+	
+	var body: some View {
+		HStack {
+			content
+			Spacer()
+		}
 	}
 }
 
