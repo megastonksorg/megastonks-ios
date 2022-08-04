@@ -11,16 +11,19 @@ struct TextFieldView: View {
 	
 	let title: String
 	let validation: FieldValidation
+	let submitLabel: SubmitLabel
 	let onCommit: () -> ()
 	@Binding var text: String
 	
 	init(title: String,
 		 validation: FieldValidation = FieldValidation.unknown,
+		 submitLabel: SubmitLabel = .return,
 		 onCommit: @escaping () -> () = {},
 		 text: Binding<String>
 	) {
 		self.title = title
 		self.validation = validation
+		self.submitLabel = submitLabel
 		self.onCommit = onCommit
 		self._text = text
 	}
@@ -34,6 +37,7 @@ struct TextFieldView: View {
 				TextField("", text: $text, onCommit: { onCommit() })
 					.font(.system(size: 15, weight: .semibold))
 					.foregroundColor(.white)
+					.submitLabel(submitLabel)
 			}
 			Group {
 				switch self.validation {

@@ -68,6 +68,11 @@ extension ProfileSettingsView {
 			}
 		}
 		
+		var isCompletionAllowed: Bool {
+			return nameValidation == .valid && userNameValidation == .valid &&
+			walletAddress != nil && image != nil
+		}
+		
 		init(
 			mode: ProfileSettingsView.ViewModel.Mode,
 			walletAddress: String? = nil,
@@ -88,48 +93,61 @@ extension ProfileSettingsView {
 		}
 		
 		func complete() {
-			switch self.mode {
-				case .editing: return
-				case .creation:
-					if walletAddress == nil {
-						self.banner = BannerData(detail: "Cannot Create user without a valid wallet", type: .warning)
-					}
-					guard let walletAddress = self.walletAddress,
-						  let image = self.image,
-						  let resizedImage = image.resizedTo(megaBytes: 2.0),
-						  let croppedImageData = resizedImage.croppedAndScaled(toFill: SizeConstants.profileImageSize).pngData() else { return }
-
-					APIClient.shared.uploadImage(imageData: croppedImageData)
-						.flatMap { url -> AnyPublisher<RegisterResponse, APIClientError>  in
-							let registerRequestModel: RegisterRequest = RegisterRequest(
-								walletAddress: walletAddress,
-								profilePhoto: url,
-								fullName: self.name,
-								userName: self.userName
-							)
-
-							return APIClient.shared.registerUser(model: registerRequestModel)
+			if isCompletionAllowed {
+				self.isLoading = true
+				switch self.mode {
+					case .editing: return
+					case .creation:
+						if walletAddress == nil {
+							self.banner = BannerData(detail: "Cannot Create user without a valid wallet", type: .warning)
+							self.isLoading = false
 						}
-						.receive(on: DispatchQueue.main)
-						.sink(receiveCompletion: { [weak self] completion in
-							guard let self = self else { return }
-							switch completion {
-								case .finished: return
-								case .failure(let error):
-									self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
+						guard let walletAddress = self.walletAddress,
+							  let image = self.image,
+							  let resizedImage = image.resizedTo(megaBytes: 2.0),
+							  let croppedImageData = resizedImage.croppedAndScaled(toFill: SizeConstants.profileImageSize).pngData()
+						else {
+							self.isLoading = false
+							return
+						}
+						
+						APIClient.shared.uploadImage(imageData: croppedImageData)
+							.flatMap { url -> AnyPublisher<RegisterResponse, APIClientError>  in
+								let registerRequestModel: RegisterRequest = RegisterRequest(
+									walletAddress: walletAddress,
+									profilePhoto: url,
+									fullName: self.name,
+									userName: self.userName
+								)
+
+								return APIClient.shared.registerUser(model: registerRequestModel)
 							}
-						}, receiveValue: { registerResponse in
-							let user: User = User(
-								walletAddress: registerResponse.walletAddress,
-								fullName: registerResponse.fullName,
-								userName: registerResponse.userName,
-								profilePhoto: registerResponse.profilePhoto,
-								currency: registerResponse.currency,
-								acceptTerms: registerResponse.acceptTerms,
-								isOnboarded: registerResponse.isOnboarded
-							)
-						})
-						.store(in: &cancellables)
+							.receive(on: DispatchQueue.main)
+							.sink(receiveCompletion: { [weak self] completion in
+								guard let self = self else { return }
+								switch completion {
+									case .finished: return
+									case .failure(let error):
+										self.isLoading = false
+										self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
+								}
+							}, receiveValue: { registerResponse in
+								let user: User = User(
+									walletAddress: registerResponse.walletAddress,
+									fullName: registerResponse.fullName,
+									userName: registerResponse.userName,
+									profilePhoto: registerResponse.profilePhoto,
+									currency: registerResponse.currency,
+									acceptTerms: registerResponse.acceptTerms,
+									isOnboarded: registerResponse.isOnboarded
+								)
+								self.isLoading = false
+							})
+							.store(in: &cancellables)
+				}
+			}
+			else {
+				self.banner = BannerData(title: "Missing Information", detail: "Cannot complete your request at this time. Please ensure all fields are valid and an image is selected", type: .info)
 			}
 		}
 	}

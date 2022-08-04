@@ -63,15 +63,16 @@ struct ProfileSettingsView: View {
 			)
 			.focused(self.$focusField, equals: .name)
 			
-			TextFieldView(title: "Username", validation: viewModel.userNameValidation, text: $viewModel.userName)
-				.focused(self.$focusField, equals: .userName)
+			TextFieldView(
+				title: "Username",
+				validation: viewModel.userNameValidation,
+				submitLabel: .done,
+				onCommit: { self.viewModel.complete() },
+				text: $viewModel.userName
+			)
+			.focused(self.$focusField, equals: .userName)
 			
 			Spacer()
-			
-			Button(action: { viewModel.complete() }) {
-				Text(self.viewModel.buttonTitle)
-			}
-			.buttonStyle(ExpandedButtonStyle())
 		}
 		.padding(.horizontal)
 		.background(Color.app.background)
@@ -84,7 +85,9 @@ struct ProfileSettingsView: View {
 				AppToolBar(.principal)
 			}
 			ToolbarItem(placement: .navigationBarTrailing) {
-				AppToolBar(.trailing, trailingClosure: {})
+				AppToolBar(.trailing, trailingClosure: { self.viewModel.complete() })
+					.disabled(!self.viewModel.isCompletionAllowed)
+					.opacity(self.viewModel.isCompletionAllowed ? 1.0 : 0.5)
 			}
 		}
 		.sheet(isPresented: $viewModel.isShowingImagePicker) {
