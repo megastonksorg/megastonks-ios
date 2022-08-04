@@ -70,7 +70,7 @@ struct AuthenticateView: View {
 					
 					Spacer()
 					
-					Button(action: {}) {
+					Button(action: { self.viewModel.copyAddress() }) {
 						Image(systemName: "doc.on.doc.fill")
 					}
 				}
@@ -95,6 +95,7 @@ struct AuthenticateView: View {
 			.buttonStyle(ExpandedButtonStyle())
 		}
 		.padding(.horizontal)
+		.banner(data: self.$viewModel.banner)
 		.toolbar {
 			ToolbarItem(placement: .principal) {
 				AppToolBar(.principal, principalTitle: "Authentication")

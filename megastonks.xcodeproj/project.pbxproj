@@ -23,6 +23,8 @@
 		D042C2C228746CE500EF62BF /* APPUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2C128746CE500EF62BF /* APPUrlRequest.swift */; };
 		D042C2C428746F3500EF62BF /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C2C328746F3500EF62BF /* Token.swift */; };
 		D0442A28289B4FDC0027D982 /* TextFieldBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A27289B4FDC0027D982 /* TextFieldBackgroundView.swift */; };
+		D0442A2A289B56AD0027D982 /* PasteboardClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A29289B56AD0027D982 /* PasteboardClient.swift */; };
+		D0442A2C289B58CD0027D982 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2B289B58CD0027D982 /* FeedbackClient.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */; };
@@ -85,6 +87,8 @@
 		D042C2C128746CE500EF62BF /* APPUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPUrlRequest.swift; sourceTree = "<group>"; };
 		D042C2C328746F3500EF62BF /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D0442A27289B4FDC0027D982 /* TextFieldBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBackgroundView.swift; sourceTree = "<group>"; };
+		D0442A29289B56AD0027D982 /* PasteboardClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardClient.swift; sourceTree = "<group>"; };
+		D0442A2B289B58CD0027D982 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecretPhraseView.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 			children = (
 				D042C2B7287467F400EF62BF /* APIClient */,
 				D039C82A28484BAD00AA3AD2 /* WalletClient.swift */,
+				D0442A29289B56AD0027D982 /* PasteboardClient.swift */,
+				D0442A2B289B58CD0027D982 /* FeedbackClient.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -482,6 +488,7 @@
 				D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */,
 				D06E27DB28830DB500C773E9 /* ImportSecretPhraseVM.swift in Sources */,
 				D06E27D628824B0D00C773E9 /* BannerViewModifier.swift in Sources */,
+				D0442A2C289B58CD0027D982 /* FeedbackClient.swift in Sources */,
 				D06EFF84287D4A9B00428711 /* String+Extension.swift in Sources */,
 				D00E102D2880DA7A00E8E12E /* EULA.swift in Sources */,
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
@@ -490,6 +497,7 @@
 				D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */,
 				D042C2C428746F3500EF62BF /* Token.swift in Sources */,
+				D0442A2A289B56AD0027D982 /* PasteboardClient.swift in Sources */,
 				D06E27CC2882289E00C773E9 /* KeychainWrapper+Keys.swift in Sources */,
 				D003DB56286A8E3200BCE964 /* AppBackgroundView.swift in Sources */,
 				D042C2B4287464F400EF62BF /* AppRouter.swift in Sources */,
