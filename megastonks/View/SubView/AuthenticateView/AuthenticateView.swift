@@ -18,6 +18,21 @@ struct AuthenticateView: View {
 	var body: some View {
 		let user = viewModel.user
 		VStack {
+			HStack {
+				Button(action: {}) {
+					Text("Cancel")
+						.opacity(0)
+				}
+				Spacer()
+				Text("Authentication")
+					.fontWeight(.bold)
+					.foregroundColor(.white)
+				Spacer()
+				Button(action: { self.viewModel.cancel() }) {
+					Text("Cancel")
+						.opacity(0.8)
+				}
+			}
 			AsyncImage(url: user.profilePhoto) { image in
 				image
 					.resizable()
@@ -98,18 +113,6 @@ struct AuthenticateView: View {
 		}
 		.padding(.horizontal)
 		.banner(data: self.$viewModel.banner)
-		.toolbar {
-			ToolbarItem(placement: .principal) {
-				AppToolBar(.principal, principalTitle: "Authentication")
-			}
-			ToolbarItem(placement: .navigationBarTrailing) {
-				AppToolBar(
-					.trailing,
-					trailingTitle: "Cancel",
-					trailingClosure: { self.viewModel.cancel() }
-				)
-			}
-		}
 		.background(Color.app.background)
 	}
 }
