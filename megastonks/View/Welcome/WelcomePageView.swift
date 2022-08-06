@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct WelcomePageView: View {
-	@StateObject var viewModel: ViewModel = ViewModel()
+	@StateObject var viewModel: ViewModel
 	
 	@EnvironmentObject var appRouter: AppRouter
 	
-	init() {
+	init(viewModel: ViewModel) {
 		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.megaStonksGreen)
 		UIPageControl.appearance().pageIndicatorTintColor = UIColor(.megaStonksGreen).withAlphaComponent(0.2)
+		self._viewModel = StateObject(wrappedValue: viewModel)
 	}
 	
 	var body: some View {
@@ -77,6 +78,6 @@ struct WelcomePageView: View {
 
 struct WelcomePageView_Previews: PreviewProvider {
 	static var previews: some View {
-		WelcomePageView()
+		WelcomePageView(viewModel: WelcomePageView.ViewModel())
 	}
 }

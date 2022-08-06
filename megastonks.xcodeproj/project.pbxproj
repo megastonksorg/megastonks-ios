@@ -25,6 +25,7 @@
 		D0442A28289B4FDC0027D982 /* TextFieldBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A27289B4FDC0027D982 /* TextFieldBackgroundView.swift */; };
 		D0442A2A289B56AD0027D982 /* PasteboardClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A29289B56AD0027D982 /* PasteboardClient.swift */; };
 		D0442A2C289B58CD0027D982 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2B289B58CD0027D982 /* FeedbackClient.swift */; };
+		D0442A30289D972C0027D982 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2F289D972C0027D982 /* AppState.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */; };
@@ -89,6 +90,7 @@
 		D0442A27289B4FDC0027D982 /* TextFieldBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBackgroundView.swift; sourceTree = "<group>"; };
 		D0442A29289B56AD0027D982 /* PasteboardClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardClient.swift; sourceTree = "<group>"; };
 		D0442A2B289B58CD0027D982 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
+		D0442A2F289D972C0027D982 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecretPhraseView.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				D042C2B3287464F400EF62BF /* AppRouter.swift */,
+				D0442A2F289D972C0027D982 /* AppState.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				D0A2F0B12831CB9E00EC397C /* Colors.swift in Sources */,
 				D00E10262880CFA100E8E12E /* NavBarTheme.swift in Sources */,
 				D0DFFBB128927BA500784BAE /* UIImage+Extensions.swift in Sources */,
+				D0442A30289D972C0027D982 /* AppState.swift in Sources */,
 				D06EFF91287F4BE500428711 /* TextFieldView.swift in Sources */,
 				D0A1EE5F2847010100BE886F /* ButtonStyles.swift in Sources */,
 				D042C2C428746F3500EF62BF /* Token.swift in Sources */,

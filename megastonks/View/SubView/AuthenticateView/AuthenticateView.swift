@@ -49,6 +49,7 @@ struct AuthenticateView: View {
 				ExpandedHStack {
 					Text(String(stringLiteral: "$_,_ _ _._ _ USD"))
 						.font(.title3)
+						.fontWeight(.semibold)
 						.foregroundColor(.white)
 						.overlay {
 							Text(String(stringLiteral: "* * * * * * *"))
@@ -62,10 +63,11 @@ struct AuthenticateView: View {
 						.foregroundColor(.gray)
 				}
 				.padding(.top, 30)
-
+				
 				HStack {
 					Text(viewModel.user.walletAddress.uppercased())
 						.font(.title3)
+						.fontWeight(.semibold)
 						.foregroundColor(.white)
 					
 					Spacer()
