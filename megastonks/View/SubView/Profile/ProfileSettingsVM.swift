@@ -117,9 +117,10 @@ extension ProfileSettingsView {
 									walletAddress: walletAddress,
 									profilePhoto: url,
 									fullName: self.name,
-									userName: self.userName
+									userName: self.userName,
+									acceptTerms: true
 								)
-
+								
 								return APIClient.shared.registerUser(model: registerRequestModel)
 							}
 							.receive(on: DispatchQueue.main)
@@ -142,6 +143,7 @@ extension ProfileSettingsView {
 									isOnboarded: registerResponse.isOnboarded
 								)
 								self.isLoading = false
+								AppState.updateAppState(with: .changeAppMode(.authentication(AuthenticateView.ViewModel(user: user))))
 							})
 							.store(in: &cancellables)
 				}

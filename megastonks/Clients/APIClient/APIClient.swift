@@ -72,7 +72,7 @@ final class APIClient: APIRequests {
 						return error
 					}
 					else {
-						return AppError.APIClientError.rawError(error.localizedDescription)
+						return AppError.APIClientError.rawError(String(describing: error))
 					}
 				}
 				.eraseToAnyPublisher()

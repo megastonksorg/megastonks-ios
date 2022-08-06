@@ -12,13 +12,14 @@ struct RegisterRequest: Encodable {
 	let profilePhoto: URL
 	let fullName: String
 	let userName: String
+	let acceptTerms: Bool
 }
 
 struct RegisterResponse: Decodable {
 	let walletAddress: String
-	let profilePhoto: URL
 	let fullName: String
 	let userName: String
+	let profilePhoto: URL
 	let currency: String
 	let acceptTerms: Bool
 	let isOnboarded: Bool
