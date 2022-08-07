@@ -11,6 +11,7 @@ extension AuthenticateView {
 	@MainActor class ViewModel: ObservableObject {
 		@Published var user: User
 		
+		@Published var isShowingAlert: Bool = false
 		@Published var banner: BannerData?
 		
 		init(user: User) {
@@ -23,7 +24,12 @@ extension AuthenticateView {
 		}
 		
 		func cancel() {
-			
+			FeedbackClient.shared.light()
+			self.isShowingAlert = true
+		}
+		
+		func alertYesTapped() {
+			AppState.updateAppState(with: .changeAppMode(.welcome(WelcomePageView.ViewModel())))
 		}
 		
 		func authenticate() {

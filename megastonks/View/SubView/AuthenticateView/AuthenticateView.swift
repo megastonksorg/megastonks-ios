@@ -19,7 +19,7 @@ struct AuthenticateView: View {
 		let user = viewModel.user
 		VStack {
 			HStack {
-				Button(action: {}) {
+				Button(action: { viewModel.cancel() }) {
 					Text("Cancel")
 						.opacity(0)
 				}
@@ -112,6 +112,21 @@ struct AuthenticateView: View {
 			.buttonStyle(ExpandedButtonStyle())
 		}
 		.padding(.horizontal)
+		.alert(
+			"Do you want to cancel the authentication process",
+			isPresented: $viewModel.isShowingAlert,
+			actions: {
+				Button(role: .destructive, action: { viewModel.alertYesTapped() }) {
+					Text("Yes")
+				}
+				Button(role: .cancel, action: {}) {
+					Text("No")
+				}
+			},
+			message: {
+				Text("Cancelling authentication will bring you back to the welcome screen. Your account creation will be saved")
+			}
+		)
 		.banner(data: self.$viewModel.banner)
 		.background(Color.app.background)
 	}

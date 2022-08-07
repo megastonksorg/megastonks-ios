@@ -10,7 +10,7 @@ import UIKit
 class FeedbackClient {
 	static let shared: FeedbackClient = FeedbackClient()
 	
-	static func light() {
+	func light() {
 		let impactFeedbackgenerator = UIImpactFeedbackGenerator(style: .light)
 		impactFeedbackgenerator.prepare()
 		impactFeedbackgenerator.impactOccurred()
