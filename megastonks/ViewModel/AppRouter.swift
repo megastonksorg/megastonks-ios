@@ -44,7 +44,7 @@ fileprivate let stackKeyNotification: String = "stack"
 		NotificationCenter
 			.default.addObserver(
 				self,
-				selector: #selector(handlePopStackRequest),
+				selector: #selector(handlePopToRootRequest),
 				name: .popToRoot,
 				object: nil
 			)
