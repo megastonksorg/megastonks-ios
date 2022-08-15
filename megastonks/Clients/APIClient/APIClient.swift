@@ -33,6 +33,17 @@ final class APIClient: APIRequests {
 		return apiRequest(appRequest: authenticationRequest, output: String.self)
 	}
 	
+	func isUsernameAvailable(userName: String) -> AnyPublisher<Bool, APIClientError> {
+		let userNameAvailableRequest = APPUrlRequest(
+			token: nil,
+			httpMethod: .post,
+			pathComponents: ["account", "isUserNameAvailable"],
+			query: [URLQueryItem(name: "userName", value: userName)],
+			body: nil
+		)
+		return apiRequest(appRequest: userNameAvailableRequest, output: Bool.self)
+	}
+	
 	func authenticateUser(model: AuthenticateRequest) -> AnyPublisher<AuthenticateResponse, APIClientError> {
 		let authenticateRequest = APPUrlRequest(
 			token: nil,
