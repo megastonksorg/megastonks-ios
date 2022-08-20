@@ -16,6 +16,7 @@ extension VerifySecretPhraseView {
 		
 		@Published var currentSelection: UUID? = nil
 		
+		@Published var isLoading: Bool = false
 		@Published var banner: BannerData?
 		
 		var isContinueButtonDisabled: Bool {
@@ -66,13 +67,16 @@ extension VerifySecretPhraseView {
 		}
 		
 		func verifyMnemonicPhrase() {
+			self.isLoading = true
 			let input = self.phraseInput.map{ $0.text }.joined(separator: " ")
 			
 			switch WalletClient.shared.verifyMnemonic(mnemonic: input) {
 				case .success(let walletAddress):
+					self.isLoading = false
 					AppRouter.pushStack(stack: .route1(.createProfile(walletAddress: walletAddress)))
 					
 				case .failure(let error):
+					self.isLoading = false
 					self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
 			}
 		}

@@ -56,11 +56,18 @@ struct VerifySecretPhraseView: View {
 					.fontWeight(.medium)
 			}
 			.buttonStyle(ExpandedButtonStyle(invertedStyle: false))
-			.disabled(self.viewModel.isContinueButtonDisabled)
+			.disabled(!self.viewModel.isContinueButtonDisabled)
 		}
 		.padding()
 		.multilineTextAlignment(.center)
 		.background(Color.app.background)
+		.overlay(isShown: self.viewModel.banner != nil) {
+			Color.black.opacity(0.8)
+				.banner(data: $viewModel.banner)
+		}
+		.overlay(isShown: viewModel.isLoading) {
+			AppProgressView()
+		}
 	}
 }
 
