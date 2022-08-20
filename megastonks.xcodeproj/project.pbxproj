@@ -26,6 +26,7 @@
 		D0442A2A289B56AD0027D982 /* PasteboardClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A29289B56AD0027D982 /* PasteboardClient.swift */; };
 		D0442A2C289B58CD0027D982 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2B289B58CD0027D982 /* FeedbackClient.swift */; };
 		D0442A30289D972C0027D982 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2F289D972C0027D982 /* AppState.swift */; };
+		D04AC32928AAF90A001E3C46 /* VerifySecretPhraseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
 		D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */; };
@@ -91,6 +92,7 @@
 		D0442A29289B56AD0027D982 /* PasteboardClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardClient.swift; sourceTree = "<group>"; };
 		D0442A2B289B58CD0027D982 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		D0442A2F289D972C0027D982 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseVM.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
 		D04B3D47286BB43400543816 /* NewSecretPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSecretPhraseView.swift; sourceTree = "<group>"; };
@@ -176,9 +178,9 @@
 		D042C2AC286D4BA300EF62BF /* SecretPhrase */ = {
 			isa = PBXGroup;
 			children = (
+				D04AC32728AAF8E9001E3C46 /* VerifySecretPhrase */,
 				D06E27D928830D9A00C773E9 /* ImportSecretPhrase */,
 				D00E10272880D7E700E8E12E /* NewSecretPhrase */,
-				D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */,
 			);
 			path = SecretPhrase;
 			sourceTree = "<group>";
@@ -209,6 +211,15 @@
 				D042C2C128746CE500EF62BF /* APPUrlRequest.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D04AC32728AAF8E9001E3C46 /* VerifySecretPhrase */ = {
+			isa = PBXGroup;
+			children = (
+				D042C2AA286D4B8500EF62BF /* VerifySecretPhraseView.swift */,
+				D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */,
+			);
+			path = VerifySecretPhrase;
 			sourceTree = "<group>";
 		};
 		D05856D5289513320073BDBC /* Authentication */ = {
@@ -486,6 +497,7 @@
 				D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */,
 				D039C82B28484BAD00AA3AD2 /* WalletClient.swift in Sources */,
 				D0A2F09D2831BC6700EC397C /* AppView.swift in Sources */,
+				D04AC32928AAF90A001E3C46 /* VerifySecretPhraseVM.swift in Sources */,
 				D07A6601287B75DF00F6EF8C /* ImportSecretPhraseView.swift in Sources */,
 				D0F2D6AF2886960A005EE41E /* Notification+Name.swift in Sources */,
 				D04B3D48286BB43400543816 /* NewSecretPhraseView.swift in Sources */,
