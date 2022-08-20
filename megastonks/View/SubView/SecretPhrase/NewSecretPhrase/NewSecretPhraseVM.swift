@@ -49,9 +49,8 @@ extension NewSecretPhraseView {
 			}
 		}
 		
-		func createProfile() {
-			guard let walletAddress = self.walletAddress else { return }
-			AppRouter.pushStack(stack: .route1(.createProfile(walletAddress: walletAddress)))
+		func verifyMnemonicPhrase() {
+			AppRouter.pushStack(stack: .route1(.verifySecretPhrase))
 		}
 	}
 }

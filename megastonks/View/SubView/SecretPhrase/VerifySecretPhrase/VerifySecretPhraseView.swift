@@ -10,7 +10,9 @@ import IdentifiedCollections
 
 struct VerifySecretPhraseView: View {
 	
-	@StateObject var viewModel: ViewModel
+	@StateObject var viewModel: ViewModel = ViewModel()
+	
+	@EnvironmentObject var appRouter: AppRouter
 	
 	var body: some View {
 		VStack(spacing: 10) {
@@ -63,7 +65,14 @@ struct VerifySecretPhraseView: View {
 }
 
 struct VerifySecretPhraseView_Previews: PreviewProvider {
+	static var viewModel: VerifySecretPhraseView.ViewModel {
+		let viewModel = VerifySecretPhraseView.ViewModel()
+		viewModel.phraseInput = MnemonicPhrase.empty
+		viewModel.phraseOptions = MnemonicPhrase.previewAlternateStyle
+		return viewModel
+	}
+	
 	static var previews: some View {
-		VerifySecretPhraseView(viewModel: .init(phraseInput: MnemonicPhrase.previewEmpty, phraseOptions: MnemonicPhrase.previewAlternateStyle))
+		VerifySecretPhraseView(viewModel: viewModel)
 	}
 }

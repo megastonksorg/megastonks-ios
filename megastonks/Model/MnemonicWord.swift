@@ -54,8 +54,10 @@ struct MnemonicPhrase {
 			MnemonicWord(text: "look", isSelectable: true, isAlternateStyle: true),
 		]
 	}()
-	
-	static var previewEmpty: IdentifiedArrayOf<MnemonicWord> = {
+}
+
+extension MnemonicPhrase {
+	static var empty: IdentifiedArrayOf<MnemonicWord> = {
 		[
 			MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),
 			MnemonicWord(text: "", isSelectable: true, isAlternateStyle: false),

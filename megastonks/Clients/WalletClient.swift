@@ -44,6 +44,22 @@ class WalletClient {
 		return .success(mnemonic)
 	}
 	
+	func verifyMnemonic(mnemonic: String) -> Result<String, WalletClientError> {
+		switch self.getMnemonic() {
+			case .success(let savedMnemonic):
+				if mnemonic == savedMnemonic {
+					guard case .success(let wallet) = self.importWallet(mnemonic: mnemonic) else { return .failure(.couldNotVerifyMnemonic) }
+					
+					return .success(wallet.getAddressForCoin(coin: coinType))
+				}
+				else {
+					return .failure(.couldNotVerifyMnemonic)
+				}
+			case .failure(let error):
+				return .failure(error)
+		}
+	}
+	
 	func signMessage(message: String) -> Result<SignedMessage, WalletClientError> {
 		guard
 			let mnemonic: String = KeychainWrapper.standard.string(forKey: .mnemonic),

@@ -14,16 +14,29 @@ extension VerifySecretPhraseView {
 		@Published var phraseInput: IdentifiedArrayOf<MnemonicWord>
 		@Published var phraseOptions: IdentifiedArrayOf<MnemonicWord>
 		
-		@Published var currentSelection: UUID?
+		@Published var currentSelection: UUID? = nil
+		
+		@Published var banner: BannerData?
 		
 		var isContinueButtonDisabled: Bool {
 			self.phraseOptions.isEmpty
 		}
 		
-		init(phraseInput: IdentifiedArrayOf<MnemonicWord>, phraseOptions: IdentifiedArrayOf<MnemonicWord>, currentSelection: UUID? = nil) {
-			self.phraseInput = phraseInput
-			self.phraseOptions = phraseOptions
-			self.currentSelection = currentSelection
+		init() {
+			self.phraseInput = MnemonicPhrase.empty
+			switch WalletClient.shared.getMnemonic() {
+				case .success(let mnemonic):
+					self.phraseOptions = IdentifiedArrayOf(uniqueElements:
+						mnemonic
+							.split(separator: " ")
+							.map {
+								MnemonicWord(text: String($0), isSelectable: true, isAlternateStyle: true)
+							}
+					)
+				case .failure(let error):
+					self.phraseOptions = []
+					self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
+			}
 		}
 		
 		func phraseInputSelected(input: MnemonicWord) {
@@ -53,7 +66,15 @@ extension VerifySecretPhraseView {
 		}
 		
 		func verifyMnemonicPhrase() {
+			let input = self.phraseInput.map{ $0.text }.joined(separator: " ")
 			
+			switch WalletClient.shared.verifyMnemonic(mnemonic: input) {
+				case .success(let walletAddress):
+					AppRouter.pushStack(stack: .route1(.createProfile(walletAddress: walletAddress)))
+					
+				case .failure(let error):
+					self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
+			}
 		}
 	}
 }

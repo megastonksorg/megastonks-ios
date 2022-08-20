@@ -65,7 +65,7 @@ struct NewSecretPhraseView: View {
 					.foregroundColor(.gray)
 					.multilineTextAlignment(.center)
 				
-				Button(action: { viewModel.createProfile() }) {
+				Button(action: { viewModel.verifyMnemonicPhrase() }) {
 					Text("I saved it somewhere safe")
 						.fontWeight(.medium)
 				}

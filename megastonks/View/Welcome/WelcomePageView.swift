@@ -57,13 +57,16 @@ struct WelcomePageView: View {
 			.navigationDestination(for: AppRouter.Route.Stack1.self) { route in
 				Group {
 					switch route {
-					case .createWallet:
-						NewSecretPhraseView()
+						case .createWallet:
+							NewSecretPhraseView()
 								.environmentObject(appRouter)
-					case .importWallet:
-						ImportSecretPhraseView()
+						case .importWallet:
+							ImportSecretPhraseView()
 								.environmentObject(appRouter)
-					case .createProfile(let walletAddress):
+						case .verifySecretPhrase:
+							VerifySecretPhraseView()
+								.environmentObject(appRouter)
+						case .createProfile(let walletAddress):
 							let viewModel = ProfileSettingsView.ViewModel(mode: .creation, walletAddress: walletAddress)
 							ProfileSettingsView(viewModel: viewModel)
 								.environmentObject(appRouter)
