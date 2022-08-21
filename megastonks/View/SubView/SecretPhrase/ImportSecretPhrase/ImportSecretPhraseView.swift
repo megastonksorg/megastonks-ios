@@ -94,7 +94,7 @@ struct ImportSecretPhraseView: View {
 				Text("Continue to Import")
 			}
 			.buttonStyle(ExpandedButtonStyle())
-			.disabled(!viewModel.isContinueButtonEnabled())
+			.disabled(!viewModel.isContinueButtonEnabled)
 			.padding()
 			.padding(.bottom, 20)
 		}

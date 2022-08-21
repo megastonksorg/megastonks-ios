@@ -49,6 +49,13 @@ extension ImportSecretPhraseView {
 		
 		@Published var focusedField: Field?
 		
+		var isContinueButtonEnabled: Bool {
+			return self.word1.isRealWord && self.word2.isRealWord && self.word3.isRealWord
+			&& self.word4.isRealWord && self.word5.isRealWord && self.word6.isRealWord
+			&& self.word7.isRealWord && self.word8.isRealWord && self.word9.isRealWord
+			&& self.word10.isRealWord && self.word11.isRealWord && self.word12.isRealWord
+		}
+		
 		func advanceToNextField() {
 			guard let currentField = self.focusedField?.rawValue else { return }
 			if self.focusedField != .twelve {
@@ -88,18 +95,11 @@ extension ImportSecretPhraseView {
 			self.word12 = ""
 		}
 		
-		func isContinueButtonEnabled() -> Bool {
-			return self.word1.isRealWord && self.word2.isRealWord && self.word3.isRealWord
-			&& self.word4.isRealWord && self.word5.isRealWord && self.word6.isRealWord
-			&& self.word7.isRealWord && self.word8.isRealWord && self.word9.isRealWord
-			&& self.word10.isRealWord && self.word11.isRealWord && self.word12.isRealWord
-		}
-		
 		func importWallet() {
 			let mnemonic: String = [
 				self.word1, self.word2, self.word3, self.word4, self.word5, self.word6,
 				self.word7, self.word8, self.word9, self.word10, self.word11, self.word12
-			].joined()
+			].joined(separator: " ")
 			
 			switch walletClient.importWallet(mnemonic: mnemonic) {
 			case .success(_): return
