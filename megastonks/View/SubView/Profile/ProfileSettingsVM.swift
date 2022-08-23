@@ -95,11 +95,11 @@ extension ProfileSettingsView {
 									switch completion {
 										case .finished: return
 										case .failure(let error):
+											self.userNameValidation = .invalid
 											self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
 									}
-								}, receiveValue: { isAvailable in
-									if isAvailable { self.userNameValidation = .valid }
-									else { self.userNameValidation = .invalid }
+								}, receiveValue: { _ in
+									self.userNameValidation = .valid
 								})
 								.store(in: &self.cancellables)
 						}

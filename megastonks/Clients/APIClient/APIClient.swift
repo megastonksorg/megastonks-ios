@@ -12,6 +12,7 @@ typealias APIClientError = AppError.APIClientError
 
 protocol APIRequests {
 	func requestAuthentication() -> AnyPublisher<String, APIClientError>
+	func isUsernameAvailable(userName: String) -> AnyPublisher<SuccessResponse, APIClientError>
 	func authenticateUser(model: AuthenticateRequest) -> AnyPublisher<AuthenticateResponse, APIClientError>
 	func registerUser(model: RegisterRequest) -> AnyPublisher<RegisterResponse, APIClientError>
 	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError>
@@ -33,7 +34,7 @@ final class APIClient: APIRequests {
 		return apiRequest(appRequest: authenticationRequest, output: String.self)
 	}
 	
-	func isUsernameAvailable(userName: String) -> AnyPublisher<Bool, APIClientError> {
+	func isUsernameAvailable(userName: String) -> AnyPublisher<SuccessResponse, APIClientError> {
 		let userNameAvailableRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .post,
@@ -41,7 +42,7 @@ final class APIClient: APIRequests {
 			query: [URLQueryItem(name: "userName", value: userName)],
 			body: nil
 		)
-		return apiRequest(appRequest: userNameAvailableRequest, output: Bool.self)
+		return apiRequest(appRequest: userNameAvailableRequest, output: SuccessResponse.self)
 	}
 	
 	func authenticateUser(model: AuthenticateRequest) -> AnyPublisher<AuthenticateResponse, APIClientError> {

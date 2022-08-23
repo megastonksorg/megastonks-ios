@@ -26,6 +26,7 @@
 		D0442A2A289B56AD0027D982 /* PasteboardClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A29289B56AD0027D982 /* PasteboardClient.swift */; };
 		D0442A2C289B58CD0027D982 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2B289B58CD0027D982 /* FeedbackClient.swift */; };
 		D0442A30289D972C0027D982 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2F289D972C0027D982 /* AppState.swift */; };
+		D04A4D7028B524BC00F77198 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A4D6F28B524BC00F77198 /* SuccessResponse.swift */; };
 		D04AC32928AAF90A001E3C46 /* VerifySecretPhraseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
@@ -92,6 +93,7 @@
 		D0442A29289B56AD0027D982 /* PasteboardClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardClient.swift; sourceTree = "<group>"; };
 		D0442A2B289B58CD0027D982 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		D0442A2F289D972C0027D982 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D04A4D6F28B524BC00F77198 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
 		D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseVM.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				D05856D5289513320073BDBC /* Authentication */,
 				D05FA81C2892E20300D05B1A /* ErrorResponse.swift */,
+				D04A4D6F28B524BC00F77198 /* SuccessResponse.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */,
 				D06E27D828824B9A00C773E9 /* View+Extensions.swift in Sources */,
 				D06EFF88287F387000428711 /* FieldValidation.swift in Sources */,
+				D04A4D7028B524BC00F77198 /* SuccessResponse.swift in Sources */,
 				D05856DE289533FE0073BDBC /* AuthenticateVM.swift in Sources */,
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
 				D05856DC289533F10073BDBC /* AuthenticateView.swift in Sources */,
