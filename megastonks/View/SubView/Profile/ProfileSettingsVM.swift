@@ -22,6 +22,9 @@ extension ProfileSettingsView {
 			case userName
 		}
 		
+		//Clients
+		let apiClient = APIClient.shared
+		
 		let mode: ProfileSettingsView.ViewModel.Mode
 		
 		var walletAddress: String?
@@ -89,7 +92,7 @@ extension ProfileSettingsView {
 					else {
 						if userName.trimmingCharacters(in: .whitespacesAndNewlines).isValidUserName {
 							//Check API for availability
-							APIClient.shared.isUsernameAvailable(userName: userName)
+							self.apiClient.isUsernameAvailable(userName: userName)
 								.receive(on: DispatchQueue.main)
 								.sink(receiveCompletion: { completion in
 									switch completion {
@@ -134,7 +137,7 @@ extension ProfileSettingsView {
 							return
 						}
 						
-						APIClient.shared.uploadImage(imageData: croppedImageData)
+						self.apiClient.uploadImage(imageData: croppedImageData)
 							.flatMap { url -> AnyPublisher<RegisterResponse, APIClientError>  in
 								let registerRequestModel: RegisterRequest = RegisterRequest(
 									walletAddress: walletAddress,
@@ -144,7 +147,7 @@ extension ProfileSettingsView {
 									acceptTerms: true
 								)
 								
-								return APIClient.shared.registerUser(model: registerRequestModel)
+								return self.apiClient.registerUser(model: registerRequestModel)
 							}
 							.receive(on: DispatchQueue.main)
 							.sink(receiveCompletion: { [weak self] completion in

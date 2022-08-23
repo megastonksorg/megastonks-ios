@@ -26,7 +26,7 @@
 		D0442A2A289B56AD0027D982 /* PasteboardClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A29289B56AD0027D982 /* PasteboardClient.swift */; };
 		D0442A2C289B58CD0027D982 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2B289B58CD0027D982 /* FeedbackClient.swift */; };
 		D0442A30289D972C0027D982 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2F289D972C0027D982 /* AppState.swift */; };
-		D04A4D7028B524BC00F77198 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A4D6F28B524BC00F77198 /* SuccessResponse.swift */; };
+		D04A4D7028B524BC00F77198 /* ResponseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A4D6F28B524BC00F77198 /* ResponseTypes.swift */; };
 		D04AC32928AAF90A001E3C46 /* VerifySecretPhraseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
@@ -38,7 +38,6 @@
 		D05856D92895218E0073BDBC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856D82895218E0073BDBC /* User.swift */; };
 		D05856DC289533F10073BDBC /* AuthenticateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856DB289533F10073BDBC /* AuthenticateView.swift */; };
 		D05856DE289533FE0073BDBC /* AuthenticateVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05856DD289533FE0073BDBC /* AuthenticateVM.swift */; };
-		D05FA81D2892E20300D05B1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05FA81C2892E20300D05B1A /* ErrorResponse.swift */; };
 		D06E27CA2882284A00C773E9 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = D06E27C92882284A00C773E9 /* SwiftKeychainWrapper */; };
 		D06E27CC2882289E00C773E9 /* KeychainWrapper+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */; };
 		D06E27CE28822FA500C773E9 /* Data+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E27CD28822FA500C773E9 /* Data+Hex.swift */; };
@@ -93,7 +92,7 @@
 		D0442A29289B56AD0027D982 /* PasteboardClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardClient.swift; sourceTree = "<group>"; };
 		D0442A2B289B58CD0027D982 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		D0442A2F289D972C0027D982 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		D04A4D6F28B524BC00F77198 /* SuccessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
+		D04A4D6F28B524BC00F77198 /* ResponseTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTypes.swift; sourceTree = "<group>"; };
 		D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseVM.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 		D05856D82895218E0073BDBC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D05856DB289533F10073BDBC /* AuthenticateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateView.swift; sourceTree = "<group>"; };
 		D05856DD289533FE0073BDBC /* AuthenticateVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateVM.swift; sourceTree = "<group>"; };
-		D05FA81C2892E20300D05B1A /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		D06E27CB2882289E00C773E9 /* KeychainWrapper+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainWrapper+Keys.swift"; sourceTree = "<group>"; };
 		D06E27CD28822FA500C773E9 /* Data+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Hex.swift"; sourceTree = "<group>"; };
 		D06E27CF288230E800C773E9 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -246,8 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				D05856D5289513320073BDBC /* Authentication */,
-				D05FA81C2892E20300D05B1A /* ErrorResponse.swift */,
-				D04A4D6F28B524BC00F77198 /* SuccessResponse.swift */,
+				D04A4D6F28B524BC00F77198 /* ResponseTypes.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -532,7 +529,7 @@
 				D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */,
 				D06E27D828824B9A00C773E9 /* View+Extensions.swift in Sources */,
 				D06EFF88287F387000428711 /* FieldValidation.swift in Sources */,
-				D04A4D7028B524BC00F77198 /* SuccessResponse.swift in Sources */,
+				D04A4D7028B524BC00F77198 /* ResponseTypes.swift in Sources */,
 				D05856DE289533FE0073BDBC /* AuthenticateVM.swift in Sources */,
 				D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */,
 				D05856DC289533F10073BDBC /* AuthenticateView.swift in Sources */,
@@ -551,7 +548,6 @@
 				D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */,
 				D00E10292880D80100E8E12E /* NewSecretPhraseVM.swift in Sources */,
 				D06E27D4288247B700C773E9 /* View+Overlay.swift in Sources */,
-				D05FA81D2892E20300D05B1A /* ErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

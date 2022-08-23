@@ -5,6 +5,7 @@
 //  Created by Kingsley Okeke on 2022-07-16.
 //
 
+import Combine
 import Foundation
 
 extension ImportSecretPhraseView {
@@ -29,7 +30,11 @@ extension ImportSecretPhraseView {
 			}
 		}
 		
+		//Clients
 		let walletClient: WalletClient = WalletClient.shared
+		let apiClient: APIClient = APIClient.shared
+		
+		private var cancellables: Set<AnyCancellable> = Set<AnyCancellable>()
 		
 		@Published var word1: String = ""
 		@Published var word2: String = ""
@@ -102,7 +107,27 @@ extension ImportSecretPhraseView {
 			].joined(separator: " ")
 			
 			switch walletClient.importWallet(mnemonic: mnemonic) {
-			case .success(_): return
+			case .success(let hdWallet):
+					self.isLoading = true
+					let address = self.walletClient.getAddress(hdWallet)
+					self.apiClient.doesAccountExist(for: address)
+						.receive(on: DispatchQueue.main)
+						.sink(receiveCompletion: { completion in
+							switch completion {
+								case .finished: return
+								case .failure(let error):
+									self.isLoading = false
+									self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)
+							}
+						}, receiveValue: { response in
+							self.isLoading = false
+							if response.success {
+							}
+							else {
+								
+							}
+						})
+						.store(in: &cancellables)
 			case .failure(let error):
 				self.banner = BannerData(detail: error.localizedDescription, type: .error)
 				return

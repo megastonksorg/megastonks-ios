@@ -11,6 +11,9 @@ import IdentifiedCollections
 
 extension VerifySecretPhraseView {
 	@MainActor class ViewModel: ObservableObject {
+		//Clients
+		let walletClient = WalletClient.shared
+		
 		@Published var phraseInput: IdentifiedArrayOf<MnemonicWord>
 		@Published var phraseOptions: IdentifiedArrayOf<MnemonicWord>
 		
@@ -25,7 +28,7 @@ extension VerifySecretPhraseView {
 		
 		init() {
 			self.phraseInput = MnemonicPhrase.empty
-			switch WalletClient.shared.getMnemonic() {
+			switch self.walletClient.getMnemonic() {
 				case .success(let mnemonic):
 					self.phraseOptions = IdentifiedArrayOf(uniqueElements:
 						mnemonic
@@ -70,7 +73,7 @@ extension VerifySecretPhraseView {
 			self.isLoading = true
 			let input = self.phraseInput.map{ $0.text }.joined(separator: " ")
 			
-			switch WalletClient.shared.verifyMnemonic(mnemonic: input) {
+			switch self.walletClient.verifyMnemonic(mnemonic: input) {
 				case .success(let walletAddress):
 					self.isLoading = false
 					AppRouter.pushStack(stack: .route1(.createProfile(walletAddress: walletAddress)))

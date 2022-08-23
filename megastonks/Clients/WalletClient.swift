@@ -80,4 +80,8 @@ class WalletClient {
 		
 		return .success(SignedMessage(signature: signature.hexString, address: address))
 	}
+	
+	func getAddress(_ hdWallet: HDWallet) -> String {
+		return hdWallet.getAddressForCoin(coin: coinType)
+	}
 }

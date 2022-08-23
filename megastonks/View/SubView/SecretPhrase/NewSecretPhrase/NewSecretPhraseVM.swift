@@ -12,6 +12,9 @@ import IdentifiedCollections
 extension NewSecretPhraseView {
 	@MainActor class ViewModel: ObservableObject {
 		
+		//Clients
+		let walletClient = WalletClient.shared
+		
 		var walletAddress: String?
 		
 		@Published var isShowingTerms: Bool = false
@@ -21,15 +24,15 @@ extension NewSecretPhraseView {
 		@Published var banner: BannerData?
 		
 		init() {
-			switch WalletClient.shared.getMnemonic() {
+			switch self.walletClient.getMnemonic() {
 			case .success(let mnemonic):
 				let mnemonicWords: [MnemonicWord] =
 				mnemonic.split(separator: " ").map{ MnemonicWord(text: String($0), isSelectable: false, isAlternateStyle: false) }
 	
-				let walletResult = WalletClient.shared.importWallet(mnemonic: mnemonic)
+					let walletResult = self.walletClient.importWallet(mnemonic: mnemonic)
 					switch walletResult {
 						case .success(let hdWallet):
-							self.walletAddress = hdWallet.getAddressForCoin(coin: .ethereum)
+							self.walletAddress = self.walletClient.getAddress(hdWallet)
 							self.phrase = IdentifiedArray(uniqueElements: mnemonicWords)
 						case .failure(let error):
 							self.banner = BannerData(title: error.title, detail: error.errorDescription ?? "", type: .error)

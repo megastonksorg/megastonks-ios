@@ -8,5 +8,13 @@
 import Foundation
 
 struct SuccessResponse: Codable {
+	let success: Bool
+}
+
+struct EmptyResponse: Codable {
 	
+}
+
+struct ErrorResponse: Codable {
+	let message: String
 }

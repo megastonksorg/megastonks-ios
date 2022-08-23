@@ -12,8 +12,8 @@ typealias APIClientError = AppError.APIClientError
 
 protocol APIRequests {
 	func requestAuthentication() -> AnyPublisher<String, APIClientError>
-	func isUsernameAvailable(userName: String) -> AnyPublisher<SuccessResponse, APIClientError>
-	func doesAccountExist(walletAddress: String) -> AnyPublisher<SuccessResponse, APIClientError>
+	func isUsernameAvailable(userName: String) -> AnyPublisher<EmptyResponse, APIClientError>
+	func doesAccountExist(for walletAddress: String) -> AnyPublisher<SuccessResponse, APIClientError>
 	func authenticateUser(model: AuthenticateRequest) -> AnyPublisher<AuthenticateResponse, APIClientError>
 	func registerUser(model: RegisterRequest) -> AnyPublisher<RegisterResponse, APIClientError>
 	func uploadImage(imageData: Data) -> AnyPublisher<URL, APIClientError>
@@ -34,17 +34,17 @@ final class APIClient: APIRequests {
 		return apiRequest(appRequest: authenticationRequest, output: String.self)
 	}
 	
-	func isUsernameAvailable(userName: String) -> AnyPublisher<SuccessResponse, APIClientError> {
+	func isUsernameAvailable(userName: String) -> AnyPublisher<EmptyResponse, APIClientError> {
 		let userNameAvailableRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .post,
 			pathComponents: ["account", "isUserNameAvailable"],
 			query: [URLQueryItem(name: "userName", value: userName)]
 		)
-		return apiRequest(appRequest: userNameAvailableRequest, output: SuccessResponse.self)
+		return apiRequest(appRequest: userNameAvailableRequest, output: EmptyResponse.self)
 	}
 	
-	func doesAccountExist(walletAddress: String) -> AnyPublisher<SuccessResponse, APIClientError> {
+	func doesAccountExist(for walletAddress: String) -> AnyPublisher<SuccessResponse, APIClientError> {
 		let accountExistsRequest = APPUrlRequest(
 			token: nil,
 			httpMethod: .post,
