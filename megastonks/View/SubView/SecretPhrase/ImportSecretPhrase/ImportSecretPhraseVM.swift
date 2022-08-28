@@ -122,9 +122,10 @@ extension ImportSecretPhraseView {
 						}, receiveValue: { response in
 							self.isLoading = false
 							if response.success {
+								//As the user to login here
 							}
 							else {
-								
+								//Take them to the Account Creation Screen
 							}
 						})
 						.store(in: &cancellables)

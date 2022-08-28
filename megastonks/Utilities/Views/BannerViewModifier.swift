@@ -87,10 +87,10 @@ struct BannerViewModifier: ViewModifier {
 					)
 					.background (
 						RoundedRectangle(cornerRadius: self.cornerRadius)
-							.fill(Color.megaStonksBlack.opacity(0.6))
+							.fill(Color.app.black.opacity(0.6))
 							.overlay(
 								RoundedRectangle(cornerRadius: self.cornerRadius)
-									.stroke(Color.megaStonksGray2, lineWidth: 1)
+									.stroke(Color.app.cardStroke, lineWidth: 1)
 							)
 							
 					)

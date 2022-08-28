@@ -10,10 +10,10 @@ import SwiftUI
 struct TextFieldBackgroundView: View {
 	var body: some View {
 		RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
-			.stroke(Color.megaStonksGray2, lineWidth: 1)
+			.stroke(Color.app.cardStroke, lineWidth: 1)
 			.overlay(
 				RoundedRectangle(cornerRadius: SizeConstants.cornerRadius)
-					.fill(Color.megaStonksGray)
+					.fill(Color.app.card)
 			)
 	}
 }

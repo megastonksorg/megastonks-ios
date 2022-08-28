@@ -13,8 +13,8 @@ struct WelcomePageView: View {
 	@EnvironmentObject var appRouter: AppRouter
 	
 	init(viewModel: ViewModel) {
-		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(.megaStonksGreen)
-		UIPageControl.appearance().pageIndicatorTintColor = UIColor(.megaStonksGreen).withAlphaComponent(0.2)
+		UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color.app.green)
+		UIPageControl.appearance().pageIndicatorTintColor = UIColor(Color.app.green).withAlphaComponent(0.2)
 		self._viewModel = StateObject(wrappedValue: viewModel)
 	}
 	
@@ -30,7 +30,7 @@ struct WelcomePageView: View {
 						}
 					}
 				}
-				.tint(.megaStonksGreen)
+				.tint(.app.green)
 				.tabViewStyle(.page(indexDisplayMode: .always))
 				
 				Group {

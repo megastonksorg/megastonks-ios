@@ -7,19 +7,16 @@
 
 import SwiftUI
 
-extension Color {
-	static var megaStonksGray: Color { .init(.init(hex: "232328")) }
-	static var megaStonksGray2: Color { .init(.init(hex: "2B2B30")) }
-	static var megaStonksGreen: Color { .init(.init(hex: "3AD77E")) }
-	static var megaStonksGreenDark: Color { .init(.init(hex: "4BBD20")) }
-	static var megaStonksBlack: Color { .init(.init(hex: "0D1114")) }
-	static var megaStonksRed: Color { .init(.init(hex: "D73A60")) }
-}
-
 public extension Color {
 	enum app {}
 }
 
 public extension Color.app {
 	static let background: Color = Color.black
+	static let black: Color = Color(uiColor: UIColor(hex: "0D1114"))
+	static let green: Color = Color(uiColor: UIColor(hex: "3AD77E"))
+	static let darkGreen: Color = Color(uiColor: UIColor(hex: "4BBD20"))
+	static let red: Color = Color(uiColor: UIColor(hex: "D73A60"))
+	static let card: Color = Color(uiColor: UIColor(hex: "232328"))
+	static let cardStroke: Color = Color(uiColor: UIColor(hex: "3E3E3E"))
 }

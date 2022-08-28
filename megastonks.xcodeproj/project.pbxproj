@@ -27,6 +27,7 @@
 		D0442A2C289B58CD0027D982 /* FeedbackClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2B289B58CD0027D982 /* FeedbackClient.swift */; };
 		D0442A30289D972C0027D982 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0442A2F289D972C0027D982 /* AppState.swift */; };
 		D04A4D7028B524BC00F77198 /* ResponseTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A4D6F28B524BC00F77198 /* ResponseTypes.swift */; };
+		D04A765D28BC082400584D47 /* SlidingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A765C28BC082400584D47 /* SlidingButtonView.swift */; };
 		D04AC32928AAF90A001E3C46 /* VerifySecretPhraseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */; };
 		D04B3D44286AC1EA00543816 /* MnemonicWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */; };
 		D04B3D46286B1BBD00543816 /* MnemonicWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04B3D45286B1BBD00543816 /* MnemonicWord.swift */; };
@@ -93,6 +94,7 @@
 		D0442A2B289B58CD0027D982 /* FeedbackClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackClient.swift; sourceTree = "<group>"; };
 		D0442A2F289D972C0027D982 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D04A4D6F28B524BC00F77198 /* ResponseTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTypes.swift; sourceTree = "<group>"; };
+		D04A765C28BC082400584D47 /* SlidingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingButtonView.swift; sourceTree = "<group>"; };
 		D04AC32828AAF90A001E3C46 /* VerifySecretPhraseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifySecretPhraseVM.swift; sourceTree = "<group>"; };
 		D04B3D43286AC1EA00543816 /* MnemonicWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWordView.swift; sourceTree = "<group>"; };
 		D04B3D45286B1BBD00543816 /* MnemonicWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicWord.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				D06E27D1288246E800C773E9 /* AppProgressView.swift */,
 				D06E27D528824B0D00C773E9 /* BannerViewModifier.swift */,
 				D0442A27289B4FDC0027D982 /* TextFieldBackgroundView.swift */,
+				D04A765C28BC082400584D47 /* SlidingButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				D042C2C028746CAD00EF62BF /* URLSession+Validation.swift in Sources */,
 				D06EFF95287F570100428711 /* ImagePicker.swift in Sources */,
 				D0442A28289B4FDC0027D982 /* TextFieldBackgroundView.swift in Sources */,
+				D04A765D28BC082400584D47 /* SlidingButtonView.swift in Sources */,
 				D0A2F0BC2831E31000EC397C /* Helpers.swift in Sources */,
 				D0A2F0AF2831C6A800EC397C /* Color+Extension.swift in Sources */,
 				D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */,
