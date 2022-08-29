@@ -70,6 +70,7 @@
 		D0A2F0C02832A56600EC397C /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */; };
 		D0CA6F122880A2E400CFE94D /* WelcomePageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */; };
 		D0CA6F142880C5BB00CFE94D /* AppToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */; };
+		D0CE444F28BCCBF700F461EE /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE444E28BCCBF700F461EE /* View+ReadSize.swift */; };
 		D0DFFBB128927BA500784BAE /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DFFBB028927BA500784BAE /* UIImage+Extensions.swift */; };
 		D0F2D6AF2886960A005EE41E /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2D6AE2886960A005EE41E /* Notification+Name.swift */; };
 		D0F2D6B1289195E0005EE41E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F2D6B0289195E0005EE41E /* APIClient.swift */; };
@@ -136,6 +137,7 @@
 		D0A2F0BF2832A56600EC397C /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		D0CA6F112880A2E400CFE94D /* WelcomePageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageVM.swift; sourceTree = "<group>"; };
 		D0CA6F132880C5BB00CFE94D /* AppToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToolBar.swift; sourceTree = "<group>"; };
+		D0CE444E28BCCBF700F461EE /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
 		D0DFFBB028927BA500784BAE /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		D0DFFBB62892874100784BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0F2D6AE2886960A005EE41E /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				D06E27D728824B9A00C773E9 /* View+Extensions.swift */,
 				D0F2D6AE2886960A005EE41E /* Notification+Name.swift */,
 				D0DFFBB028927BA500784BAE /* UIImage+Extensions.swift */,
+				D0CE444E28BCCBF700F461EE /* View+ReadSize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				D039C82D28484DC100AA3AD2 /* Wallet.swift in Sources */,
 				D06E27CE28822FA500C773E9 /* Data+Hex.swift in Sources */,
 				D0CA6F122880A2E400CFE94D /* WelcomePageVM.swift in Sources */,
+				D0CE444F28BCCBF700F461EE /* View+ReadSize.swift in Sources */,
 				D0A1EE622847022F00BE886F /* WelcomePageView.swift in Sources */,
 				D00E10292880D80100E8E12E /* NewSecretPhraseVM.swift in Sources */,
 				D06E27D4288247B700C773E9 /* View+Overlay.swift in Sources */,

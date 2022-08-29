@@ -9,8 +9,8 @@ import SwiftUI
 
 extension View {
 	
-	func frame(dimension: CGFloat?) -> some View {
-		frame(width: dimension, height: dimension)
+	func frame(dimension: CGFloat?, alignment: Alignment = .center) -> some View {
+		frame(width: dimension, height: dimension, alignment: alignment)
 	}
 	
 	func frame(size: CGSize?) -> some View {
@@ -21,7 +21,7 @@ extension View {
 		ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
 	}
 	
-	func pushOutFrame() -> some View {
-		frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+	func pushOutFrame(alignment: Alignment = .center) -> some View {
+		frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
 	}
 }
