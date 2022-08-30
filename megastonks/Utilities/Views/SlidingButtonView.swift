@@ -24,11 +24,15 @@ struct SlidingButtonView: View {
 				let width: CGFloat = proxy.frame(in: .local).width
 				let maxXTravelDistance: CGFloat = width - (buttonDiameter + defaultXOffset / 2)
 				HStack {
-					Circle()
-						.fill(Color.red)
-						.frame(dimension: buttonDiameter)
-						.offset(x: xOffset)
-						.animation(.interactiveSpring(response: 0.4), value: xOffset)
+					ZStack {
+
+						
+						Circle()
+							.fill(Color.red)
+							.frame(dimension: buttonDiameter)
+							.offset(x: xOffset)
+							.animation(.interactiveSpring(response: 0.4), value: xOffset)
+					}
 				}
 				.frame(width: width, height: proxy.size.height, alignment: .leading)
 				.gesture(
@@ -50,7 +54,15 @@ struct SlidingButtonView: View {
 			}
 			.frame(height: self.height)
 		}
-		.background(Color.black, in: Capsule())
+		.background(
+			ZStack {
+				Capsule()
+					.fill(Color.black)
+				Text("Slide to cast your vote")
+					.font(.system(.body, design: .rounded, weight: .medium))
+					.foregroundStyle(LinearGradient.shine)
+			}
+		)
 		.overlay(Capsule().stroke(Color.app.cardStroke, lineWidth: 2))
 	}
 }

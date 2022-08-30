@@ -16,6 +16,8 @@ public extension LinearGradient {
 	
 	static let megaStonksGreen = LinearGradient(colors: [.app.darkGreen, .app.green], startPoint: .leading, endPoint: .trailing)
 	
+	static let shine = LinearGradient(colors: [.white.opacity(0.5), .white], startPoint: .leading, endPoint: .trailing)
+	
 	static let white = LinearGradient(colors: [.white], startPoint: .leading, endPoint: .trailing)
 	
 	static let clear = LinearGradient(colors: [], startPoint: .center, endPoint: .center)
