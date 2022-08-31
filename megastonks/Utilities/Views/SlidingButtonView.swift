@@ -11,6 +11,7 @@ struct SlidingButtonView: View {
 	let height: CGFloat = 60
 	let buttonDiameter: CGFloat = 50
 	let defaultXOffset: CGFloat = 6
+	let offsetAnimation: Animation = .interactiveSpring(response: 0.4)
 	
 	@State var isSliding: Bool = false
 	@State var inverseProgress: CGFloat = 1.0
@@ -27,18 +28,19 @@ struct SlidingButtonView: View {
 				let maxXTravelDistance: CGFloat = width - (buttonDiameter + defaultXOffset / 2)
 				HStack {
 					ZStack(alignment: .leading) {
-						if self.isSliding {
+						if self.inverseProgress < 1 {
 							Capsule()
 								.fill(LinearGradient.red)
 								.frame(width: width)
 								.offset(x: xOffset - maxXTravelDistance)
 								.animation(.default, value: xOffset)
+								.clipShape(Capsule())
 						}
 						Circle()
 							.fill(Color.red)
 							.frame(dimension: buttonDiameter, alignment: .leading)
 							.offset(x: xOffset)
-							.animation(.interactiveSpring(response: 0.4), value: xOffset)
+							.animation(offsetAnimation, value: xOffset)
 							.gesture(
 								DragGesture()
 									.onChanged { value in
@@ -55,7 +57,9 @@ struct SlidingButtonView: View {
 										if self.xOffset < maxXTravelDistance - 1  {
 											self.xOffset = defaultXOffset
 											self.isSliding = false
-											self.inverseProgress = 1.0
+											withAnimation(offsetAnimation) {
+												self.inverseProgress = 1.0
+											}
 										}
 									}
 							)
