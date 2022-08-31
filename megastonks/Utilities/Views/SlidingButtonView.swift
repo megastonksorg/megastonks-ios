@@ -37,7 +37,7 @@ struct SlidingButtonView: View {
 								.clipShape(Capsule())
 						}
 						Circle()
-							.fill(Color.red)
+							.fill(Color.app.red)
 							.frame(dimension: buttonDiameter, alignment: .leading)
 							.offset(x: xOffset)
 							.animation(offsetAnimation, value: xOffset)
