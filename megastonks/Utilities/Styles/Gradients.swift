@@ -18,6 +18,10 @@ public extension LinearGradient {
 	
 	static let shine = LinearGradient(colors: [.white.opacity(0.5), .white], startPoint: .leading, endPoint: .trailing)
 	
+	static let gray = LinearGradient(colors: [.gray], startPoint: .leading, endPoint: .trailing)
+	
+	static let red = LinearGradient(colors: [.app.red.opacity(0.5), .app.red], startPoint: .leading, endPoint: .trailing)
+	
 	static let white = LinearGradient(colors: [.white], startPoint: .leading, endPoint: .trailing)
 	
 	static let clear = LinearGradient(colors: [], startPoint: .center, endPoint: .center)
