@@ -13,7 +13,7 @@ struct SlidingButtonView: View {
 	let defaultXOffset: CGFloat = 6
 	
 	@State var isSliding: Bool = false
-	@State var progress: CGFloat = 1.0
+	@State var inverseProgress: CGFloat = 1.0
 	@State var xOffset: CGFloat
 	
 	init() {
@@ -26,33 +26,42 @@ struct SlidingButtonView: View {
 				let width: CGFloat = proxy.frame(in: .local).width
 				let maxXTravelDistance: CGFloat = width - (buttonDiameter + defaultXOffset / 2)
 				HStack {
-					Circle()
-						.fill(Color.red)
-						.frame(dimension: buttonDiameter)
-						.offset(x: xOffset)
-						.animation(.interactiveSpring(response: 0.4), value: xOffset)
+					ZStack(alignment: .leading) {
+						if self.isSliding {
+							Capsule()
+								.fill(LinearGradient.red)
+								.frame(width: width)
+								.offset(x: xOffset - maxXTravelDistance)
+								.animation(.default, value: xOffset)
+						}
+						Circle()
+							.fill(Color.red)
+							.frame(dimension: buttonDiameter, alignment: .leading)
+							.offset(x: xOffset)
+							.animation(.interactiveSpring(response: 0.4), value: xOffset)
+							.gesture(
+								DragGesture()
+									.onChanged { value in
+										let xDistance  = value.translation.width
+										
+										if (defaultXOffset...maxXTravelDistance).contains(xDistance) {
+											self.isSliding = true
+											self.xOffset = value.translation.width
+											self.inverseProgress = 1 - (xDistance / maxXTravelDistance)
+										}
+									}
+									.onEnded { _ in
+										//Allow tolerance of 1 when completing actino
+										if self.xOffset < maxXTravelDistance - 1  {
+											self.xOffset = defaultXOffset
+											self.isSliding = false
+											self.inverseProgress = 1.0
+										}
+									}
+							)
+					}
 				}
 				.frame(width: width, height: proxy.size.height, alignment: .leading)
-				.gesture(
-					DragGesture()
-						.onChanged { value in
-							let xDistance  = value.translation.width
-							
-							if (defaultXOffset...maxXTravelDistance).contains(xDistance) {
-								self.isSliding = true
-								self.xOffset = value.translation.width
-								self.progress = 1 - (xDistance / maxXTravelDistance)
-							}
-						}
-						.onEnded { _ in
-							//Allow tolerance of 1 when completing actino
-							if self.xOffset < maxXTravelDistance - 1  {
-								self.xOffset = defaultXOffset
-								self.isSliding = false
-								self.progress = 1.0
-							}
-						}
-				)
 			}
 			.frame(height: self.height)
 		}
@@ -63,7 +72,7 @@ struct SlidingButtonView: View {
 				Text("Slide to cast your vote")
 					.font(.system(.body, design: .rounded, weight: .medium))
 					.foregroundStyle(LinearGradient.shine)
-					.opacity(self.progress)
+					.opacity(self.inverseProgress)
 			}
 		)
 		.overlay(
