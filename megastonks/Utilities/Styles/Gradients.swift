@@ -14,13 +14,13 @@ public extension LinearGradient {
 	
 	static let black = LinearGradient(colors: [.black, .black.opacity(0.2), .black.opacity(0.2), .black.opacity(0.2)], startPoint: .top, endPoint: .bottom)
 	
-	static let megaStonksGreen = LinearGradient(colors: [.app.darkGreen, .app.green], startPoint: .leading, endPoint: .trailing)
+	static let green = LinearGradient(colors: [.app.green.opacity(0.8), .app.green], startPoint: .leading, endPoint: .trailing)
+	
+	static let red = LinearGradient(colors: [.app.red.opacity(0.8), .app.red], startPoint: .leading, endPoint: .trailing)
 	
 	static let shine = LinearGradient(colors: [.white.opacity(0.5), .white], startPoint: .leading, endPoint: .trailing)
 	
 	static let gray = LinearGradient(colors: [.gray], startPoint: .leading, endPoint: .trailing)
-	
-	static let red = LinearGradient(colors: [.app.red.opacity(0.1), .app.red.opacity(0.2), .app.red.opacity(0.3), .app.red.opacity(0.6), .app.red], startPoint: .leading, endPoint: .trailing)
 	
 	static let white = LinearGradient(colors: [.white], startPoint: .leading, endPoint: .trailing)
 	

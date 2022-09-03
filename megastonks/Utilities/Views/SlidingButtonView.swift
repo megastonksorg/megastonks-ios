@@ -28,7 +28,7 @@ struct SlidingButtonView: View {
 		
 		var gradientTheme: LinearGradient {
 			switch self {
-			case .yea: return LinearGradient.megaStonksGreen
+			case .yea: return LinearGradient.green
 			case .nay: return LinearGradient.red
 			}
 		}
@@ -66,7 +66,7 @@ struct SlidingButtonView: View {
 					ZStack(alignment: .leading) {
 						if self.inverseProgress < 1 {
 							Capsule()
-								.fill(style.gradientTheme)
+								.fill(style.gradientTheme.opacity(1 - inverseProgress))
 								.frame(width: width)
 								.background(Color.black.clipShape(Capsule()))
 								.offset(x: xOffset - maxXTravelDistance)
@@ -131,7 +131,7 @@ struct SlidingButtonView_Previews: PreviewProvider {
 	static var previews: some View {
 		VStack {
 			Spacer()
-			SlidingButtonView(style: .yea)
+			SlidingButtonView(style: .nay)
 				.padding(.horizontal, 40)
 		}
 	}
