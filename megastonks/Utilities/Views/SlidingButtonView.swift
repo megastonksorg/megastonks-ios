@@ -51,6 +51,7 @@ struct SlidingButtonView: View {
 	@State var isSliding: Bool = false
 	@State var inverseProgress: CGFloat = 1.0
 	@State var xOffset: CGFloat
+	@State var didComplete: Bool = false
 	
 	init(style: Style) {
 		self.style = style
@@ -91,11 +92,13 @@ struct SlidingButtonView: View {
 											self.isSliding = true
 											self.xOffset = value.translation.width
 											self.inverseProgress = 1 - (xDistance / maxXTravelDistance)
+											if self.inverseProgress == 0 {
+												self.didComplete = true
+											}
 										}
 									}
 									.onEnded { _ in
-										//Allow tolerance of 1 when completing actino
-										if self.xOffset < maxXTravelDistance - 1  {
+										if !self.didComplete  {
 											self.xOffset = defaultXOffset
 											self.isSliding = false
 											withAnimation(offsetAnimation) {
@@ -121,8 +124,14 @@ struct SlidingButtonView: View {
 			}
 		)
 		.overlay(
-			Capsule()
-				.stroke(self.isSliding ? style.gradientTheme : LinearGradient.gray)
+			ZStack {
+				Capsule()
+					.stroke(self.isSliding ? style.gradientTheme : LinearGradient.gray)
+				Text("You voted \(style.title)")
+					.font(.system(.body, design: .rounded))
+					.foregroundColor(.white)
+					.opacity(self.didComplete ? 1.0 : 0.0)
+			}
 		)
 	}
 }
@@ -131,7 +140,7 @@ struct SlidingButtonView_Previews: PreviewProvider {
 	static var previews: some View {
 		VStack {
 			Spacer()
-			SlidingButtonView(style: .nay)
+			SlidingButtonView(style: .yea)
 				.padding(.horizontal, 40)
 		}
 	}
