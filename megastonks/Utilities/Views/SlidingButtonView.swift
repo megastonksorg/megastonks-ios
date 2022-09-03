@@ -40,6 +40,10 @@ struct SlidingButtonView: View {
 						Circle()
 							.fill(Color.app.red)
 							.frame(dimension: buttonDiameter, alignment: .leading)
+							.overlay(
+								Image(systemName: "hand.thumbsdown.fill")
+									.foregroundColor(.white)
+							)
 							.offset(x: xOffset)
 							.animation(offsetAnimation, value: xOffset)
 							.gesture(
