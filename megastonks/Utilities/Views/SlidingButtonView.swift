@@ -8,16 +8,52 @@
 import SwiftUI
 
 struct SlidingButtonView: View {
+	enum Style: Equatable {
+		case yea
+		case nay
+		
+		var title: String {
+			switch self {
+			case .yea: return "Yea"
+			case .nay: return "Nay"
+			}
+		}
+		
+		var colorTheme: Color {
+			switch self {
+			case .yea: return Color.app.green
+			case .nay: return Color.app.red
+			}
+		}
+		
+		var gradientTheme: LinearGradient {
+			switch self {
+			case .yea: return LinearGradient.megaStonksGreen
+			case .nay: return LinearGradient.red
+			}
+		}
+		
+		var sfSymbolName: String {
+			switch self {
+			case .yea: return "hand.thumbsup.fill"
+			case .nay: return "hand.thumbsdown.fill"
+			}
+		}
+	}
+	
 	let height: CGFloat = 60
 	let buttonDiameter: CGFloat = 50
 	let defaultXOffset: CGFloat = 6
 	let offsetAnimation: Animation = .interactiveSpring(response: 0.4)
 	
+	let style: Style
+	
 	@State var isSliding: Bool = false
 	@State var inverseProgress: CGFloat = 1.0
 	@State var xOffset: CGFloat
 	
-	init() {
+	init(style: Style) {
+		self.style = style
 		self._xOffset = State(initialValue: defaultXOffset)
 	}
 	
@@ -30,7 +66,7 @@ struct SlidingButtonView: View {
 					ZStack(alignment: .leading) {
 						if self.inverseProgress < 1 {
 							Capsule()
-								.fill(LinearGradient.red)
+								.fill(style.gradientTheme)
 								.frame(width: width)
 								.background(Color.black.clipShape(Capsule()))
 								.offset(x: xOffset - maxXTravelDistance)
@@ -38,10 +74,10 @@ struct SlidingButtonView: View {
 								.clipShape(Capsule())
 						}
 						Circle()
-							.fill(Color.app.red)
+							.fill(style.colorTheme)
 							.frame(dimension: buttonDiameter, alignment: .leading)
 							.overlay(
-								Image(systemName: "hand.thumbsdown.fill")
+								Image(systemName: style.sfSymbolName)
 									.foregroundColor(.white)
 							)
 							.offset(x: xOffset)
@@ -86,7 +122,7 @@ struct SlidingButtonView: View {
 		)
 		.overlay(
 			Capsule()
-				.stroke(self.isSliding ? LinearGradient.red : LinearGradient.gray)
+				.stroke(self.isSliding ? style.gradientTheme : LinearGradient.gray)
 		)
 	}
 }
@@ -95,7 +131,7 @@ struct SlidingButtonView_Previews: PreviewProvider {
 	static var previews: some View {
 		VStack {
 			Spacer()
-			SlidingButtonView()
+			SlidingButtonView(style: .yea)
 				.padding(.horizontal, 40)
 		}
 	}
